@@ -185,5 +185,72 @@ x-ratelimit-remaining: name=1persec,0;
 - Логотип (list.logo)
 - Минимальная цена (list.models.minprice)
 - Есть спецпредложение (list.models.hasSpecialPrice)
+
 *Остальные поля по желанию и если будем успевать
+
+## Заявка на кредит 
+Используется **API Car Loan**, метод <a href="" target="_blank">POST /carloan</a>
+Тело запроса:
+```
+{
+  "comment": "Комментарий",
+  "customer_party": {
+    "email": "apetrovich@example.com",
+    "income_amount": 140000,
+    "person": {
+      "birth_date_time": "1981-11-01",
+      "birth_place": "г. Воронеж",
+      "family_name": "Иванов",
+      "first_name": "Иван",
+      "gender": "female",
+      "middle_name": "Иванович",
+      "nationality_country_code": "RU"
+    },
+    "phone": "+99999999999"
+  },
+  "datetime": "2020-10-10T08:15:47Z",
+  "interest_rate": 15.7,
+  "requested_amount": 300000,
+  "requested_term": 36,
+  "trade_mark": "Nissan",
+  "vehicle_cost": 600000
+}
+```
+Заполняем из формы в приложении: 
+- Email (customer_party.email)
+- ФИО (customer_party.person.family_name, customer_party.person.first_name, customer_party.person.middle_name)
+- Пол (customer_party.person.gender)
+- Дата рождения (customer_party.person.birth_date_time)
+- Телефон (customer_party.phone)
+- Сколько денег в наличии (customer_party.income_amount)
+- Запрашиваемая сумма (requested_amount)
+- Срок (requested_term)
+Поля trade_mark, vehicle_cost, datetime заполняются автоматически. 
+
+Пример ответа: 
+```
+Код: 200 OK
+Заголовки:
+content-type: application/json
+x-global-transaction-id: ebeabefd5f7f8aee000277f3
+{
+    "datetime": "2020-10-08T21:55:58+00:00",
+    "application": {
+        "VTB_client_ID": 5067679726,
+        "decision_report": {
+            "application_status": "prescore_denied",
+            "decision_date": "2020-10-08",
+            "decision_end_date": "2021-04-08",
+            "comment": "Комментарий",
+            "monthly_payment": 8333.333333333334
+        }
+    }
+}
+```
+Отсюда разбираем:
+- Статус заявки (application.decision_report.application_status)
+- Комментарий (comment)
+- Ежемесячный платеж (monthly_payment)
+
+
 
