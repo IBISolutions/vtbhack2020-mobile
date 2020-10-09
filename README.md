@@ -252,5 +252,59 @@ x-global-transaction-id: ebeabefd5f7f8aee000277f3
 - Комментарий (comment)
 - Ежемесячный платеж (monthly_payment)
 
+## Программы кредитования и условия
+Для получения списка условий используем **API Calculator**, метод <a href="" target="_blank">GET /settings</a>.
+На вход подаем name (Haval) и  language (ru-RU).
+Пример ответа: 
+```
+Код: 200 OK
+Заголовки:
+content-type: application/json; charset=utf-8
+x-global-transaction-id: ebeabefd5f803a3000002a35
+{
+    "name": "Haval",
+    "language": "ru-RU",
+    "programs": [
+        "d3c2acc2-b91d-4a4e-b8cb-3be3d6d6d383",
+        "f0694a0f-25da-48ce-adeb-6dd9009673cc"
+    ],
+    "clientTypes": [],
+    "specialConditions": [
+        {
+            "name": "КАСКО",
+            "language": "ru-RU",
+            "excludingConditions": [
+                "ba09cad6-c839-437f-98dc-5d2e9b8872ea"
+            ],
+            "id": "b907b476-5a26-4b25-b9c0-8091e9d5c65f",
+            "isChecked": true
+        },
+        {
+            "name": "Страхование жизни",
+            "language": "ru-RU",
+            "excludingConditions": [],
+            "id": "57ba0183-5988-4137-86a6-3d30a4ed8dc9",
+            "isChecked": true
+        },
+        {
+            "name": "Я готов предоставить полный пакет документов",
+            "language": "ru-RU",
+            "excludingConditions": [],
+            "id": "cbfc4ef3-af70-4182-8cf6-e73f361d1e68",
+            "isChecked": true
+        }
+    ],
+    "variant": {
+        "id": "aa0f4c17-da62-4885-b27f-5cde7d12ec44",
+        "name": "Лучшая ставка",
+        "language": "ru-RU"
+    },
+    "cost": 2000000,
+    "initialFee": 400000,
+    "openInNewTab": false,
+    "anchor": null,
+    "kaskoDefaultValue": null
+}
+```
 
 
