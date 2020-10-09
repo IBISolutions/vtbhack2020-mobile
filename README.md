@@ -253,7 +253,7 @@ x-global-transaction-id: ebeabefd5f7f8aee000277f3
 - Ежемесячный платеж (monthly_payment)
 
 ## Программы кредитования и условия
-Для получения списка условий используем **API Calculator**, метод <a href="" target="_blank">GET /settings</a>.
+Для получения списка условий используем **API Calculator**, метод <a href="https://developer.hackathon.vtb.ru/vtb/hackathon/product/62/api/24" target="_blank">GET /settings</a>.
 На вход подаем name (Haval) и  language (ru-RU).
 Пример ответа: 
 ```
@@ -306,5 +306,179 @@ x-global-transaction-id: ebeabefd5f803a3000002a35
     "kaskoDefaultValue": null
 }
 ```
+## Калькулятор
+Для расчета используем **API Calculator**, метод <a href="https://developer.hackathon.vtb.ru/vtb/hackathon/product/62/api/24" target="_blank">POST /calculate</a>. 
+Пример запроса:
+```
+{
+  "clientTypes": [
+  ],
+  "cost": 850000,
+  "initialFee": 200000,
+  "kaskoValue": null,
+  "language": "ru-RU",
+  "residualPayment": 77.82549307,
+  "settingsName": "Haval",
+  "specialConditions": [
+    "57ba0183-5988-4137-86a6-3d30a4ed8dc9"
+  ],
+  "term": 5
+}
+```
+Пример ответа: 
+```
+Код: 200 OK
+Заголовки:
+content-type: application/json; charset=utf-8
+x-global-transaction-id: ebeabefd5f803bce0000e201
+{
+    "program": {
+        "id": "d3c2acc2-b91d-4a4e-b8cb-3be3d6d6d383",
+        "programName": "Haval",
+        "programUrl": "/personal/avtokredity/legkovye-avtomobili/haval/",
+        "requestUrl": "//anketa.vtb.ru/avtokredit/",
+        "cost": {
+            "min": 1500000,
+            "max": 10000000,
+            "filled": true
+        }
+    },
+    "result": {
+        "payment": 14558,
+        "term": 5,
+        "loanAmount": 650000,
+        "residualPayment": null,
+        "subsidy": null,
+        "contractRate": 12.3,
+        "lastPayment": null,
+        "kaskoCost": null
+    },
+    "ranges": {
+        "cost": {
+            "min": 1000000,
+            "max": 10000000,
+            "filled": true
+        },
+        "initialFee": {
+            "min": 20,
+            "max": 100,
+            "filled": true
+        },
+        "residualPayment": {
+            "min": null,
+            "max": null,
+            "filled": false
+        },
+        "term": {
+            "min": 1,
+            "max": 5,
+            "filled": true
+        }
+    }
+}
+```
 
+## График платежей 
+Для получения графика платежей используем **API Calculator**, <a href="https://developer.hackathon.vtb.ru/vtb/hackathon/product/62/api/24" target="_blank">POST /payments-graph</a>. 
+Пример запроса: 
+```
+{
+  "contractRate": 1,
+  "lastPayment": 10000,
+  "loanAmount": 3,
+  "payment": 9500,
+  "term": 1
+}
+```
+Пример ответа:
+```
+{
+    "payments": [
+        {
+            "order": 1,
+            "percent": 0,
+            "debt": 9500,
+            "payment": 9500,
+            "balanceOut": 0
+        },
+        {
+            "order": 2,
+            "percent": 0,
+            "debt": 9500,
+            "payment": 9500,
+            "balanceOut": 0
+        },
+        {
+            "order": 3,
+            "percent": 0,
+            "debt": 9500,
+            "payment": 9500,
+            "balanceOut": 0
+        },
+        {
+            "order": 4,
+            "percent": 0,
+            "debt": 9500,
+            "payment": 9500,
+            "balanceOut": 0
+        },
+        {
+            "order": 5,
+            "percent": 0,
+            "debt": 9500,
+            "payment": 9500,
+            "balanceOut": 0
+        },
+        {
+            "order": 6,
+            "percent": 0,
+            "debt": 9500,
+            "payment": 9500,
+            "balanceOut": 0
+        },
+        {
+            "order": 7,
+            "percent": 0,
+            "debt": 9500,
+            "payment": 9500,
+            "balanceOut": 0
+        },
+        {
+            "order": 8,
+            "percent": 0,
+            "debt": 9500,
+            "payment": 9500,
+            "balanceOut": 0
+        },
+        {
+            "order": 9,
+            "percent": 0,
+            "debt": 9500,
+            "payment": 9500,
+            "balanceOut": 0
+        },
+        {
+            "order": 10,
+            "percent": 0,
+            "debt": 9500,
+            "payment": 9500,
+            "balanceOut": 0
+        },
+        {
+            "order": 11,
+            "percent": 0,
+            "debt": 9500,
+            "payment": 9500,
+            "balanceOut": 0
+        },
+        {
+            "order": 12,
+            "percent": 9500,
+            "debt": 0,
+            "payment": 9500,
+            "balanceOut": 0
+        }
+    ]
+}
+```
 
