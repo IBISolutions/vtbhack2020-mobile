@@ -174,19 +174,57 @@ x-ratelimit-remaining: name=1persec,0;
     ]
 }
 ```
-Для поиска по Marketplace потребуются поля list.title и models.title (так как Car Recognition возвращает названия латиницей). 
+
+*Для поиска по Marketplace потребуются поля list.title и models.title (так как Car Recognition возвращает названия латиницей).*
+
+**Экран "ARkit/UPLOAD"**
+
 Для вывода на экран понадобятся:
 - Марка (list.titleRus)
 - Модель (list.models.titleRus)
 - Страна-производитель (list.country.title)
 - Тип кузова (list.models.bodies.typeTitle)
-- Фото тачки (list.models.bodies.photo)
-- Количество машин в наличии (list.currentCarCount)
-- Логотип (list.logo)
-- Минимальная цена (list.models.minprice)
+- Количество предложений (list.currentCarCount)
+- Цена "От" (list.models.minprice)
 - Есть спецпредложение (list.models.hasSpecialPrice)
 
-*Остальные поля по желанию и если будем успевать
+**Экран "Кредитный калькулятор"**
+
+Для вывода на экран понадобятся:
+- Марка (list.titleRus)
+- Модель (list.models.titleRus)
+- Тип кузова (list.models.bodies.typeTitle)
+- Фото тачки (list.models.bodies.photo)
+
+**Экран "Маркетплейс 1 (список марок)"**
+
+Для вывода на экран понадобятся:
+- Логотип (list.logo)
+- Марка (list.titleRus)
+- Страна-производитель (list.country.title)
+
+**Экран "Маркетплейс 2 (список моделей)"**
+
+Для вывода на экран понадобятся:
+- Логотип (list.logo)
+- Марка (list.titleRus)
+- Фото тачки (list.models.bodies.photo)
+- Модель (list.models.titleRus)
+- Тип кузова (list.models.bodies.typeTitle)
+- Цена "От" (list.models.minprice)
+- Количество предложений (list.currentCarCount)
+
+**Экран "Мои авто"**
+
+Для вывода на экран понадобятся:
+- Марка (list.titleRus)
+- Фото тачки (list.models.bodies.photo)
+- Модель (list.models.titleRus)
+- Тип кузова (list.models.bodies.typeTitle)
+- Цена "От" (list.models.minprice)
+- Количество предложений (list.currentCarCount)
+
+*Остальные поля по желанию и если будем успевать*
 
 ## Заявка на кредит 
 Используется **API Car Loan**, метод <a href="" target="_blank">POST /carloan</a>
@@ -216,16 +254,23 @@ x-ratelimit-remaining: name=1persec,0;
   "vehicle_cost": 600000
 }
 ```
+**Экран "Оформление заявки на кредит"** 
+
 Заполняем из формы в приложении: 
 - Email (customer_party.email)
 - ФИО (customer_party.person.family_name, customer_party.person.first_name, customer_party.person.middle_name)
-- Пол (customer_party.person.gender)
 - Дата рождения (customer_party.person.birth_date_time)
 - Телефон (customer_party.phone)
-- Сколько денег в наличии (customer_party.income_amount)
-- Запрашиваемая сумма (requested_amount)
-- Срок (requested_term)
-Поля trade_mark, vehicle_cost, datetime заполняются автоматически. 
+- Город (customer_party.birth_place)
+
+Автоматом из предыдущего экрана подтягивается 
+- Сколько денег в наличии (customer_party.income_amount) 
+- Запрашиваемая сумма (requested_amount) *Высчитываем ПОЛНАЯ СТОИМОСТЬ - СКОЛЬКО ДЕНЕГ В НАЛИЧИИ + СТОИМОСТЬ КАСКО*
+- Срок (requested_term) 
+- Марка машины (trade_mark)
+- Стоимость машины (vehicle_cost)
+- Дата заполнения (datetime)
+- Ставка (interest_rate) 
 
 Пример ответа: 
 ```
@@ -325,6 +370,18 @@ x-global-transaction-id: ebeabefd5f803a3000002a35
   "term": 5
 }
 ```
+
+**Экран "Кредитный калькулятор"**
+Заполняем из формы в приложении: 
+- Первоначальный взнос (initialFee)
+- Срок (term)
+- Доп. условия (specialConditions)
+
+Автоматически подтягивается:
+- Полная стоимость автомобиля (cost)
+- КАСКО (kaskoValue - при наличии 20% от стоимости автомобиля) 
+- Остаточный платеж (residualPayment = cost - initialFee + kaskoValue)
+
 Пример ответа: 
 ```
 Код: 200 OK
@@ -377,6 +434,13 @@ x-global-transaction-id: ebeabefd5f803bce0000e201
     }
 }
 ```
+**Экран "Расчет платежей"**
+
+Для вывода на экран понадобятся:
+- Размер ежемесячного платежа (payment)
+- Сумма кредита (loanAmount)
+- Ставка (contractRate)
+- Срок (term)
 
 ## График платежей 
 Для получения графика платежей используем **API Calculator**, <a href="https://developer.hackathon.vtb.ru/vtb/hackathon/product/62/api/24" target="_blank">POST /payments-graph</a>. 
@@ -390,6 +454,17 @@ x-global-transaction-id: ebeabefd5f803bce0000e201
   "term": 1
 }
 ```
+
+**Экран "Расчет платежей"**
+
+Автоматически подтягивается:
+- Размер ежемесячного платежа (payment)
+- Остаточный платеж (lastPayment)
+- Сумма кредита (loanAmount)
+- Ставка (contractRate)
+- Срок (term)
+
+
 Пример ответа:
 ```
 {
@@ -482,3 +557,9 @@ x-global-transaction-id: ebeabefd5f803bce0000e201
 }
 ```
 
+**Экран "Расчет платежей" (всплывашка/pdf)**
+
+Для вывода на экран понадобятся: 
+- Номер платежа (order)
+- Сумма (payment)
+- Долг(debt)
