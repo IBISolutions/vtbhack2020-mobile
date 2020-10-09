@@ -1,0 +1,15 @@
+name: VTB
+options:
+  bundleIdPrefix: com.IBI-Solutions
+  minimumXcodeGenVersion: 2.18.0
+  deploymentTarget:
+    iOS: 14.0
+  groupSortPosition: top
+attributes:
+  ORGANIZATIONNAME: "IBI-Solutions"
+targets:
+  VTB:
+    type: application
+    platform: iOS
+    sources:
+      - path: VTB
