@@ -174,19 +174,57 @@ x-ratelimit-remaining: name=1persec,0;
     ]
 }
 ```
-Для поиска по Marketplace потребуются поля list.title и models.title (так как Car Recognition возвращает названия латиницей). 
+
+*Для поиска по Marketplace потребуются поля list.title и models.title (так как Car Recognition возвращает названия латиницей).*
+
+**Экран "ARkit/UPLOAD"**
+
 Для вывода на экран понадобятся:
 - Марка (list.titleRus)
 - Модель (list.models.titleRus)
 - Страна-производитель (list.country.title)
 - Тип кузова (list.models.bodies.typeTitle)
-- Фото тачки (list.models.bodies.photo)
-- Количество машин в наличии (list.currentCarCount)
-- Логотип (list.logo)
-- Минимальная цена (list.models.minprice)
+- Количество предложений (list.currentCarCount)
+- Цена "От" (list.models.minprice)
 - Есть спецпредложение (list.models.hasSpecialPrice)
 
-*Остальные поля по желанию и если будем успевать
+**Экран "Кредитный калькулятор"**
+
+Для вывода на экран понадобятся:
+- Марка (list.titleRus)
+- Модель (list.models.titleRus)
+- Тип кузова (list.models.bodies.typeTitle)
+- Фото тачки (list.models.bodies.photo)
+
+**Экран "Маркетплейс 1 (список марок)"**
+
+Для вывода на экран понадобятся:
+- Логотип (list.logo)
+- Марка (list.titleRus)
+- Страна-производитель (list.country.title)
+
+**Экран "Маркетплейс 2 (список моделей)"**
+
+Для вывода на экран понадобятся:
+- Логотип (list.logo)
+- Марка (list.titleRus)
+- Фото тачки (list.models.bodies.photo)
+- Модель (list.models.titleRus)
+- Тип кузова (list.models.bodies.typeTitle)
+- Цена "От" (list.models.minprice)
+- Количество предложений (list.currentCarCount)
+
+**Экран "Мои авто"**
+
+Для вывода на экран понадобятся:
+- Марка (list.titleRus)
+- Фото тачки (list.models.bodies.photo)
+- Модель (list.models.titleRus)
+- Тип кузова (list.models.bodies.typeTitle)
+- Цена "От" (list.models.minprice)
+- Количество предложений (list.currentCarCount)
+
+*Остальные поля по желанию и если будем успевать*
 
 ## Заявка на кредит 
 Используется **API Car Loan**, метод <a href="" target="_blank">POST /carloan</a>
@@ -216,16 +254,23 @@ x-ratelimit-remaining: name=1persec,0;
   "vehicle_cost": 600000
 }
 ```
+**Экран "Оформление заявки на кредит"** 
+
 Заполняем из формы в приложении: 
 - Email (customer_party.email)
 - ФИО (customer_party.person.family_name, customer_party.person.first_name, customer_party.person.middle_name)
-- Пол (customer_party.person.gender)
 - Дата рождения (customer_party.person.birth_date_time)
 - Телефон (customer_party.phone)
-- Сколько денег в наличии (customer_party.income_amount)
-- Запрашиваемая сумма (requested_amount)
-- Срок (requested_term)
-Поля trade_mark, vehicle_cost, datetime заполняются автоматически. 
+- Город (customer_party.birth_place)
+
+Автоматом из предыдущего экрана подтягивается 
+- Сколько денег в наличии (customer_party.income_amount) 
+- Запрашиваемая сумма (requested_amount) *Высчитываем ПОЛНАЯ СТОИМОСТЬ - СКОЛЬКО ДЕНЕГ В НАЛИЧИИ + СТОИМОСТЬ КАСКО*
+- Срок (requested_term) 
+- Марка машины (trade_mark)
+- Стоимость машины (vehicle_cost)
+- Дата заполнения (datetime)
+- Ставка (interest_rate) 
 
 Пример ответа: 
 ```
@@ -252,5 +297,269 @@ x-global-transaction-id: ebeabefd5f7f8aee000277f3
 - Комментарий (comment)
 - Ежемесячный платеж (monthly_payment)
 
+## Программы кредитования и условия
+Для получения списка условий используем **API Calculator**, метод <a href="https://developer.hackathon.vtb.ru/vtb/hackathon/product/62/api/24" target="_blank">GET /settings</a>.
+На вход подаем name (Haval) и  language (ru-RU).
+Пример ответа: 
+```
+Код: 200 OK
+Заголовки:
+content-type: application/json; charset=utf-8
+x-global-transaction-id: ebeabefd5f803a3000002a35
+{
+    "name": "Haval",
+    "language": "ru-RU",
+    "programs": [
+        "d3c2acc2-b91d-4a4e-b8cb-3be3d6d6d383",
+        "f0694a0f-25da-48ce-adeb-6dd9009673cc"
+    ],
+    "clientTypes": [],
+    "specialConditions": [
+        {
+            "name": "КАСКО",
+            "language": "ru-RU",
+            "excludingConditions": [
+                "ba09cad6-c839-437f-98dc-5d2e9b8872ea"
+            ],
+            "id": "b907b476-5a26-4b25-b9c0-8091e9d5c65f",
+            "isChecked": true
+        },
+        {
+            "name": "Страхование жизни",
+            "language": "ru-RU",
+            "excludingConditions": [],
+            "id": "57ba0183-5988-4137-86a6-3d30a4ed8dc9",
+            "isChecked": true
+        },
+        {
+            "name": "Я готов предоставить полный пакет документов",
+            "language": "ru-RU",
+            "excludingConditions": [],
+            "id": "cbfc4ef3-af70-4182-8cf6-e73f361d1e68",
+            "isChecked": true
+        }
+    ],
+    "variant": {
+        "id": "aa0f4c17-da62-4885-b27f-5cde7d12ec44",
+        "name": "Лучшая ставка",
+        "language": "ru-RU"
+    },
+    "cost": 2000000,
+    "initialFee": 400000,
+    "openInNewTab": false,
+    "anchor": null,
+    "kaskoDefaultValue": null
+}
+```
+## Калькулятор
+Для расчета используем **API Calculator**, метод <a href="https://developer.hackathon.vtb.ru/vtb/hackathon/product/62/api/24" target="_blank">POST /calculate</a>. 
+Пример запроса:
+```
+{
+  "clientTypes": [
+  ],
+  "cost": 850000,
+  "initialFee": 200000,
+  "kaskoValue": null,
+  "language": "ru-RU",
+  "residualPayment": 77.82549307,
+  "settingsName": "Haval",
+  "specialConditions": [
+    "57ba0183-5988-4137-86a6-3d30a4ed8dc9"
+  ],
+  "term": 5
+}
+```
+
+**Экран "Кредитный калькулятор"**
+Заполняем из формы в приложении: 
+- Первоначальный взнос (initialFee)
+- Срок (term)
+- Доп. условия (specialConditions)
+
+Автоматически подтягивается:
+- Полная стоимость автомобиля (cost)
+- КАСКО (kaskoValue - при наличии 20% от стоимости автомобиля) 
+- Остаточный платеж (residualPayment = cost - initialFee + kaskoValue)
+
+Пример ответа: 
+```
+Код: 200 OK
+Заголовки:
+content-type: application/json; charset=utf-8
+x-global-transaction-id: ebeabefd5f803bce0000e201
+{
+    "program": {
+        "id": "d3c2acc2-b91d-4a4e-b8cb-3be3d6d6d383",
+        "programName": "Haval",
+        "programUrl": "/personal/avtokredity/legkovye-avtomobili/haval/",
+        "requestUrl": "//anketa.vtb.ru/avtokredit/",
+        "cost": {
+            "min": 1500000,
+            "max": 10000000,
+            "filled": true
+        }
+    },
+    "result": {
+        "payment": 14558,
+        "term": 5,
+        "loanAmount": 650000,
+        "residualPayment": null,
+        "subsidy": null,
+        "contractRate": 12.3,
+        "lastPayment": null,
+        "kaskoCost": null
+    },
+    "ranges": {
+        "cost": {
+            "min": 1000000,
+            "max": 10000000,
+            "filled": true
+        },
+        "initialFee": {
+            "min": 20,
+            "max": 100,
+            "filled": true
+        },
+        "residualPayment": {
+            "min": null,
+            "max": null,
+            "filled": false
+        },
+        "term": {
+            "min": 1,
+            "max": 5,
+            "filled": true
+        }
+    }
+}
+```
+**Экран "Расчет платежей"**
+
+Для вывода на экран понадобятся:
+- Размер ежемесячного платежа (payment)
+- Сумма кредита (loanAmount)
+- Ставка (contractRate)
+- Срок (term)
+
+## График платежей 
+Для получения графика платежей используем **API Calculator**, <a href="https://developer.hackathon.vtb.ru/vtb/hackathon/product/62/api/24" target="_blank">POST /payments-graph</a>. 
+Пример запроса: 
+```
+{
+  "contractRate": 1,
+  "lastPayment": 10000,
+  "loanAmount": 3,
+  "payment": 9500,
+  "term": 1
+}
+```
+
+**Экран "Расчет платежей"**
+
+Автоматически подтягивается:
+- Размер ежемесячного платежа (payment)
+- Остаточный платеж (lastPayment)
+- Сумма кредита (loanAmount)
+- Ставка (contractRate)
+- Срок (term)
 
 
+Пример ответа:
+```
+{
+    "payments": [
+        {
+            "order": 1,
+            "percent": 0,
+            "debt": 9500,
+            "payment": 9500,
+            "balanceOut": 0
+        },
+        {
+            "order": 2,
+            "percent": 0,
+            "debt": 9500,
+            "payment": 9500,
+            "balanceOut": 0
+        },
+        {
+            "order": 3,
+            "percent": 0,
+            "debt": 9500,
+            "payment": 9500,
+            "balanceOut": 0
+        },
+        {
+            "order": 4,
+            "percent": 0,
+            "debt": 9500,
+            "payment": 9500,
+            "balanceOut": 0
+        },
+        {
+            "order": 5,
+            "percent": 0,
+            "debt": 9500,
+            "payment": 9500,
+            "balanceOut": 0
+        },
+        {
+            "order": 6,
+            "percent": 0,
+            "debt": 9500,
+            "payment": 9500,
+            "balanceOut": 0
+        },
+        {
+            "order": 7,
+            "percent": 0,
+            "debt": 9500,
+            "payment": 9500,
+            "balanceOut": 0
+        },
+        {
+            "order": 8,
+            "percent": 0,
+            "debt": 9500,
+            "payment": 9500,
+            "balanceOut": 0
+        },
+        {
+            "order": 9,
+            "percent": 0,
+            "debt": 9500,
+            "payment": 9500,
+            "balanceOut": 0
+        },
+        {
+            "order": 10,
+            "percent": 0,
+            "debt": 9500,
+            "payment": 9500,
+            "balanceOut": 0
+        },
+        {
+            "order": 11,
+            "percent": 0,
+            "debt": 9500,
+            "payment": 9500,
+            "balanceOut": 0
+        },
+        {
+            "order": 12,
+            "percent": 9500,
+            "debt": 0,
+            "payment": 9500,
+            "balanceOut": 0
+        }
+    ]
+}
+```
+
+**Экран "Расчет платежей" (всплывашка/pdf)**
+
+Для вывода на экран понадобятся: 
+- Номер платежа (order)
+- Сумма (payment)
+- Долг(debt)
