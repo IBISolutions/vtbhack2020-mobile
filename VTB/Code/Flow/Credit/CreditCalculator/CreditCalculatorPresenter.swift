@@ -6,9 +6,11 @@
 //  Copyright © 2020 IBI-Solutions. All rights reserved.
 //
 
+import Service
 
 protocol CreditCalculatorControllerOutput: AnyObject {
     
+    func viewDidLoad()
     func didTapOnCalculate()
 }
 
@@ -19,15 +21,22 @@ protocol CreditCalculatorCoordinatorOutput: AnyObject {
 
 final class CreditCalculatorPresenter: CreditCalculatorCoordinatorOutput {
 
+    private let model: Model
     weak var view: CreditCalculatorView?
     var onCalculate: Closure.Void?
 
-    init(view: CreditCalculatorView) {
+    init(model: Model, view: CreditCalculatorView) {
+        self.model = model
         self.view = view
     }
 }
 
 extension CreditCalculatorPresenter: CreditCalculatorControllerOutput {
+    
+    func viewDidLoad() {
+        let conditions = AppData.shared.settings?.specialConditions
+        view?.configure(with: model, conditions: conditions)
+    }
     
     func didTapOnCalculate() {
         onCalculate?()

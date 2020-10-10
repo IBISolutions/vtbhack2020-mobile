@@ -31,7 +31,6 @@
 		62E5653B529CB4B6DD5572C3 /* StarterCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720A95A087C05355DBCE6D11 /* StarterCoordinatorFactory.swift */; };
 		63C34BF1E90793A8E8D4BA9F /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC61BBAFBBD9B6C460962A /* CoordinatorFactory.swift */; };
 		74C75CC58C332688283D9E48 /* ChooseFlowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69198666963C34126C8E015C /* ChooseFlowPresenter.swift */; };
-		844ED5903211D20F3983B821 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BABAF640D6D8DDE3059CCF /* Settings.swift */; };
 		8974B9D9C3F95484EE1FB0B0 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756A9E2DDF544C5734E17503 /* Router.swift */; };
 		8BAB2123C02EC81C51A7FB18 /* Carloan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743F214BA8FA55263E8D5736 /* Carloan.swift */; };
 		92EAA9AD59E02F0F4BDC566F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C1EB869087AE74C13CE84 /* ViewController.swift */; };
@@ -90,7 +89,6 @@
 		573BCEA0301F2B4F3B21EC14 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
 		5BFF6AC77404C03634A79945 /* Closure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closure.swift; sourceTree = "<group>"; };
 		69198666963C34126C8E015C /* ChooseFlowPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseFlowPresenter.swift; sourceTree = "<group>"; };
-		69BABAF640D6D8DDE3059CCF /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		720A95A087C05355DBCE6D11 /* StarterCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterCoordinatorFactory.swift; sourceTree = "<group>"; };
 		743F214BA8FA55263E8D5736 /* Carloan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carloan.swift; sourceTree = "<group>"; };
 		756A9E2DDF544C5734E17503 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -202,7 +200,6 @@
 				E05761026FADD9DACFFF0538 /* Helpers */,
 				88D180DA25D9FD499979B34E /* Calculate.swift */,
 				743F214BA8FA55263E8D5736 /* Carloan.swift */,
-				69BABAF640D6D8DDE3059CCF /* Settings.swift */,
 				DD6C1EB869087AE74C13CE84 /* ViewController.swift */,
 			);
 			path = Code;
@@ -438,7 +435,6 @@
 				F445AD832D72AE1D61DF6AC3 /* RouterImp.swift in Sources */,
 				FDA79D39AA632BC0FBBB54A7 /* ScanPresenter.swift in Sources */,
 				5FCA45B39974118A4352CDCA /* ScanViewController.swift in Sources */,
-				844ED5903211D20F3983B821 /* Settings.swift in Sources */,
 				CA9B67F210B67DBF2BE9429E /* StarterCoordinator.swift in Sources */,
 				62E5653B529CB4B6DD5572C3 /* StarterCoordinatorFactory.swift in Sources */,
 				B3C42E5CAF25E7EE6EC5EB4D /* StarterModuleFactory.swift in Sources */,

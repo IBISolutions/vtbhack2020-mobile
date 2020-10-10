@@ -135,6 +135,30 @@ public struct R: Rswift.Validatable {
       }
       #endif
 
+      /// This `R.image.uI.checkbox` struct is generated, and contains static references to 2 images.
+      public struct checkbox {
+        /// Image `Deselected`.
+        public static let deselected = Rswift.ImageResource(bundle: R.hostingBundle, name: "UI/Checkbox/Deselected")
+        /// Image `Selected`.
+        public static let selected = Rswift.ImageResource(bundle: R.hostingBundle, name: "UI/Checkbox/Selected")
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "Deselected", bundle: ..., traitCollection: ...)`
+        public static func deselected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.uI.checkbox.deselected, compatibleWith: traitCollection)
+        }
+        #endif
+
+        #if os(iOS) || os(tvOS)
+        /// `UIImage(named: "Selected", bundle: ..., traitCollection: ...)`
+        public static func selected(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+          return UIKit.UIImage(resource: R.image.uI.checkbox.selected, compatibleWith: traitCollection)
+        }
+        #endif
+
+        fileprivate init() {}
+      }
+
       fileprivate init() {}
     }
 

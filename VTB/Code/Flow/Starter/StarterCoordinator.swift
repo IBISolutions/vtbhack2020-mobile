@@ -31,7 +31,8 @@ final class StarterCoordinator: BaseCoordinator {
             
             switch action {
             case .startScan:
-                self?.showScannerModule()
+                self?.startCreditFlow()
+//                self?.showScannerModule()
             case .chooseFromGallery:
                 print("gal")
             }
@@ -56,7 +57,10 @@ final class StarterCoordinator: BaseCoordinator {
     
     private func startCreditFlow() {
         let controller = UINavigationController()
-        let coordinator = coordinatorFactory.makeCreditCoordinator(rootController: controller)
+        guard let model = AppData.shared.marketplace?.list.first?.models.first else {
+            return
+        }
+        let coordinator = coordinatorFactory.makeCreditCoordinator(model: model, rootController: controller)
         addDependency(coordinator)
         coordinator.start()
         router.present(controller)

@@ -9,13 +9,15 @@
 import Foundation
 
 public struct SpecialConditions: Codable {
-    let name: String
-    let id: String
-    let excludingConditions: [String]
+    
+    public let name: String
+    public let id: String
+    public let excludingConditions: [String]
 }
 
 public struct Settings: Codable {
-    let name: String
-    let specialConditions: [SpecialConditions]
+    
+    public let name: String
+    public let specialConditions: [SpecialConditions]
 }
 

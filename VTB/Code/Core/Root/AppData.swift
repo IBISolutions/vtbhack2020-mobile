@@ -16,6 +16,7 @@ class AppData {
     static var shared = AppData()
     
     var marketplace: Marketplace?
+    var settings: Settings?
     
     private init() {
         service.marketplace {
@@ -23,6 +24,13 @@ class AppData {
             
             if case .success(let marketplace) = res {
                 self.marketplace = marketplace
+            }
+        }
+        service.settings {
+            [unowned self] res in
+            
+            if case .success(let settings) = res {
+                self.settings = settings
             }
         }
     }

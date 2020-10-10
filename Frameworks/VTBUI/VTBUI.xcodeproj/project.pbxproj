@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5523A534253266DC00225F29 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523A533253266DC00225F29 /* Checkbox.swift */; };
+		5523A53725326DD200225F29 /* KingfisherStatic in Frameworks */ = {isa = PBXBuildFile; productRef = 5523A53625326DD200225F29 /* KingfisherStatic */; };
 		554C2BF925322F560021DBB4 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554C2BF825322F560021DBB4 /* PrimaryButton.swift */; };
 		554C2C06253230F10021DBB4 /* Resources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554C2C05253230F10021DBB4 /* Resources.framework */; };
 		554C2C07253230F10021DBB4 /* Resources.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 554C2C05253230F10021DBB4 /* Resources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -41,6 +43,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		5523A533253266DC00225F29 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		554C2BF825322F560021DBB4 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		554C2C05253230F10021DBB4 /* Resources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Resources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A19B8E25323A720033D53E /* + UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ UIImageView.swift"; sourceTree = "<group>"; };
@@ -67,6 +70,7 @@
 			files = (
 				554C2C06253230F10021DBB4 /* Resources.framework in Frameworks */,
 				55C53C122531BFAB00BAA6E7 /* SnapKit in Frameworks */,
+				5523A53725326DD200225F29 /* KingfisherStatic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +121,7 @@
 				55C53C2B2531C98200BAA6E7 /* CustomView.swift */,
 				55C53C752531F51700BAA6E7 /* PredictionView.swift */,
 				55C53C782531FD0300BAA6E7 /* ScanBackgroundView.swift */,
+				5523A533253266DC00225F29 /* Checkbox.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -191,6 +196,7 @@
 			name = VTBUI;
 			packageProductDependencies = (
 				55C53C112531BFAB00BAA6E7 /* SnapKit */,
+				5523A53625326DD200225F29 /* KingfisherStatic */,
 			);
 			productName = VTBUI;
 			productReference = 55F0F494253077FA0035CEE5 /* VTBUI.framework */;
@@ -221,6 +227,7 @@
 			mainGroup = 55F0F48A253077FA0035CEE5;
 			packageReferences = (
 				55C53C102531BFAB00BAA6E7 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				5523A53525326DD200225F29 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			productRefGroup = 55F0F495253077FA0035CEE5 /* Products */;
 			projectDirPath = "";
@@ -250,6 +257,7 @@
 				554C2BF925322F560021DBB4 /* PrimaryButton.swift in Sources */,
 				55A19B972532583E0033D53E /* CustomSlider.swift in Sources */,
 				55C53C302531C9EB00BAA6E7 /* + UIView.swift in Sources */,
+				5523A534253266DC00225F29 /* Checkbox.swift in Sources */,
 				55C53C292531C96200BAA6E7 /* InfiniteContainer.swift in Sources */,
 				55C53C2C2531C98200BAA6E7 /* CustomView.swift in Sources */,
 				55C53C762531F51700BAA6E7 /* PredictionView.swift in Sources */,
@@ -468,6 +476,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		5523A53525326DD200225F29 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.15.5;
+			};
+		};
 		55C53C102531BFAB00BAA6E7 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
@@ -479,6 +495,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		5523A53625326DD200225F29 /* KingfisherStatic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 5523A53525326DD200225F29 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = KingfisherStatic;
+		};
 		55C53C112531BFAB00BAA6E7 /* SnapKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 55C53C102531BFAB00BAA6E7 /* XCRemoteSwiftPackageReference "SnapKit" */;

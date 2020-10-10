@@ -17,4 +17,6 @@ public enum Color {
     public static let coldGray = UIColor(hex: 0x999EA9)
     /// #222222
     public static let deepBlack = UIColor(hex: 0x222222)
+    /// #D8D8D8
+    public static let gray = UIColor(hex: 0xD8D8D8)
 }

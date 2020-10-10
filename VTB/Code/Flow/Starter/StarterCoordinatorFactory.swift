@@ -7,16 +7,17 @@
 //
 
 import UIKit.UINavigationController
+import Service
 
 protocol StarterCoordinatorFactory {
     
-    func makeCreditCoordinator(rootController: UINavigationController) -> Coordinator
+    func makeCreditCoordinator(model: Model, rootController: UINavigationController) -> Coordinator
 }
 
 extension CoordinatorFactory: StarterCoordinatorFactory {
     
-    func makeCreditCoordinator(rootController: UINavigationController) -> Coordinator {
+    func makeCreditCoordinator(model: Model, rootController: UINavigationController) -> Coordinator {
         let router = RouterImp(rootController: rootController)
-        return CreditCoordinator(router: router, factory: ModuleFactory(router: router))
+        return CreditCoordinator(model: model, router: router, factory: ModuleFactory(router: router))
     }
 }

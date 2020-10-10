@@ -6,12 +6,16 @@
 //  Copyright © 2020 IBI-Solutions. All rights reserved.
 //
 
+import Service
+
 final class CreditCoordinator: BaseCoordinator {
     
+    private let model: Model
     private let factory: CreditModuleFactory
     private let router: Router
     
-    init(router: Router, factory: CreditModuleFactory) {
+    init(model: Model, router: Router, factory: CreditModuleFactory) {
+        self.model = model
         self.factory = factory
         self.router = router
     }
@@ -21,13 +25,13 @@ final class CreditCoordinator: BaseCoordinator {
     }
     
     private func showMakeCreditModule() {
-        let (view, output) = factory.makeCreditCalculatorModule()
+        let (view, output) = factory.makeCreditCalculatorModule(using: model)
         output.onCalculate = {
             [weak self] in
             
             self?.showCreditResultModule()
         }
-        router.setRootModule(view)
+        router.setRootModule(view, hideBar: false)
     }
     
     private func showCreditResultModule() {
