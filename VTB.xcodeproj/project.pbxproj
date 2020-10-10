@@ -9,9 +9,6 @@
 /* Begin PBXBuildFile section */
 		30A6913365BEB749CEBA3549 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F1ED4B62E53102EEBE5F975 /* Assets.xcassets */; };
 		557815D42531B897007BBD34 /* + UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557815D32531B897007BBD34 /* + UINavigationController.swift */; };
-		55AF3C0A2530EFE700AF9F3D /* Car.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 55AF3C092530EFE700AF9F3D /* Car.mlmodel */; };
-		55AF3C0D2530FA4B00AF9F3D /* Cars.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 55AF3C0C2530FA4B00AF9F3D /* Cars.mlmodel */; };
-		55AF3C102530FFCD00AF9F3D /* CarRecognition.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 55AF3C0F2530FFCD00AF9F3D /* CarRecognition.mlmodel */; };
 		55AF3C3A2531B06D00AF9F3D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF3C392531B06D00AF9F3D /* Coordinator.swift */; };
 		55AF3C3D2531B09300AF9F3D /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF3C3C2531B09300AF9F3D /* BaseCoordinator.swift */; };
 		55AF3C422531B10600AF9F3D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF3C412531B10600AF9F3D /* Router.swift */; };
@@ -43,6 +40,9 @@
 		55C53C532531D1AD00BAA6E7 /* Resources.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55C53C512531D1AD00BAA6E7 /* Resources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55C53C562531D1BD00BAA6E7 /* CreditResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C542531D1BD00BAA6E7 /* CreditResultPresenter.swift */; };
 		55C53C572531D1BD00BAA6E7 /* CreditResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C552531D1BD00BAA6E7 /* CreditResultViewController.swift */; };
+		55C53C592531D9CD00BAA6E7 /* YOLOv3Tiny.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C582531D9CD00BAA6E7 /* YOLOv3Tiny.mlmodel */; };
+		55C53C5C2531DB9100BAA6E7 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C5B2531DB9100BAA6E7 /* VideoCapture.swift */; };
+		55C53C5E2531E30B00BAA6E7 /* + VNRecognizedObjectObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C5D2531E30B00BAA6E7 /* + VNRecognizedObjectObservation.swift */; };
 		5AF8862A7B4022E43A1C9339 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 897D59029163E6B8925C7B4F /* LaunchScreen.storyboard */; };
 		92EAA9AD59E02F0F4BDC566F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C1EB869087AE74C13CE84 /* ViewController.swift */; };
 		FCEA5DB9E180A76AABC9369F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB075C1327A156E59A2E6507 /* AppDelegate.swift */; };
@@ -67,9 +67,6 @@
 		3F1952C71185AB0314F9B163 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3F1ED4B62E53102EEBE5F975 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		557815D32531B897007BBD34 /* + UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ UINavigationController.swift"; sourceTree = "<group>"; };
-		55AF3C092530EFE700AF9F3D /* Car.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Car.mlmodel; sourceTree = "<group>"; };
-		55AF3C0C2530FA4B00AF9F3D /* Cars.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Cars.mlmodel; sourceTree = "<group>"; };
-		55AF3C0F2530FFCD00AF9F3D /* CarRecognition.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = CarRecognition.mlmodel; sourceTree = "<group>"; };
 		55AF3C392531B06D00AF9F3D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		55AF3C3C2531B09300AF9F3D /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		55AF3C412531B10600AF9F3D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -99,6 +96,9 @@
 		55C53C512531D1AD00BAA6E7 /* Resources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Resources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C53C542531D1BD00BAA6E7 /* CreditResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditResultPresenter.swift; sourceTree = "<group>"; };
 		55C53C552531D1BD00BAA6E7 /* CreditResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditResultViewController.swift; sourceTree = "<group>"; };
+		55C53C582531D9CD00BAA6E7 /* YOLOv3Tiny.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = YOLOv3Tiny.mlmodel; sourceTree = "<group>"; };
+		55C53C5B2531DB9100BAA6E7 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
+		55C53C5D2531E30B00BAA6E7 /* + VNRecognizedObjectObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ VNRecognizedObjectObservation.swift"; sourceTree = "<group>"; };
 		90A7EC6362B68882BC38C2F1 /* VTB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VTB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB075C1327A156E59A2E6507 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C583FA14094266DD7994FFC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -121,9 +121,7 @@
 		22A9D9D6A479E3F2C1D674CE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				55AF3C0F2530FFCD00AF9F3D /* CarRecognition.mlmodel */,
-				55AF3C0C2530FA4B00AF9F3D /* Cars.mlmodel */,
-				55AF3C092530EFE700AF9F3D /* Car.mlmodel */,
+				55C53C582531D9CD00BAA6E7 /* YOLOv3Tiny.mlmodel */,
 				3F1ED4B62E53102EEBE5F975 /* Assets.xcassets */,
 				897D59029163E6B8925C7B4F /* LaunchScreen.storyboard */,
 			);
@@ -215,6 +213,7 @@
 				55AF3C5D2531B60900AF9F3D /* + UIViewController.swift */,
 				557815D32531B897007BBD34 /* + UINavigationController.swift */,
 				55C53C1A2531C26000BAA6E7 /* + UIStackView.swift */,
+				55C53C5D2531E30B00BAA6E7 /* + VNRecognizedObjectObservation.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -260,6 +259,7 @@
 		55C53C1D2531C3D800BAA6E7 /* Scan */ = {
 			isa = PBXGroup;
 			children = (
+				55C53C5A2531DB7F00BAA6E7 /* Capture */,
 				55C53C1E2531C3EC00BAA6E7 /* ScanPresenter.swift */,
 				55C53C1F2531C3EC00BAA6E7 /* ScanViewController.swift */,
 			);
@@ -294,6 +294,14 @@
 				55C53C552531D1BD00BAA6E7 /* CreditResultViewController.swift */,
 			);
 			path = CreditResult;
+			sourceTree = "<group>";
+		};
+		55C53C5A2531DB7F00BAA6E7 /* Capture */ = {
+			isa = PBXGroup;
+			children = (
+				55C53C5B2531DB9100BAA6E7 /* VideoCapture.swift */,
+			);
+			path = Capture;
 			sourceTree = "<group>";
 		};
 		646F1C2EF49B0D73981043C8 /* SupportingFiles */ = {
@@ -387,6 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55C53C592531D9CD00BAA6E7 /* YOLOv3Tiny.mlmodel in Sources */,
 				55C53C1B2531C26000BAA6E7 /* + UIStackView.swift in Sources */,
 				55AF3C4C2531B36E00AF9F3D /* AppCoordinator.swift in Sources */,
 				55AF3C5A2531B49B00AF9F3D /* RouterImp.swift in Sources */,
@@ -396,12 +405,10 @@
 				FCEA5DB9E180A76AABC9369F /* AppDelegate.swift in Sources */,
 				55AF3C702531BD3C00AF9F3D /* ChooseFlowPresenter.swift in Sources */,
 				55C53C562531D1BD00BAA6E7 /* CreditResultPresenter.swift in Sources */,
-				55AF3C102530FFCD00AF9F3D /* CarRecognition.mlmodel in Sources */,
 				55AF3C3A2531B06D00AF9F3D /* Coordinator.swift in Sources */,
 				55C53C382531CC1D00BAA6E7 /* CreditModuleFactory.swift in Sources */,
 				55C53C252531C6D700BAA6E7 /* CreditCalculatorPresenter.swift in Sources */,
 				55C53C262531C6D700BAA6E7 /* CreditCalculatorViewController.swift in Sources */,
-				55AF3C0D2530FA4B00AF9F3D /* Cars.mlmodel in Sources */,
 				55AF3C542531B42400AF9F3D /* ModuleFactory.swift in Sources */,
 				55C53C372531CC1D00BAA6E7 /* CreditCoordinatorFactory.swift in Sources */,
 				55AF3C712531BD3C00AF9F3D /* ChooseFlowViewController.swift in Sources */,
@@ -412,12 +419,13 @@
 				55C53C212531C3EC00BAA6E7 /* ScanViewController.swift in Sources */,
 				55AF3C502531B3DA00AF9F3D /* AppCoordinatorFactory.swift in Sources */,
 				55C53C572531D1BD00BAA6E7 /* CreditResultViewController.swift in Sources */,
+				55C53C5C2531DB9100BAA6E7 /* VideoCapture.swift in Sources */,
 				55AF3C572531B47700AF9F3D /* CoordinatorFactory.swift in Sources */,
 				55C53C362531CC1D00BAA6E7 /* CreditCoordinator.swift in Sources */,
-				55AF3C0A2530EFE700AF9F3D /* Car.mlmodel in Sources */,
 				55AF3C492531B24500AF9F3D /* Closure.swift in Sources */,
 				92EAA9AD59E02F0F4BDC566F /* ViewController.swift in Sources */,
 				55AF3C452531B1A000AF9F3D /* Presentable.swift in Sources */,
+				55C53C5E2531E30B00BAA6E7 /* + VNRecognizedObjectObservation.swift in Sources */,
 				55AF3C512531B3DA00AF9F3D /* AppModuleFactory.swift in Sources */,
 				55AF3C692531BCC200AF9F3D /* StarterCoordinatorFactory.swift in Sources */,
 			);
