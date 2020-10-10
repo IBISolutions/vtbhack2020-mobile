@@ -5,6 +5,9 @@
       location = "container:"
       name = "Frameworks">
       <FileRef
+         location = "group:Frameworks/Service/Service.xcodeproj">
+      </FileRef>
+      <FileRef
          location = "group:Frameworks/Resources/Resources.xcodeproj">
       </FileRef>
       <FileRef

@@ -70,10 +70,6 @@ final class ScanViewController: UIViewController {
         }
         output?.didHandleShake()
     }
-    
-    @objc private func scannedAction() {
-        output?.didScan()
-    }
 }
 
 extension ScanViewController: ScanView {

@@ -13,6 +13,7 @@ struct CarRecognition: Codable {
 }
 
 struct Probabilities: Codable {
+    
     var mazda6: Double
         
     enum CodingKeys: String, CodingKey {

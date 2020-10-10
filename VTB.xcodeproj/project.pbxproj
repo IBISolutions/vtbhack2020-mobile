@@ -16,10 +16,11 @@
 		2C30D4F7D8049EC4D32C2A79 /* CreditCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6F2DE324F9B2CD01EF7A60 /* CreditCoordinatorFactory.swift */; };
 		30A6913365BEB749CEBA3549 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F1ED4B62E53102EEBE5F975 /* Assets.xcassets */; };
 		455432EFD97F8E77AC350EBB /* CreditResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA081AEFA443E745D029BDED /* CreditResultPresenter.swift */; };
-		462D00EA5F644607889EF541 /* CarRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF5139A9EF2452B9D65294A /* CarRecognition.swift */; };
 		474FB84F7C048318644BFCA7 /* AppModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F94AC704D48CB632ADD99B /* AppModuleFactory.swift */; };
 		4830536CC7ECB9D281049879 /* + VNRecognizedObjectObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BABFD2661877416E33657CB /* + VNRecognizedObjectObservation.swift */; };
 		54DBE5B525279807CD9EDD2C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B8C883ECF4CBE0E5C5F69C /* Coordinator.swift */; };
+		5509C93A25321A6C002A3833 /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5509C93925321A6C002A3833 /* Service.framework */; };
+		5509C93B25321A6D002A3833 /* Service.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5509C93925321A6C002A3833 /* Service.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		551C4BCFEBCC82C9D8A172E1 /* CreditCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE2EA802F18E29AEBF40C2B /* CreditCoordinator.swift */; };
 		55C53C6E2531F09F00BAA6E7 /* VTBUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C53C6D2531F09F00BAA6E7 /* VTBUI.framework */; };
 		55C53C6F2531F09F00BAA6E7 /* VTBUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55C53C6D2531F09F00BAA6E7 /* VTBUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -61,6 +62,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				5509C93B25321A6D002A3833 /* Service.framework in Embed Frameworks */,
 				55C53C742531F0AF00BAA6E7 /* Resources.framework in Embed Frameworks */,
 				55C53C6F2531F09F00BAA6E7 /* VTBUI.framework in Embed Frameworks */,
 			);
@@ -86,6 +88,7 @@
 		4C422047CFD5484F9C67A351 /* + UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ UIStackView.swift"; sourceTree = "<group>"; };
 		4D220547AE0D4451E68BE7D1 /* AppCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorFactory.swift; sourceTree = "<group>"; };
 		53B8C883ECF4CBE0E5C5F69C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		5509C93925321A6C002A3833 /* Service.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Service.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C53C6D2531F09F00BAA6E7 /* VTBUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VTBUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C53C722531F0AE00BAA6E7 /* Resources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Resources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		573BCEA0301F2B4F3B21EC14 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
@@ -114,7 +117,6 @@
 		C9A17308F866A9A83B6B1196 /* ChooseFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseFlowViewController.swift; sourceTree = "<group>"; };
 		DC14ED7D4B3C059471DC5A09 /* ModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactory.swift; sourceTree = "<group>"; };
 		DD6C1EB869087AE74C13CE84 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		EAF5139A9EF2452B9D65294A /* CarRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRecognition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +124,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5509C93A25321A6C002A3833 /* Service.framework in Frameworks */,
 				55C53C732531F0AF00BAA6E7 /* Resources.framework in Frameworks */,
 				55C53C6E2531F09F00BAA6E7 /* VTBUI.framework in Frameworks */,
 			);
@@ -207,7 +210,6 @@
 				E05761026FADD9DACFFF0538 /* Helpers */,
 				88D180DA25D9FD499979B34E /* Calculate.swift */,
 				743F214BA8FA55263E8D5736 /* Carloan.swift */,
-				EAF5139A9EF2452B9D65294A /* CarRecognition.swift */,
 				AF5F24B1EAB8491F341B1C24 /* Marketplace.swift */,
 				A03A3B16F9666EFAAED1DCEB /* PaymentsGraph.swift */,
 				69BABAF640D6D8DDE3059CCF /* Settings.swift */,
@@ -240,6 +242,7 @@
 			children = (
 				55C53C6D2531F09F00BAA6E7 /* VTBUI.framework */,
 				55C53C722531F0AE00BAA6E7 /* Resources.framework */,
+				5509C93925321A6C002A3833 /* Service.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -423,7 +426,6 @@
 				474FB84F7C048318644BFCA7 /* AppModuleFactory.swift in Sources */,
 				D9ADD6674F762590D4BE9715 /* BaseCoordinator.swift in Sources */,
 				A45B043697281BBBD7750FA9 /* Calculate.swift in Sources */,
-				462D00EA5F644607889EF541 /* CarRecognition.swift in Sources */,
 				8BAB2123C02EC81C51A7FB18 /* Carloan.swift in Sources */,
 				74C75CC58C332688283D9E48 /* ChooseFlowPresenter.swift in Sources */,
 				A357BEE0071B66D62B4CB010 /* ChooseFlowViewController.swift in Sources */,
