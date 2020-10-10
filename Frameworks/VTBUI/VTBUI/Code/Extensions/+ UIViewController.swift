@@ -8,7 +8,7 @@
 
 import UIKit.UIViewController
 
-extension UIViewController {
+public extension UIViewController {
     
     var lastPresentedController: UIViewController? {
         var lastPresented: UIViewController? = self

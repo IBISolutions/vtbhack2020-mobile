@@ -123,6 +123,21 @@ public struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
+    /// This `R.image.uI` struct is generated, and contains static references to 1 images.
+    public struct uI {
+      /// Image `Thumb`.
+      public static let thumb = Rswift.ImageResource(bundle: R.hostingBundle, name: "UI/Thumb")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Thumb", bundle: ..., traitCollection: ...)`
+      public static func thumb(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.uI.thumb, compatibleWith: traitCollection)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
     fileprivate init() {}
   }
 
