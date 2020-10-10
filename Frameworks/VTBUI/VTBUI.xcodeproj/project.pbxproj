@@ -3,14 +3,21 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		55C53C122531BFAB00BAA6E7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 55C53C112531BFAB00BAA6E7 /* SnapKit */; };
+		55C53C292531C96200BAA6E7 /* InfiniteContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C282531C96200BAA6E7 /* InfiniteContainer.swift */; };
+		55C53C2C2531C98200BAA6E7 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C2B2531C98200BAA6E7 /* CustomView.swift */; };
+		55C53C302531C9EB00BAA6E7 /* + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C2F2531C9EB00BAA6E7 /* + UIView.swift */; };
 		55F0F499253077FA0035CEE5 /* VTBUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 55F0F497253077FA0035CEE5 /* VTBUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		55C53C282531C96200BAA6E7 /* InfiniteContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteContainer.swift; sourceTree = "<group>"; };
+		55C53C2B2531C98200BAA6E7 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		55C53C2F2531C9EB00BAA6E7 /* + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ UIView.swift"; sourceTree = "<group>"; };
 		55F0F494253077FA0035CEE5 /* VTBUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VTBUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F0F497253077FA0035CEE5 /* VTBUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VTBUI.h; sourceTree = "<group>"; };
 		55F0F498253077FA0035CEE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -21,12 +28,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55C53C122531BFAB00BAA6E7 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		55C53C272531C95200BAA6E7 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				55C53C282531C96200BAA6E7 /* InfiniteContainer.swift */,
+				55C53C2B2531C98200BAA6E7 /* CustomView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		55C53C2E2531C9DD00BAA6E7 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				55C53C2F2531C9EB00BAA6E7 /* + UIView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		55F0F48A253077FA0035CEE5 = {
 			isa = PBXGroup;
 			children = (
@@ -46,6 +71,8 @@
 		55F0F496253077FA0035CEE5 /* VTBUI */ = {
 			isa = PBXGroup;
 			children = (
+				55C53C2E2531C9DD00BAA6E7 /* Extensions */,
+				55C53C272531C95200BAA6E7 /* Views */,
 				55F0F497253077FA0035CEE5 /* VTBUI.h */,
 				55F0F498253077FA0035CEE5 /* Info.plist */,
 			);
@@ -80,6 +107,9 @@
 			dependencies = (
 			);
 			name = VTBUI;
+			packageProductDependencies = (
+				55C53C112531BFAB00BAA6E7 /* SnapKit */,
+			);
 			productName = VTBUI;
 			productReference = 55F0F494253077FA0035CEE5 /* VTBUI.framework */;
 			productType = "com.apple.product-type.framework";
@@ -94,6 +124,7 @@
 				TargetAttributes = {
 					55F0F493253077FA0035CEE5 = {
 						CreatedOnToolsVersion = 12.0.1;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -106,6 +137,9 @@
 				Base,
 			);
 			mainGroup = 55F0F48A253077FA0035CEE5;
+			packageReferences = (
+				55C53C102531BFAB00BAA6E7 /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 55F0F495253077FA0035CEE5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -130,6 +164,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55C53C302531C9EB00BAA6E7 /* + UIView.swift in Sources */,
+				55C53C292531C96200BAA6E7 /* InfiniteContainer.swift in Sources */,
+				55C53C2C2531C98200BAA6E7 /* CustomView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +298,7 @@
 		55F0F49D253077FA0035CEE5 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = A7HQ3AATVX;
@@ -277,6 +315,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.IBI-Solutions.VTBUI";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -285,6 +324,7 @@
 		55F0F49E253077FA0035CEE5 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = A7HQ3AATVX;
@@ -328,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		55C53C102531BFAB00BAA6E7 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		55C53C112531BFAB00BAA6E7 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 55C53C102531BFAB00BAA6E7 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 55F0F48B253077FA0035CEE5 /* Project object */;
 }
