@@ -8,6 +8,8 @@
 
 import CoreVideo
 import Vision
+import UIKit
+import Service
 
 protocol ScanControllerOutput: AnyObject {
     
@@ -55,7 +57,10 @@ final class ScanPresenter: ScanCoordinatorOutput {
             view?.updateScanViewState(state)
         }
     }
+    private var capturedBuffer: CVPixelBuffer?
+    
     weak var view: ScanView?
+    private let service = NetworkService()
     
     var onAction: Closure.Generic<ScanCoordinatorAction>?
 
@@ -88,11 +93,20 @@ final class ScanPresenter: ScanCoordinatorOutput {
                 return
             }
             
-            print("\n\n\n")
+            guard let buffer = capturedBuffer,
+                  let data = UIImage(ciImage: CIImage(cvPixelBuffer: buffer)).jpegData(compressionQuality: 0.95) else {
+                return
+            }
+            print(data)
+            let strBase64 = data.base64EncodedString()
+            service.recognize(base64image: strBase64) {
+                res in
+                
+                print(res)
+            }
+            
             DispatchQueue.main.async {
                 self.state = .found
-                //TODO send endpoint with captured
-                //TODO show on UI
             }
         }
     }
@@ -106,6 +120,7 @@ extension ScanPresenter: ScanControllerOutput {
     }
     
     func didCaptureFrame(with buffer: CVPixelBuffer) {
+        capturedBuffer = buffer
         predictUsingVision(pixelBuffer: buffer)
     }
     

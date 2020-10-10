@@ -53,7 +53,9 @@ public class HttpClient {
                 return
             }
             if let data = data {
-                result(mapper.map(data: data))
+                DispatchQueue.main.async {
+                    result(mapper.map(data: data))
+                }
             }
         }
         dataTask.resume()

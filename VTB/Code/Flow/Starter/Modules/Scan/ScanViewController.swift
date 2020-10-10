@@ -114,8 +114,7 @@ extension ScanViewController: ScanView {
 extension ScanViewController: VideoCaptureDelegate {
     
     func videoCapture(_ capture: VideoCapture,
-                      didCaptureVideoFrame pixelBuffer: CVPixelBuffer?,
-                      timestamp: CMTime) {
+                      didCaptureVideoFrame pixelBuffer: CVPixelBuffer?) {
         if let pixelBuffer = pixelBuffer {
             output?.didCaptureFrame(with: pixelBuffer)
         }

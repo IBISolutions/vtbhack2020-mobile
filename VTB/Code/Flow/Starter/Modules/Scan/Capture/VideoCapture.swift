@@ -11,7 +11,7 @@ import AVFoundation
 import CoreVideo
 
 public protocol VideoCaptureDelegate: class {
-    func videoCapture(_ capture: VideoCapture, didCaptureVideoFrame: CVPixelBuffer?, timestamp: CMTime)
+    func videoCapture(_ capture: VideoCapture, didCaptureVideoFrame: CVPixelBuffer?)
 }
 
 public class VideoCapture: NSObject {
@@ -94,16 +94,17 @@ public class VideoCapture: NSObject {
 }
 
 extension VideoCapture: AVCaptureVideoDataOutputSampleBufferDelegate {
+    
     public func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
+        
         // Because lowering the capture device's FPS looks ugly in the preview,
         // we capture at full speed but only call the delegate at its desired
         // framerate.
         let timestamp = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
         let deltaTime = timestamp - lastTimestamp
         if deltaTime >= CMTimeMake(value: 1, timescale: Int32(fps)) {
-            lastTimestamp = timestamp
             let imageBuffer = CMSampleBufferGetImageBuffer(sampleBuffer)
-            delegate?.videoCapture(self, didCaptureVideoFrame: imageBuffer, timestamp: timestamp)
+            delegate?.videoCapture(self, didCaptureVideoFrame: imageBuffer)
         }
     }
     
