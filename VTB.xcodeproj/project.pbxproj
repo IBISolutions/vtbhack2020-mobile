@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		30A6913365BEB749CEBA3549 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F1ED4B62E53102EEBE5F975 /* Assets.xcassets */; };
+		40644023253108CC005D71BD /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40644022253108CB005D71BD /* Settings.swift */; };
+		4064402525319F11005D71BD /* Carloan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4064402425319F11005D71BD /* Carloan.swift */; };
+		406440272531BD53005D71BD /* PaymentsGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406440262531BD53005D71BD /* PaymentsGraph.swift */; };
+		406440292531C33F005D71BD /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 406440282531C33F005D71BD /* Calculate.swift */; };
+		4064402B2531C7BF005D71BD /* Marketplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4064402A2531C7BF005D71BD /* Marketplace.swift */; };
+		4064402D2531D19A005D71BD /* CarRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4064402C2531D19A005D71BD /* CarRecognition.swift */; };
 		55AF3C0A2530EFE700AF9F3D /* Car.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 55AF3C092530EFE700AF9F3D /* Car.mlmodel */; };
 		5AF8862A7B4022E43A1C9339 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 897D59029163E6B8925C7B4F /* LaunchScreen.storyboard */; };
 		92EAA9AD59E02F0F4BDC566F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C1EB869087AE74C13CE84 /* ViewController.swift */; };
@@ -17,6 +23,12 @@
 /* Begin PBXFileReference section */
 		3F1952C71185AB0314F9B163 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3F1ED4B62E53102EEBE5F975 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		40644022253108CB005D71BD /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		4064402425319F11005D71BD /* Carloan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carloan.swift; sourceTree = "<group>"; };
+		406440262531BD53005D71BD /* PaymentsGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsGraph.swift; sourceTree = "<group>"; };
+		406440282531C33F005D71BD /* Calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculate.swift; sourceTree = "<group>"; };
+		4064402A2531C7BF005D71BD /* Marketplace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marketplace.swift; sourceTree = "<group>"; };
+		4064402C2531D19A005D71BD /* CarRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRecognition.swift; sourceTree = "<group>"; };
 		55AF3C092530EFE700AF9F3D /* Car.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Car.mlmodel; sourceTree = "<group>"; };
 		90A7EC6362B68882BC38C2F1 /* VTB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VTB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB075C1327A156E59A2E6507 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -40,6 +52,12 @@
 			children = (
 				C8E331D5097B74F4CC5A5FF0 /* AppDelegate */,
 				DD6C1EB869087AE74C13CE84 /* ViewController.swift */,
+				40644022253108CB005D71BD /* Settings.swift */,
+				4064402425319F11005D71BD /* Carloan.swift */,
+				406440262531BD53005D71BD /* PaymentsGraph.swift */,
+				406440282531C33F005D71BD /* Calculate.swift */,
+				4064402A2531C7BF005D71BD /* Marketplace.swift */,
+				4064402C2531D19A005D71BD /* CarRecognition.swift */,
 			);
 			path = Code;
 			sourceTree = "<group>";
@@ -148,9 +166,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4064402D2531D19A005D71BD /* CarRecognition.swift in Sources */,
+				4064402525319F11005D71BD /* Carloan.swift in Sources */,
+				406440292531C33F005D71BD /* Calculate.swift in Sources */,
 				FCEA5DB9E180A76AABC9369F /* AppDelegate.swift in Sources */,
 				55AF3C0A2530EFE700AF9F3D /* Car.mlmodel in Sources */,
+				40644023253108CC005D71BD /* Settings.swift in Sources */,
+				4064402B2531C7BF005D71BD /* Marketplace.swift in Sources */,
 				92EAA9AD59E02F0F4BDC566F /* ViewController.swift in Sources */,
+				406440272531BD53005D71BD /* PaymentsGraph.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,7 +237,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -229,8 +253,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = A7HQ3AATVX;
+				DEVELOPMENT_TEAM = UUXDLM7J5S;
 				INFOPLIST_FILE = VTB/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -246,8 +271,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = A7HQ3AATVX;
+				DEVELOPMENT_TEAM = UUXDLM7J5S;
 				INFOPLIST_FILE = VTB/SupportingFiles/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -309,7 +335,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
