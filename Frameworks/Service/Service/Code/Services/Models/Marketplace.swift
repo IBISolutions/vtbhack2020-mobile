@@ -8,11 +8,11 @@
 
 import Foundation
 
-struct Marketplace: Codable {
+public struct Marketplace: Codable {
     let list: [ListItem]
 }
 
-struct ListItem: Codable {
+public struct ListItem: Codable {
     let country: Country
     let models: [Model]
     let currentCarCount: Int
@@ -21,12 +21,12 @@ struct ListItem: Codable {
     let title: String
 }
 
-struct Country: Codable {
+public struct Country: Codable {
     let code: String
     let title: String
 }
 
-struct Model: Codable {
+public struct Model: Codable {
     let title: String
     let titleRus: String
     let photo: String

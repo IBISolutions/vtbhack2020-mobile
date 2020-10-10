@@ -14,7 +14,7 @@ public struct CarRecognition: Codable {
 
 public struct Probabilities: Codable {
     
-    //HACK: We don't care this values, only array of string and double tuples needs
+    //HACK: We don't care this values, only array of (string, double) tuples needs
     let bmw3: Double? = nil
     let bmw5: Double? = nil
     let cadillac: Double? = nil

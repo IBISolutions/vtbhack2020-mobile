@@ -12,6 +12,13 @@
 		5509C90825320483002A3833 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509C90725320483002A3833 /* NetworkService.swift */; };
 		5509C934253213DA002A3833 /* CarRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509C933253213DA002A3833 /* CarRecognition.swift */; };
 		5509C93725321857002A3833 /* Mapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5509C93625321857002A3833 /* Mapper.swift */; };
+		554C2BEA253228E30021DBB4 /* Carloan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554C2BE5253228E30021DBB4 /* Carloan.swift */; };
+		554C2BEB253228E30021DBB4 /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554C2BE6253228E30021DBB4 /* Calculate.swift */; };
+		554C2BEC253228E30021DBB4 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554C2BE7253228E30021DBB4 /* Settings.swift */; };
+		554C2BED253228E30021DBB4 /* PaymentsGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554C2BE8253228E30021DBB4 /* PaymentsGraph.swift */; };
+		554C2BEE253228E30021DBB4 /* Marketplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554C2BE9253228E30021DBB4 /* Marketplace.swift */; };
+		554C2BF3253229920021DBB4 /* CalculateParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554C2BF2253229920021DBB4 /* CalculateParameters.swift */; };
+		554C2BF625322CB90021DBB4 /* LoanParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554C2BF525322CB90021DBB4 /* LoanParameters.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +29,13 @@
 		5509C90725320483002A3833 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		5509C933253213DA002A3833 /* CarRecognition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarRecognition.swift; sourceTree = "<group>"; };
 		5509C93625321857002A3833 /* Mapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mapper.swift; sourceTree = "<group>"; };
+		554C2BE5253228E30021DBB4 /* Carloan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Carloan.swift; sourceTree = "<group>"; };
+		554C2BE6253228E30021DBB4 /* Calculate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculate.swift; sourceTree = "<group>"; };
+		554C2BE7253228E30021DBB4 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		554C2BE8253228E30021DBB4 /* PaymentsGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentsGraph.swift; sourceTree = "<group>"; };
+		554C2BE9253228E30021DBB4 /* Marketplace.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marketplace.swift; sourceTree = "<group>"; };
+		554C2BF2253229920021DBB4 /* CalculateParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculateParameters.swift; sourceTree = "<group>"; };
+		554C2BF525322CB90021DBB4 /* LoanParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoanParameters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,11 +87,26 @@
 		5509C9052532046D002A3833 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				5509C933253213DA002A3833 /* CarRecognition.swift */,
+				554C2BF0253228E70021DBB4 /* Models */,
 				5509C90725320483002A3833 /* NetworkService.swift */,
 				5509C93625321857002A3833 /* Mapper.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		554C2BF0253228E70021DBB4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				554C2BE6253228E30021DBB4 /* Calculate.swift */,
+				554C2BE5253228E30021DBB4 /* Carloan.swift */,
+				554C2BE9253228E30021DBB4 /* Marketplace.swift */,
+				554C2BE8253228E30021DBB4 /* PaymentsGraph.swift */,
+				554C2BE7253228E30021DBB4 /* Settings.swift */,
+				5509C933253213DA002A3833 /* CarRecognition.swift */,
+				554C2BF2253229920021DBB4 /* CalculateParameters.swift */,
+				554C2BF525322CB90021DBB4 /* LoanParameters.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,10 +188,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				554C2BEB253228E30021DBB4 /* Calculate.swift in Sources */,
+				554C2BED253228E30021DBB4 /* PaymentsGraph.swift in Sources */,
+				554C2BEA253228E30021DBB4 /* Carloan.swift in Sources */,
 				5509C93725321857002A3833 /* Mapper.swift in Sources */,
+				554C2BF3253229920021DBB4 /* CalculateParameters.swift in Sources */,
+				554C2BEE253228E30021DBB4 /* Marketplace.swift in Sources */,
 				5509C934253213DA002A3833 /* CarRecognition.swift in Sources */,
+				554C2BEC253228E30021DBB4 /* Settings.swift in Sources */,
 				5509C90825320483002A3833 /* NetworkService.swift in Sources */,
 				5509C90225320459002A3833 /* HttpClient.swift in Sources */,
+				554C2BF625322CB90021DBB4 /* LoanParameters.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

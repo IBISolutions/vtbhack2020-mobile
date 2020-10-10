@@ -39,7 +39,6 @@
 		A2C76DA8030EC50094372041 /* CreditCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB294045DBF02E113C4998 /* CreditCalculatorViewController.swift */; };
 		A357BEE0071B66D62B4CB010 /* ChooseFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A17308F866A9A83B6B1196 /* ChooseFlowViewController.swift */; };
 		A45B043697281BBBD7750FA9 /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D180DA25D9FD499979B34E /* Calculate.swift */; };
-		AF1A647A8A897C24F26CAFA6 /* Marketplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5F24B1EAB8491F341B1C24 /* Marketplace.swift */; };
 		B3C42E5CAF25E7EE6EC5EB4D /* StarterModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A51E000B5891AEE104175A6 /* StarterModuleFactory.swift */; };
 		B71FD4FC406714867172CDFE /* CreditCalculatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9853798088B7AD84FAAF429B /* CreditCalculatorPresenter.swift */; };
 		BF96496B44A139E54F72015F /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909C3DA567B1AA471A56980 /* Presentable.swift */; };
@@ -47,7 +46,6 @@
 		CA9B67F210B67DBF2BE9429E /* StarterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00709D540BB4FF95C3937F02 /* StarterCoordinator.swift */; };
 		CC0128DFF413603FFC74D108 /* CreditModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008E4AA7F5400C5749477792 /* CreditModuleFactory.swift */; };
 		D9ADD6674F762590D4BE9715 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F873CE643E5900E8BC64A2 /* BaseCoordinator.swift */; };
-		DB9CAEDADFD39E4FAD0D3DA2 /* PaymentsGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03A3B16F9666EFAAED1DCEB /* PaymentsGraph.swift */; };
 		EC8F5D87A743DD7A07419811 /* ModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC14ED7D4B3C059471DC5A09 /* ModuleFactory.swift */; };
 		F445AD832D72AE1D61DF6AC3 /* RouterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFAD3A76DB424BB9168AB61 /* RouterImp.swift */; };
 		FCEA5DB9E180A76AABC9369F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB075C1327A156E59A2E6507 /* AppDelegate.swift */; };
@@ -107,9 +105,7 @@
 		9A51E000B5891AEE104175A6 /* StarterModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterModuleFactory.swift; sourceTree = "<group>"; };
 		9E863B4916AA8A443734B39B /* + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ UIViewController.swift"; sourceTree = "<group>"; };
 		9FFAD3A76DB424BB9168AB61 /* RouterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterImp.swift; sourceTree = "<group>"; };
-		A03A3B16F9666EFAAED1DCEB /* PaymentsGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsGraph.swift; sourceTree = "<group>"; };
 		AE16B16346E4DB44D30AF608 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
-		AF5F24B1EAB8491F341B1C24 /* Marketplace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marketplace.swift; sourceTree = "<group>"; };
 		BA081AEFA443E745D029BDED /* CreditResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditResultPresenter.swift; sourceTree = "<group>"; };
 		BB075C1327A156E59A2E6507 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C3F873CE643E5900E8BC64A2 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
@@ -210,8 +206,6 @@
 				E05761026FADD9DACFFF0538 /* Helpers */,
 				88D180DA25D9FD499979B34E /* Calculate.swift */,
 				743F214BA8FA55263E8D5736 /* Carloan.swift */,
-				AF5F24B1EAB8491F341B1C24 /* Marketplace.swift */,
-				A03A3B16F9666EFAAED1DCEB /* PaymentsGraph.swift */,
 				69BABAF640D6D8DDE3059CCF /* Settings.swift */,
 				DD6C1EB869087AE74C13CE84 /* ViewController.swift */,
 			);
@@ -439,9 +433,7 @@
 				CC0128DFF413603FFC74D108 /* CreditModuleFactory.swift in Sources */,
 				455432EFD97F8E77AC350EBB /* CreditResultPresenter.swift in Sources */,
 				1CC7FB6F28BB541594C96A05 /* CreditResultViewController.swift in Sources */,
-				AF1A647A8A897C24F26CAFA6 /* Marketplace.swift in Sources */,
 				EC8F5D87A743DD7A07419811 /* ModuleFactory.swift in Sources */,
-				DB9CAEDADFD39E4FAD0D3DA2 /* PaymentsGraph.swift in Sources */,
 				BF96496B44A139E54F72015F /* Presentable.swift in Sources */,
 				8974B9D9C3F95484EE1FB0B0 /* Router.swift in Sources */,
 				F445AD832D72AE1D61DF6AC3 /* RouterImp.swift in Sources */,
