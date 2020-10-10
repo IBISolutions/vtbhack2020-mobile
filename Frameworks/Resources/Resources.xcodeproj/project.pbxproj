@@ -3,14 +3,23 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		554C2BFD2532306C0021DBB4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554C2BFC2532306C0021DBB4 /* Color.swift */; };
+		554C2C01253230960021DBB4 /* + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554C2C00253230960021DBB4 /* + UIColor.swift */; };
+		554C2C0C253233A80021DBB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 554C2C0B253233A80021DBB4 /* Assets.xcassets */; };
+		558E81F02532388800CF078C /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558E81EF2532388800CF078C /* R.generated.swift */; };
+		558E81F7253238CA00CF078C /* Rswift in Frameworks */ = {isa = PBXBuildFile; productRef = 558E81F6253238CA00CF078C /* Rswift */; };
 		55C53C492531D14F00BAA6E7 /* Resources.h in Headers */ = {isa = PBXBuildFile; fileRef = 55C53C472531D14F00BAA6E7 /* Resources.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		554C2BFC2532306C0021DBB4 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		554C2C00253230960021DBB4 /* + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ UIColor.swift"; sourceTree = "<group>"; };
+		554C2C0B253233A80021DBB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		558E81EF2532388800CF078C /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = "<group>"; };
 		55C53C442531D14F00BAA6E7 /* Resources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Resources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C53C472531D14F00BAA6E7 /* Resources.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Resources.h; sourceTree = "<group>"; };
 		55C53C482531D14F00BAA6E7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -21,12 +30,46 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				558E81F7253238CA00CF078C /* Rswift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		554C2BFB253230640021DBB4 /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				554C2BFF2532308C0021DBB4 /* Extensions */,
+				554C2BFC2532306C0021DBB4 /* Color.swift */,
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
+		554C2BFF2532308C0021DBB4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				554C2C00253230960021DBB4 /* + UIColor.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		554C2C0A2532339C0021DBB4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				554C2C0B253233A80021DBB4 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		558E81EE2532388800CF078C /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				558E81EF2532388800CF078C /* R.generated.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		55C53C3A2531D14E00BAA6E7 = {
 			isa = PBXGroup;
 			children = (
@@ -46,6 +89,9 @@
 		55C53C462531D14F00BAA6E7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				558E81EE2532388800CF078C /* Generated */,
+				554C2C0A2532339C0021DBB4 /* Resources */,
+				554C2BFB253230640021DBB4 /* Code */,
 				55C53C472531D14F00BAA6E7 /* Resources.h */,
 				55C53C482531D14F00BAA6E7 /* Info.plist */,
 			);
@@ -70,6 +116,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 55C53C4C2531D14F00BAA6E7 /* Build configuration list for PBXNativeTarget "Resources" */;
 			buildPhases = (
+				554C2C352532352B0021DBB4 /* R.Swift */,
 				55C53C3F2531D14E00BAA6E7 /* Headers */,
 				55C53C402531D14E00BAA6E7 /* Sources */,
 				55C53C412531D14E00BAA6E7 /* Frameworks */,
@@ -80,6 +127,9 @@
 			dependencies = (
 			);
 			name = Resources;
+			packageProductDependencies = (
+				558E81F6253238CA00CF078C /* Rswift */,
+			);
 			productName = Resources;
 			productReference = 55C53C442531D14F00BAA6E7 /* Resources.framework */;
 			productType = "com.apple.product-type.framework";
@@ -94,6 +144,7 @@
 				TargetAttributes = {
 					55C53C432531D14E00BAA6E7 = {
 						CreatedOnToolsVersion = 12.0.1;
+						LastSwiftMigration = 1200;
 					};
 				};
 			};
@@ -106,6 +157,9 @@
 				Base,
 			);
 			mainGroup = 55C53C3A2531D14E00BAA6E7;
+			packageReferences = (
+				558E81F5253238CA00CF078C /* XCRemoteSwiftPackageReference "R.swift" */,
+			);
 			productRefGroup = 55C53C452531D14F00BAA6E7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -120,16 +174,43 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				554C2C0C253233A80021DBB4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		554C2C352532352B0021DBB4 /* R.Swift */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$TEMP_DIR/rswift-lastrun",
+			);
+			name = R.Swift;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				$SRCROOT/Resources/Generated/R.generated.swift,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if mint list | grep -q 'R.swift'; then\n  mint run R.swift rswift generate --accessLevel public \"$SRCROOT/Resources/Generated/R.generated.swift\"\nelse\n  echo \"error: R.swift not installed; run 'mint bootstrap' to install\"\n  return -1\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		55C53C402531D14E00BAA6E7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				554C2C01253230960021DBB4 /* + UIColor.swift in Sources */,
+				554C2BFD2532306C0021DBB4 /* Color.swift in Sources */,
+				558E81F02532388800CF078C /* R.generated.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,6 +342,7 @@
 		55C53C4D2531D14F00BAA6E7 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = A7HQ3AATVX;
@@ -269,6 +351,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -277,14 +360,17 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.IBI-Solutions.Resources";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
 		55C53C4E2531D14F00BAA6E7 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = A7HQ3AATVX;
@@ -293,6 +379,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = Resources/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,8 +388,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.IBI-Solutions.Resources";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -328,6 +416,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		558E81F5253238CA00CF078C /* XCRemoteSwiftPackageReference "R.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mac-cain13/R.swift.Library";
+			requirement = {
+				kind = exactVersion;
+				version = 5.2.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		558E81F6253238CA00CF078C /* Rswift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 558E81F5253238CA00CF078C /* XCRemoteSwiftPackageReference "R.swift" */;
+			productName = Rswift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 55C53C3B2531D14E00BAA6E7 /* Project object */;
 }

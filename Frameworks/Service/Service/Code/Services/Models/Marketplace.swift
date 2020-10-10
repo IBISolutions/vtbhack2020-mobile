@@ -9,29 +9,28 @@
 import Foundation
 
 public struct Marketplace: Codable {
-    let list: [ListItem]
+    public let list: [ListItem]
 }
 
 public struct ListItem: Codable {
-    let country: Country
-    let models: [Model]
-    let currentCarCount: Int
-    let currentModelsTotal: Int
-    let logo: String
-    let title: String
+    public let country: Country
+    public let models: [Model]
+    public let currentCarCount: Int
+    public let currentModelsTotal: Int
+    public let logo: String
+    public let title: String
 }
 
 public struct Country: Codable {
-    let code: String
-    let title: String
+    public let code: String
+    public let title: String
 }
 
 public struct Model: Codable {
-    let title: String
-    let titleRus: String
-    let photo: String
-    let minPrice: Int
-    let count: Int
-    let colorsCount: Int
+    public let title: String
+    public let titleRus: String
+    public let photo: String
+    public let minPrice: Int
+    public let count: Int
+    public let colorsCount: Int
 }
-

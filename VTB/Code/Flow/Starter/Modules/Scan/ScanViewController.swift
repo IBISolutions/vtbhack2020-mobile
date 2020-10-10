@@ -17,6 +17,7 @@ protocol ScanView: AnyObject {
     func initializeCapturing()
     func startCapturing()
     func stopCapturing()
+    func updateCarInfo(name: String, offers: String)
     func updateScanViewState(_ state: ScanState)
 }
 
@@ -24,7 +25,12 @@ final class ScanViewController: UIViewController {
     
     private let videoPreview = UIView()
     
-    private var backgroundView = ScanBackgroundView()
+    private lazy var backgroundView: ScanBackgroundView = {
+        let view = ScanBackgroundView()
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(tapBackgroundAction))
+        view.addGestureRecognizer(tapGestureRecognizer)
+        return view
+    }()
     private var predictionView = PredictionView()
     
     private lazy var videoCapture: VideoCapture = {
@@ -52,8 +58,6 @@ final class ScanViewController: UIViewController {
         predictionView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.centerY.equalToSuperview().multipliedBy(0.4)
-            $0.leading.trailing.equalToSuperview().inset(24)
-            $0.height.equalTo(100)
         }
         output?.viewDidLoad()
     }
@@ -69,6 +73,10 @@ final class ScanViewController: UIViewController {
             return
         }
         output?.didHandleShake()
+    }
+    
+    @objc private func tapBackgroundAction() {
+        output?.didTapOnBackground()
     }
 }
 
@@ -93,18 +101,31 @@ extension ScanViewController: ScanView {
         videoCapture.stop()
     }
     
+    func updateCarInfo(name: String, offers: String) {
+        predictionView.configure(header: name, offers: offers, showsLoader: false)
+    }
+    
     func updateScanViewState(_ state: ScanState) {
         let isBackgroundVisible: Bool
+        let alpha: CGFloat
         switch state {
         case .capturing:
-            self.startCapturing()
+            startCapturing()
             isBackgroundVisible = false
+            alpha = .zero
         case .found:
-            self.stopCapturing()
+            stopCapturing()
             isBackgroundVisible = true
+            alpha = 1
         }
         
+        predictionView.configure(showsLoader: isBackgroundVisible)
+        
         UIView.animate(withDuration: CATransaction.animationDuration()) {
+            self.backgroundView.alpha = alpha
+        } completion: {
+            _ in
+            
             self.backgroundView.isHidden = !isBackgroundVisible
         }
     }

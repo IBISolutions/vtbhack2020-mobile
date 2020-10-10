@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		554C2BF925322F560021DBB4 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554C2BF825322F560021DBB4 /* PrimaryButton.swift */; };
+		554C2C06253230F10021DBB4 /* Resources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554C2C05253230F10021DBB4 /* Resources.framework */; };
+		554C2C07253230F10021DBB4 /* Resources.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 554C2C05253230F10021DBB4 /* Resources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		55A19B8F25323A720033D53E /* + UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A19B8E25323A720033D53E /* + UIImageView.swift */; };
+		55A19B922532471C0033D53E /* CustomLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A19B912532471C0033D53E /* CustomLabel.swift */; };
 		55C53C122531BFAB00BAA6E7 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 55C53C112531BFAB00BAA6E7 /* SnapKit */; };
 		55C53C292531C96200BAA6E7 /* InfiniteContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C282531C96200BAA6E7 /* InfiniteContainer.swift */; };
 		55C53C2C2531C98200BAA6E7 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C2B2531C98200BAA6E7 /* CustomView.swift */; };
@@ -16,7 +21,25 @@
 		55F0F499253077FA0035CEE5 /* VTBUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 55F0F497253077FA0035CEE5 /* VTBUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		554C2C08253230F10021DBB4 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				554C2C07253230F10021DBB4 /* Resources.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		554C2BF825322F560021DBB4 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
+		554C2C05253230F10021DBB4 /* Resources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Resources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55A19B8E25323A720033D53E /* + UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ UIImageView.swift"; sourceTree = "<group>"; };
+		55A19B912532471C0033D53E /* CustomLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLabel.swift; sourceTree = "<group>"; };
 		55C53C282531C96200BAA6E7 /* InfiniteContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteContainer.swift; sourceTree = "<group>"; };
 		55C53C2B2531C98200BAA6E7 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		55C53C2F2531C9EB00BAA6E7 /* + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ UIView.swift"; sourceTree = "<group>"; };
@@ -32,6 +55,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				554C2C06253230F10021DBB4 /* Resources.framework in Frameworks */,
 				55C53C122531BFAB00BAA6E7 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -42,10 +66,28 @@
 		5509C8FF2532041B002A3833 /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				55A19B90253247100033D53E /* Labels */,
 				55C53C2E2531C9DD00BAA6E7 /* Extensions */,
 				55C53C272531C95200BAA6E7 /* Views */,
+				554C2BF825322F560021DBB4 /* PrimaryButton.swift */,
 			);
 			path = Code;
+			sourceTree = "<group>";
+		};
+		554C2C04253230F10021DBB4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				554C2C05253230F10021DBB4 /* Resources.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		55A19B90253247100033D53E /* Labels */ = {
+			isa = PBXGroup;
+			children = (
+				55A19B912532471C0033D53E /* CustomLabel.swift */,
+			);
+			path = Labels;
 			sourceTree = "<group>";
 		};
 		55C53C272531C95200BAA6E7 /* Views */ = {
@@ -63,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				55C53C2F2531C9EB00BAA6E7 /* + UIView.swift */,
+				55A19B8E25323A720033D53E /* + UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -72,6 +115,7 @@
 			children = (
 				55F0F496253077FA0035CEE5 /* VTBUI */,
 				55F0F495253077FA0035CEE5 /* Products */,
+				554C2C04253230F10021DBB4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -115,6 +159,7 @@
 				55F0F490253077FA0035CEE5 /* Sources */,
 				55F0F491253077FA0035CEE5 /* Frameworks */,
 				55F0F492253077FA0035CEE5 /* Resources */,
+				554C2C08253230F10021DBB4 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -178,11 +223,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				554C2BF925322F560021DBB4 /* PrimaryButton.swift in Sources */,
 				55C53C302531C9EB00BAA6E7 /* + UIView.swift in Sources */,
 				55C53C292531C96200BAA6E7 /* InfiniteContainer.swift in Sources */,
 				55C53C2C2531C98200BAA6E7 /* CustomView.swift in Sources */,
 				55C53C762531F51700BAA6E7 /* PredictionView.swift in Sources */,
+				55A19B8F25323A720033D53E /* + UIImageView.swift in Sources */,
 				55C53C792531FD0300BAA6E7 /* ScanBackgroundView.swift in Sources */,
+				55A19B922532471C0033D53E /* CustomLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -317,6 +365,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = A7HQ3AATVX;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -332,9 +381,10 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.IBI-Solutions.VTBUI";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -344,6 +394,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEFINES_MODULE = YES;
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = A7HQ3AATVX;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -359,8 +410,9 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.IBI-Solutions.VTBUI";
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

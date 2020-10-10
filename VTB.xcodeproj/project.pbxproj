@@ -22,6 +22,7 @@
 		5509C93A25321A6C002A3833 /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5509C93925321A6C002A3833 /* Service.framework */; };
 		5509C93B25321A6D002A3833 /* Service.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5509C93925321A6C002A3833 /* Service.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		551C4BCFEBCC82C9D8A172E1 /* CreditCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE2EA802F18E29AEBF40C2B /* CreditCoordinator.swift */; };
+		55A19B95253250330033D53E /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A19B94253250330033D53E /* AppData.swift */; };
 		55C53C6E2531F09F00BAA6E7 /* VTBUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C53C6D2531F09F00BAA6E7 /* VTBUI.framework */; };
 		55C53C6F2531F09F00BAA6E7 /* VTBUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55C53C6D2531F09F00BAA6E7 /* VTBUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		55C53C732531F0AF00BAA6E7 /* Resources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C53C722531F0AE00BAA6E7 /* Resources.framework */; };
@@ -87,6 +88,7 @@
 		4D220547AE0D4451E68BE7D1 /* AppCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorFactory.swift; sourceTree = "<group>"; };
 		53B8C883ECF4CBE0E5C5F69C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		5509C93925321A6C002A3833 /* Service.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Service.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		55A19B94253250330033D53E /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		55C53C6D2531F09F00BAA6E7 /* VTBUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VTBUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C53C722531F0AE00BAA6E7 /* Resources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Resources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		573BCEA0301F2B4F3B21EC14 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
@@ -231,6 +233,14 @@
 			);
 			sourceTree = "<group>";
 		};
+		55A19B93253250260033D53E /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				55A19B94253250330033D53E /* AppData.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
 		55C53C6C2531F09F00BAA6E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -320,6 +330,7 @@
 		D79396FB1359F5C4B8152291 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				55A19B93253250260033D53E /* Root */,
 				FC509B44A90CE7F2BD302BF3 /* Coordinator */,
 				A459C43DC562C60FB536C163 /* Extensions */,
 				195F1525F4E9DC162A68E5E2 /* Routing */,
@@ -444,6 +455,7 @@
 				62E5653B529CB4B6DD5572C3 /* StarterCoordinatorFactory.swift in Sources */,
 				B3C42E5CAF25E7EE6EC5EB4D /* StarterModuleFactory.swift in Sources */,
 				09CF3A01B7112E65B29801B4 /* VideoCapture.swift in Sources */,
+				55A19B95253250330033D53E /* AppData.swift in Sources */,
 				92EAA9AD59E02F0F4BDC566F /* ViewController.swift in Sources */,
 				1E8A69E4191D59D989410FBC /* YOLOv3Tiny.mlmodel in Sources */,
 			);

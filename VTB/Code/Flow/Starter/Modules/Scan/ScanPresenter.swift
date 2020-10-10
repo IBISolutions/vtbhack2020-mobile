@@ -16,6 +16,7 @@ protocol ScanControllerOutput: AnyObject {
     func viewDidLoad()
     func didCaptureFrame(with buffer: CVPixelBuffer)
     func didHandleShake()
+    func didTapOnBackground()
 }
 
 enum ScanCoordinatorAction {
@@ -77,38 +78,63 @@ final class ScanPresenter: ScanCoordinatorOutput {
     }
     
     private func visionRequestDidComplete(request: VNRequest, error: Error?) {
-        if let predictions = request.results as? [VNRecognizedObjectObservation] {
-            let carPredictions = predictions
-                .filter { $0.label == Constants.carIdentifier }
-                .sorted { (first, second) -> Bool in
-                    guard let fConfidence = first.labels.first?.confidence,
-                          let sConfidence = second.labels.first?.confidence else {
-                        return false
-                    }
-                    return fConfidence > sConfidence
+        guard let predictions = request.results as? [VNRecognizedObjectObservation] else {
+            return
+        }
+        let carPredictions = predictions
+            .filter { $0.label == Constants.carIdentifier }
+            .sorted { (first, second) -> Bool in
+                guard let fConfidence = first.labels.first?.confidence,
+                      let sConfidence = second.labels.first?.confidence else {
+                    return false
                 }
-            
-            guard let goodPrediction = carPredictions.first,
-                  goodPrediction.labels.first?.confidence ?? .zero > 0.9 else {
-                return
+                return fConfidence > sConfidence
             }
+        
+        guard let goodPrediction = carPredictions.first,
+              goodPrediction.labels.first?.confidence ?? .zero > 0.9 else {
+            return
+        }
+        
+        guard let buffer = capturedBuffer,
+              let data = UIImage(ciImage: CIImage(cvPixelBuffer: buffer)).jpegData(compressionQuality: 0.95) else {
+            return
+        }
+        let strBase64 = data.base64EncodedString()
+        service.recognize(base64image: strBase64) {
+            [weak self] res in
             
-            guard let buffer = capturedBuffer,
-                  let data = UIImage(ciImage: CIImage(cvPixelBuffer: buffer)).jpegData(compressionQuality: 0.95) else {
-                return
-            }
-            print(data)
-            let strBase64 = data.base64EncodedString()
-            service.recognize(base64image: strBase64) {
-                res in
-                
-                print(res)
-            }
-            
-            DispatchQueue.main.async {
-                self.state = .found
+            if case .success(let predictions) = res {
+                self?.findCarOnMarketplace(using: predictions.probabilities)
             }
         }
+        
+        DispatchQueue.main.async {
+            self.state = .found
+        }
+    }
+    
+    private func findCarOnMarketplace(using probabilities: Probabilities) {
+        guard let marketplace = AppData.shared.marketplace else {
+            return
+        }
+        
+        guard let max = (probabilities.allProbabilities.max {
+            (f, s) -> Bool in
+            
+            f.1 > s.1
+        }) else {
+            return
+        }
+        guard let markList = (marketplace.list.filter { max.0.contains($0.title) }).first else {
+            return
+        }
+        guard let model = (markList.models.filter { max.0.contains($0.title) }).first else {
+            return
+        }
+        let name = String(format: "%@ %@", markList.title, model.title)
+        let offers = String(format: "%d предложений от %d ₽", model.count, model.minPrice)
+        view?.updateCarInfo(name: name, offers: offers)
     }
 }
 
@@ -128,5 +154,9 @@ extension ScanPresenter: ScanControllerOutput {
         if case .found = state {
             onAction?(.scanned)
         }
+    }
+    
+    func didTapOnBackground() {
+        state = .capturing
     }
 }

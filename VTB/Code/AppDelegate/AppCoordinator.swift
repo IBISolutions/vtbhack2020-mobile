@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Service
 
 final class AppCoordinator: BaseCoordinator {
     
@@ -19,6 +20,7 @@ final class AppCoordinator: BaseCoordinator {
          coordinatorFactory: AppCoordinatorFactory,
          moduleFactory: AppModuleFactory) {
         
+        _ = AppData.shared
         self.router = router
         self.coordinatorFactory = coordinatorFactory
         self.moduleFactory = moduleFactory

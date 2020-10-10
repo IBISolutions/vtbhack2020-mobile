@@ -9,6 +9,15 @@ import UIKit
 
 public extension UIView {
     
+    convenience init(backgroundColor: UIColor = .clear,
+                     isHidden: Bool = false,
+                     isUserInteractionEnabled: Bool = true) {
+        self.init()
+        self.backgroundColor = backgroundColor
+        self.isHidden = isHidden
+        self.isUserInteractionEnabled = isUserInteractionEnabled
+    }
+    
     func setRequiredContentHuggingPriority(_ axis: NSLayoutConstraint.Axis) {
         setContentHuggingPriority(.required, for: axis)
         

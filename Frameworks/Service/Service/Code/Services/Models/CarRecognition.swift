@@ -9,7 +9,7 @@
 import Foundation
 
 public struct CarRecognition: Codable {
-    let probabilities: Probabilities
+    public let probabilities: Probabilities
 }
 
 public struct Probabilities: Codable {
@@ -30,7 +30,7 @@ public struct Probabilities: Codable {
     let mercedes: Double? = nil
     let toyota: Double? = nil
     
-    let allProbabilities: [(String, Double)]
+    public let allProbabilities: [(String, Double)]
         
     enum CodingKeys: String, CodingKey, CaseIterable {
         case bmw3 = "BMW 3"
