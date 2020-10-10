@@ -7,134 +7,177 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		09CF3A01B7112E65B29801B4 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573BCEA0301F2B4F3B21EC14 /* VideoCapture.swift */; };
+		176A3FCA19EF20E9407E2A28 /* + UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C422047CFD5484F9C67A351 /* + UIStackView.swift */; };
+		18D1A1D7AB020D8DFB177885 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4590134A051842EE452F1E3B /* AppCoordinator.swift */; };
+		1CC7FB6F28BB541594C96A05 /* CreditResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8BC5CCBBFC43029629CF3F /* CreditResultViewController.swift */; };
+		1E8A69E4191D59D989410FBC /* YOLOv3Tiny.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1D624EA89774A37022D98797 /* YOLOv3Tiny.mlmodel */; };
+		2A133D8ADBE34D656EF87381 /* Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BFF6AC77404C03634A79945 /* Closure.swift */; };
+		2C30D4F7D8049EC4D32C2A79 /* CreditCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E6F2DE324F9B2CD01EF7A60 /* CreditCoordinatorFactory.swift */; };
 		30A6913365BEB749CEBA3549 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F1ED4B62E53102EEBE5F975 /* Assets.xcassets */; };
-		557815D42531B897007BBD34 /* + UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557815D32531B897007BBD34 /* + UINavigationController.swift */; };
-		55AF3C3A2531B06D00AF9F3D /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF3C392531B06D00AF9F3D /* Coordinator.swift */; };
-		55AF3C3D2531B09300AF9F3D /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF3C3C2531B09300AF9F3D /* BaseCoordinator.swift */; };
-		55AF3C422531B10600AF9F3D /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF3C412531B10600AF9F3D /* Router.swift */; };
-		55AF3C452531B1A000AF9F3D /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF3C442531B1A000AF9F3D /* Presentable.swift */; };
-		55AF3C492531B24500AF9F3D /* Closure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF3C482531B24500AF9F3D /* Closure.swift */; };
-		55AF3C4C2531B36E00AF9F3D /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF3C4B2531B36E00AF9F3D /* AppCoordinator.swift */; };
-		55AF3C502531B3DA00AF9F3D /* AppCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF3C4E2531B3DA00AF9F3D /* AppCoordinatorFactory.swift */; };
-		55AF3C512531B3DA00AF9F3D /* AppModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF3C4F2531B3DA00AF9F3D /* AppModuleFactory.swift */; };
-		55AF3C542531B42400AF9F3D /* ModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF3C532531B42400AF9F3D /* ModuleFactory.swift */; };
-		55AF3C572531B47700AF9F3D /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF3C562531B47700AF9F3D /* CoordinatorFactory.swift */; };
-		55AF3C5A2531B49B00AF9F3D /* RouterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF3C592531B49B00AF9F3D /* RouterImp.swift */; };
-		55AF3C5E2531B60900AF9F3D /* + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF3C5D2531B60900AF9F3D /* + UIViewController.swift */; };
-		55AF3C682531BCC200AF9F3D /* StarterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF3C652531BCC200AF9F3D /* StarterCoordinator.swift */; };
-		55AF3C692531BCC200AF9F3D /* StarterCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF3C662531BCC200AF9F3D /* StarterCoordinatorFactory.swift */; };
-		55AF3C6A2531BCC200AF9F3D /* StarterModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF3C672531BCC200AF9F3D /* StarterModuleFactory.swift */; };
-		55AF3C702531BD3C00AF9F3D /* ChooseFlowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF3C6E2531BD3C00AF9F3D /* ChooseFlowPresenter.swift */; };
-		55AF3C712531BD3C00AF9F3D /* ChooseFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55AF3C6F2531BD3C00AF9F3D /* ChooseFlowViewController.swift */; };
-		55C53C162531BFC900BAA6E7 /* VTBUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C53C152531BFC900BAA6E7 /* VTBUI.framework */; };
-		55C53C172531BFC900BAA6E7 /* VTBUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55C53C152531BFC900BAA6E7 /* VTBUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		55C53C1B2531C26000BAA6E7 /* + UIStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C1A2531C26000BAA6E7 /* + UIStackView.swift */; };
-		55C53C202531C3EC00BAA6E7 /* ScanPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C1E2531C3EC00BAA6E7 /* ScanPresenter.swift */; };
-		55C53C212531C3EC00BAA6E7 /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C1F2531C3EC00BAA6E7 /* ScanViewController.swift */; };
-		55C53C252531C6D700BAA6E7 /* CreditCalculatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C232531C6D700BAA6E7 /* CreditCalculatorPresenter.swift */; };
-		55C53C262531C6D700BAA6E7 /* CreditCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C242531C6D700BAA6E7 /* CreditCalculatorViewController.swift */; };
-		55C53C362531CC1D00BAA6E7 /* CreditCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C332531CC1D00BAA6E7 /* CreditCoordinator.swift */; };
-		55C53C372531CC1D00BAA6E7 /* CreditCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C342531CC1D00BAA6E7 /* CreditCoordinatorFactory.swift */; };
-		55C53C382531CC1D00BAA6E7 /* CreditModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C352531CC1D00BAA6E7 /* CreditModuleFactory.swift */; };
-		55C53C522531D1AD00BAA6E7 /* Resources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C53C512531D1AD00BAA6E7 /* Resources.framework */; };
-		55C53C532531D1AD00BAA6E7 /* Resources.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55C53C512531D1AD00BAA6E7 /* Resources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		55C53C562531D1BD00BAA6E7 /* CreditResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C542531D1BD00BAA6E7 /* CreditResultPresenter.swift */; };
-		55C53C572531D1BD00BAA6E7 /* CreditResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C552531D1BD00BAA6E7 /* CreditResultViewController.swift */; };
-		55C53C592531D9CD00BAA6E7 /* YOLOv3Tiny.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C582531D9CD00BAA6E7 /* YOLOv3Tiny.mlmodel */; };
-		55C53C5C2531DB9100BAA6E7 /* VideoCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C5B2531DB9100BAA6E7 /* VideoCapture.swift */; };
-		55C53C5E2531E30B00BAA6E7 /* + VNRecognizedObjectObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C5D2531E30B00BAA6E7 /* + VNRecognizedObjectObservation.swift */; };
+		455432EFD97F8E77AC350EBB /* CreditResultPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA081AEFA443E745D029BDED /* CreditResultPresenter.swift */; };
+		462D00EA5F644607889EF541 /* CarRecognition.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF5139A9EF2452B9D65294A /* CarRecognition.swift */; };
+		474FB84F7C048318644BFCA7 /* AppModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F94AC704D48CB632ADD99B /* AppModuleFactory.swift */; };
+		4830536CC7ECB9D281049879 /* + VNRecognizedObjectObservation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BABFD2661877416E33657CB /* + VNRecognizedObjectObservation.swift */; };
+		54DBE5B525279807CD9EDD2C /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53B8C883ECF4CBE0E5C5F69C /* Coordinator.swift */; };
+		551C4BCFEBCC82C9D8A172E1 /* CreditCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE2EA802F18E29AEBF40C2B /* CreditCoordinator.swift */; };
 		5AF8862A7B4022E43A1C9339 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 897D59029163E6B8925C7B4F /* LaunchScreen.storyboard */; };
+		5FCA45B39974118A4352CDCA /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE16B16346E4DB44D30AF608 /* ScanViewController.swift */; };
+		62E5653B529CB4B6DD5572C3 /* StarterCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 720A95A087C05355DBCE6D11 /* StarterCoordinatorFactory.swift */; };
+		63C34BF1E90793A8E8D4BA9F /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FAC61BBAFBBD9B6C460962A /* CoordinatorFactory.swift */; };
+		74C75CC58C332688283D9E48 /* ChooseFlowPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69198666963C34126C8E015C /* ChooseFlowPresenter.swift */; };
+		844ED5903211D20F3983B821 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69BABAF640D6D8DDE3059CCF /* Settings.swift */; };
+		8974B9D9C3F95484EE1FB0B0 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 756A9E2DDF544C5734E17503 /* Router.swift */; };
+		8BAB2123C02EC81C51A7FB18 /* Carloan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 743F214BA8FA55263E8D5736 /* Carloan.swift */; };
 		92EAA9AD59E02F0F4BDC566F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C1EB869087AE74C13CE84 /* ViewController.swift */; };
+		9E9D3ABD38DFC9C8815C5949 /* AppCoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D220547AE0D4451E68BE7D1 /* AppCoordinatorFactory.swift */; };
+		A2C76DA8030EC50094372041 /* CreditCalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DAB294045DBF02E113C4998 /* CreditCalculatorViewController.swift */; };
+		A357BEE0071B66D62B4CB010 /* ChooseFlowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A17308F866A9A83B6B1196 /* ChooseFlowViewController.swift */; };
+		A45B043697281BBBD7750FA9 /* Calculate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D180DA25D9FD499979B34E /* Calculate.swift */; };
+		AF1A647A8A897C24F26CAFA6 /* Marketplace.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5F24B1EAB8491F341B1C24 /* Marketplace.swift */; };
+		B3C42E5CAF25E7EE6EC5EB4D /* StarterModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A51E000B5891AEE104175A6 /* StarterModuleFactory.swift */; };
+		B71FD4FC406714867172CDFE /* CreditCalculatorPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9853798088B7AD84FAAF429B /* CreditCalculatorPresenter.swift */; };
+		BF96496B44A139E54F72015F /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0909C3DA567B1AA471A56980 /* Presentable.swift */; };
+		C6D0C6ABE6168AF10A153C5C /* + UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E863B4916AA8A443734B39B /* + UIViewController.swift */; };
+		CA9B67F210B67DBF2BE9429E /* StarterCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00709D540BB4FF95C3937F02 /* StarterCoordinator.swift */; };
+		CC0128DFF413603FFC74D108 /* CreditModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 008E4AA7F5400C5749477792 /* CreditModuleFactory.swift */; };
+		D9ADD6674F762590D4BE9715 /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3F873CE643E5900E8BC64A2 /* BaseCoordinator.swift */; };
+		DB9CAEDADFD39E4FAD0D3DA2 /* PaymentsGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = A03A3B16F9666EFAAED1DCEB /* PaymentsGraph.swift */; };
+		EC8F5D87A743DD7A07419811 /* ModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC14ED7D4B3C059471DC5A09 /* ModuleFactory.swift */; };
+		F445AD832D72AE1D61DF6AC3 /* RouterImp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFAD3A76DB424BB9168AB61 /* RouterImp.swift */; };
 		FCEA5DB9E180A76AABC9369F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB075C1327A156E59A2E6507 /* AppDelegate.swift */; };
+		FDA79D39AA632BC0FBBB54A7 /* ScanPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3A15880CB8458F14725F5739 /* ScanPresenter.swift */; };
+		FE120D9692C4C9341F4E8202 /* + UINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63F3D9501B4042A2E395EA12 /* + UINavigationController.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		55C53C192531BFC900BAA6E7 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				55C53C532531D1AD00BAA6E7 /* Resources.framework in Embed Frameworks */,
-				55C53C172531BFC900BAA6E7 /* VTBUI.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
+		00709D540BB4FF95C3937F02 /* StarterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterCoordinator.swift; sourceTree = "<group>"; };
+		008E4AA7F5400C5749477792 /* CreditModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditModuleFactory.swift; sourceTree = "<group>"; };
+		0909C3DA567B1AA471A56980 /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		0BABFD2661877416E33657CB /* + VNRecognizedObjectObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ VNRecognizedObjectObservation.swift"; sourceTree = "<group>"; };
+		0F8BC5CCBBFC43029629CF3F /* CreditResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditResultViewController.swift; sourceTree = "<group>"; };
+		1D624EA89774A37022D98797 /* YOLOv3Tiny.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = YOLOv3Tiny.mlmodel; sourceTree = "<group>"; };
+		2EE2EA802F18E29AEBF40C2B /* CreditCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCoordinator.swift; sourceTree = "<group>"; };
+		3A15880CB8458F14725F5739 /* ScanPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanPresenter.swift; sourceTree = "<group>"; };
+		3DAB294045DBF02E113C4998 /* CreditCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCalculatorViewController.swift; sourceTree = "<group>"; };
 		3F1952C71185AB0314F9B163 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3F1ED4B62E53102EEBE5F975 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		557815D32531B897007BBD34 /* + UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ UINavigationController.swift"; sourceTree = "<group>"; };
-		55AF3C392531B06D00AF9F3D /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
-		55AF3C3C2531B09300AF9F3D /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
-		55AF3C412531B10600AF9F3D /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
-		55AF3C442531B1A000AF9F3D /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
-		55AF3C482531B24500AF9F3D /* Closure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closure.swift; sourceTree = "<group>"; };
-		55AF3C4B2531B36E00AF9F3D /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
-		55AF3C4E2531B3DA00AF9F3D /* AppCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorFactory.swift; sourceTree = "<group>"; };
-		55AF3C4F2531B3DA00AF9F3D /* AppModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModuleFactory.swift; sourceTree = "<group>"; };
-		55AF3C532531B42400AF9F3D /* ModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactory.swift; sourceTree = "<group>"; };
-		55AF3C562531B47700AF9F3D /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
-		55AF3C592531B49B00AF9F3D /* RouterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterImp.swift; sourceTree = "<group>"; };
-		55AF3C5D2531B60900AF9F3D /* + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ UIViewController.swift"; sourceTree = "<group>"; };
-		55AF3C652531BCC200AF9F3D /* StarterCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterCoordinator.swift; sourceTree = "<group>"; };
-		55AF3C662531BCC200AF9F3D /* StarterCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterCoordinatorFactory.swift; sourceTree = "<group>"; };
-		55AF3C672531BCC200AF9F3D /* StarterModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterModuleFactory.swift; sourceTree = "<group>"; };
-		55AF3C6E2531BD3C00AF9F3D /* ChooseFlowPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseFlowPresenter.swift; sourceTree = "<group>"; };
-		55AF3C6F2531BD3C00AF9F3D /* ChooseFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseFlowViewController.swift; sourceTree = "<group>"; };
-		55C53C152531BFC900BAA6E7 /* VTBUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VTBUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		55C53C1A2531C26000BAA6E7 /* + UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ UIStackView.swift"; sourceTree = "<group>"; };
-		55C53C1E2531C3EC00BAA6E7 /* ScanPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanPresenter.swift; sourceTree = "<group>"; };
-		55C53C1F2531C3EC00BAA6E7 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
-		55C53C232531C6D700BAA6E7 /* CreditCalculatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCalculatorPresenter.swift; sourceTree = "<group>"; };
-		55C53C242531C6D700BAA6E7 /* CreditCalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCalculatorViewController.swift; sourceTree = "<group>"; };
-		55C53C332531CC1D00BAA6E7 /* CreditCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCoordinator.swift; sourceTree = "<group>"; };
-		55C53C342531CC1D00BAA6E7 /* CreditCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCoordinatorFactory.swift; sourceTree = "<group>"; };
-		55C53C352531CC1D00BAA6E7 /* CreditModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditModuleFactory.swift; sourceTree = "<group>"; };
-		55C53C512531D1AD00BAA6E7 /* Resources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Resources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		55C53C542531D1BD00BAA6E7 /* CreditResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditResultPresenter.swift; sourceTree = "<group>"; };
-		55C53C552531D1BD00BAA6E7 /* CreditResultViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditResultViewController.swift; sourceTree = "<group>"; };
-		55C53C582531D9CD00BAA6E7 /* YOLOv3Tiny.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = YOLOv3Tiny.mlmodel; sourceTree = "<group>"; };
-		55C53C5B2531DB9100BAA6E7 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
-		55C53C5D2531E30B00BAA6E7 /* + VNRecognizedObjectObservation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ VNRecognizedObjectObservation.swift"; sourceTree = "<group>"; };
+		3FAC61BBAFBBD9B6C460962A /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
+		4590134A051842EE452F1E3B /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
+		4C422047CFD5484F9C67A351 /* + UIStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ UIStackView.swift"; sourceTree = "<group>"; };
+		4D220547AE0D4451E68BE7D1 /* AppCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorFactory.swift; sourceTree = "<group>"; };
+		53B8C883ECF4CBE0E5C5F69C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		573BCEA0301F2B4F3B21EC14 /* VideoCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoCapture.swift; sourceTree = "<group>"; };
+		5BFF6AC77404C03634A79945 /* Closure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closure.swift; sourceTree = "<group>"; };
+		63F3D9501B4042A2E395EA12 /* + UINavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ UINavigationController.swift"; sourceTree = "<group>"; };
+		69198666963C34126C8E015C /* ChooseFlowPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseFlowPresenter.swift; sourceTree = "<group>"; };
+		69BABAF640D6D8DDE3059CCF /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		720A95A087C05355DBCE6D11 /* StarterCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterCoordinatorFactory.swift; sourceTree = "<group>"; };
+		743F214BA8FA55263E8D5736 /* Carloan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Carloan.swift; sourceTree = "<group>"; };
+		756A9E2DDF544C5734E17503 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		7E6F2DE324F9B2CD01EF7A60 /* CreditCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCoordinatorFactory.swift; sourceTree = "<group>"; };
+		88D180DA25D9FD499979B34E /* Calculate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculate.swift; sourceTree = "<group>"; };
 		90A7EC6362B68882BC38C2F1 /* VTB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VTB.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		94F94AC704D48CB632ADD99B /* AppModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModuleFactory.swift; sourceTree = "<group>"; };
+		9853798088B7AD84FAAF429B /* CreditCalculatorPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCalculatorPresenter.swift; sourceTree = "<group>"; };
+		9A51E000B5891AEE104175A6 /* StarterModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarterModuleFactory.swift; sourceTree = "<group>"; };
+		9E863B4916AA8A443734B39B /* + UIViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ UIViewController.swift"; sourceTree = "<group>"; };
+		9FFAD3A76DB424BB9168AB61 /* RouterImp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterImp.swift; sourceTree = "<group>"; };
+		A03A3B16F9666EFAAED1DCEB /* PaymentsGraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaymentsGraph.swift; sourceTree = "<group>"; };
+		AE16B16346E4DB44D30AF608 /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		AF5F24B1EAB8491F341B1C24 /* Marketplace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Marketplace.swift; sourceTree = "<group>"; };
+		BA081AEFA443E745D029BDED /* CreditResultPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditResultPresenter.swift; sourceTree = "<group>"; };
 		BB075C1327A156E59A2E6507 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C3F873CE643E5900E8BC64A2 /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
 		C583FA14094266DD7994FFC6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		C9A17308F866A9A83B6B1196 /* ChooseFlowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseFlowViewController.swift; sourceTree = "<group>"; };
+		DC14ED7D4B3C059471DC5A09 /* ModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactory.swift; sourceTree = "<group>"; };
 		DD6C1EB869087AE74C13CE84 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EAF5139A9EF2452B9D65294A /* CarRecognition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarRecognition.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFrameworksBuildPhase section */
-		55C53C182531BFC900BAA6E7 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				55C53C522531D1AD00BAA6E7 /* Resources.framework in Frameworks */,
-				55C53C162531BFC900BAA6E7 /* VTBUI.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
 /* Begin PBXGroup section */
+		0A414F908EBEA15B376F7020 /* CreditCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				9853798088B7AD84FAAF429B /* CreditCalculatorPresenter.swift */,
+				3DAB294045DBF02E113C4998 /* CreditCalculatorViewController.swift */,
+			);
+			path = CreditCalculator;
+			sourceTree = "<group>";
+		};
+		177798D07DCDE605851CEDA4 /* Credit */ = {
+			isa = PBXGroup;
+			children = (
+				0A414F908EBEA15B376F7020 /* CreditCalculator */,
+				A2FFC19B32FC7BE0E4F7EE5C /* CreditResult */,
+				2EE2EA802F18E29AEBF40C2B /* CreditCoordinator.swift */,
+				7E6F2DE324F9B2CD01EF7A60 /* CreditCoordinatorFactory.swift */,
+				008E4AA7F5400C5749477792 /* CreditModuleFactory.swift */,
+			);
+			path = Credit;
+			sourceTree = "<group>";
+		};
+		195F1525F4E9DC162A68E5E2 /* Routing */ = {
+			isa = PBXGroup;
+			children = (
+				0909C3DA567B1AA471A56980 /* Presentable.swift */,
+				756A9E2DDF544C5734E17503 /* Router.swift */,
+				9FFAD3A76DB424BB9168AB61 /* RouterImp.swift */,
+			);
+			path = Routing;
+			sourceTree = "<group>";
+		};
+		1BD241E7B34E8C2B6D803D61 /* Capture */ = {
+			isa = PBXGroup;
+			children = (
+				573BCEA0301F2B4F3B21EC14 /* VideoCapture.swift */,
+			);
+			path = Capture;
+			sourceTree = "<group>";
+		};
 		22A9D9D6A479E3F2C1D674CE /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				55C53C582531D9CD00BAA6E7 /* YOLOv3Tiny.mlmodel */,
 				3F1ED4B62E53102EEBE5F975 /* Assets.xcassets */,
 				897D59029163E6B8925C7B4F /* LaunchScreen.storyboard */,
+				1D624EA89774A37022D98797 /* YOLOv3Tiny.mlmodel */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2E977284F066282F09371FA7 /* Scan */ = {
+			isa = PBXGroup;
+			children = (
+				1BD241E7B34E8C2B6D803D61 /* Capture */,
+				3A15880CB8458F14725F5739 /* ScanPresenter.swift */,
+				AE16B16346E4DB44D30AF608 /* ScanViewController.swift */,
+			);
+			path = Scan;
+			sourceTree = "<group>";
+		};
+		357B1CF507FF42D1384B793A /* Flow */ = {
+			isa = PBXGroup;
+			children = (
+				177798D07DCDE605851CEDA4 /* Credit */,
+				A5A9DB1B98606A7D0A1587D4 /* Starter */,
+			);
+			path = Flow;
 			sourceTree = "<group>";
 		};
 		3F6F1FA2002B2E81600E0DA8 /* Code */ = {
 			isa = PBXGroup;
 			children = (
-				55AF3C472531B22F00AF9F3D /* Helpers */,
-				55AF3C382531AFED00AF9F3D /* Flow */,
-				55AF3C372531AFC200AF9F3D /* Core */,
 				C8E331D5097B74F4CC5A5FF0 /* AppDelegate */,
+				D79396FB1359F5C4B8152291 /* Core */,
+				357B1CF507FF42D1384B793A /* Flow */,
+				E05761026FADD9DACFFF0538 /* Helpers */,
+				88D180DA25D9FD499979B34E /* Calculate.swift */,
+				743F214BA8FA55263E8D5736 /* Carloan.swift */,
+				EAF5139A9EF2452B9D65294A /* CarRecognition.swift */,
+				AF5F24B1EAB8491F341B1C24 /* Marketplace.swift */,
+				A03A3B16F9666EFAAED1DCEB /* PaymentsGraph.swift */,
+				69BABAF640D6D8DDE3059CCF /* Settings.swift */,
 				DD6C1EB869087AE74C13CE84 /* ViewController.swift */,
 			);
 			path = Code;
@@ -155,153 +198,7 @@
 			children = (
 				419C3F0B9B9020E6C4C0322A /* VTB */,
 				7E7F8088CD002370F4E4324A /* Products */,
-				55C53C142531BFC900BAA6E7 /* Frameworks */,
 			);
-			sourceTree = "<group>";
-		};
-		55AF3C372531AFC200AF9F3D /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				55AF3C5C2531B5FC00AF9F3D /* Extensions */,
-				55AF3C402531B0F700AF9F3D /* Routing */,
-				55AF3C3F2531B0ED00AF9F3D /* Coordinator */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		55AF3C382531AFED00AF9F3D /* Flow */ = {
-			isa = PBXGroup;
-			children = (
-				55C53C322531CC0A00BAA6E7 /* Credit */,
-				55AF3C6C2531BD0C00AF9F3D /* Starter */,
-			);
-			path = Flow;
-			sourceTree = "<group>";
-		};
-		55AF3C3F2531B0ED00AF9F3D /* Coordinator */ = {
-			isa = PBXGroup;
-			children = (
-				55AF3C392531B06D00AF9F3D /* Coordinator.swift */,
-				55AF3C3C2531B09300AF9F3D /* BaseCoordinator.swift */,
-				55AF3C532531B42400AF9F3D /* ModuleFactory.swift */,
-				55AF3C562531B47700AF9F3D /* CoordinatorFactory.swift */,
-			);
-			path = Coordinator;
-			sourceTree = "<group>";
-		};
-		55AF3C402531B0F700AF9F3D /* Routing */ = {
-			isa = PBXGroup;
-			children = (
-				55AF3C412531B10600AF9F3D /* Router.swift */,
-				55AF3C442531B1A000AF9F3D /* Presentable.swift */,
-				55AF3C592531B49B00AF9F3D /* RouterImp.swift */,
-			);
-			path = Routing;
-			sourceTree = "<group>";
-		};
-		55AF3C472531B22F00AF9F3D /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				55AF3C482531B24500AF9F3D /* Closure.swift */,
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
-		55AF3C5C2531B5FC00AF9F3D /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				55AF3C5D2531B60900AF9F3D /* + UIViewController.swift */,
-				557815D32531B897007BBD34 /* + UINavigationController.swift */,
-				55C53C1A2531C26000BAA6E7 /* + UIStackView.swift */,
-				55C53C5D2531E30B00BAA6E7 /* + VNRecognizedObjectObservation.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		55AF3C6C2531BD0C00AF9F3D /* Starter */ = {
-			isa = PBXGroup;
-			children = (
-				55C53C1C2531C3D000BAA6E7 /* Modules */,
-				55AF3C652531BCC200AF9F3D /* StarterCoordinator.swift */,
-				55AF3C662531BCC200AF9F3D /* StarterCoordinatorFactory.swift */,
-				55AF3C672531BCC200AF9F3D /* StarterModuleFactory.swift */,
-			);
-			path = Starter;
-			sourceTree = "<group>";
-		};
-		55AF3C6D2531BD2400AF9F3D /* ChooseFlow */ = {
-			isa = PBXGroup;
-			children = (
-				55AF3C6E2531BD3C00AF9F3D /* ChooseFlowPresenter.swift */,
-				55AF3C6F2531BD3C00AF9F3D /* ChooseFlowViewController.swift */,
-			);
-			path = ChooseFlow;
-			sourceTree = "<group>";
-		};
-		55C53C142531BFC900BAA6E7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				55C53C512531D1AD00BAA6E7 /* Resources.framework */,
-				55C53C152531BFC900BAA6E7 /* VTBUI.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		55C53C1C2531C3D000BAA6E7 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				55C53C1D2531C3D800BAA6E7 /* Scan */,
-				55AF3C6D2531BD2400AF9F3D /* ChooseFlow */,
-			);
-			path = Modules;
-			sourceTree = "<group>";
-		};
-		55C53C1D2531C3D800BAA6E7 /* Scan */ = {
-			isa = PBXGroup;
-			children = (
-				55C53C5A2531DB7F00BAA6E7 /* Capture */,
-				55C53C1E2531C3EC00BAA6E7 /* ScanPresenter.swift */,
-				55C53C1F2531C3EC00BAA6E7 /* ScanViewController.swift */,
-			);
-			path = Scan;
-			sourceTree = "<group>";
-		};
-		55C53C222531C6C800BAA6E7 /* CreditCalculator */ = {
-			isa = PBXGroup;
-			children = (
-				55C53C232531C6D700BAA6E7 /* CreditCalculatorPresenter.swift */,
-				55C53C242531C6D700BAA6E7 /* CreditCalculatorViewController.swift */,
-			);
-			path = CreditCalculator;
-			sourceTree = "<group>";
-		};
-		55C53C322531CC0A00BAA6E7 /* Credit */ = {
-			isa = PBXGroup;
-			children = (
-				55C53C392531D0FF00BAA6E7 /* CreditResult */,
-				55C53C222531C6C800BAA6E7 /* CreditCalculator */,
-				55C53C332531CC1D00BAA6E7 /* CreditCoordinator.swift */,
-				55C53C342531CC1D00BAA6E7 /* CreditCoordinatorFactory.swift */,
-				55C53C352531CC1D00BAA6E7 /* CreditModuleFactory.swift */,
-			);
-			path = Credit;
-			sourceTree = "<group>";
-		};
-		55C53C392531D0FF00BAA6E7 /* CreditResult */ = {
-			isa = PBXGroup;
-			children = (
-				55C53C542531D1BD00BAA6E7 /* CreditResultPresenter.swift */,
-				55C53C552531D1BD00BAA6E7 /* CreditResultViewController.swift */,
-			);
-			path = CreditResult;
-			sourceTree = "<group>";
-		};
-		55C53C5A2531DB7F00BAA6E7 /* Capture */ = {
-			isa = PBXGroup;
-			children = (
-				55C53C5B2531DB9100BAA6E7 /* VideoCapture.swift */,
-			);
-			path = Capture;
 			sourceTree = "<group>";
 		};
 		646F1C2EF49B0D73981043C8 /* SupportingFiles */ = {
@@ -320,15 +217,93 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		8FA5813C0C88046F7C610CB0 /* ChooseFlow */ = {
+			isa = PBXGroup;
+			children = (
+				69198666963C34126C8E015C /* ChooseFlowPresenter.swift */,
+				C9A17308F866A9A83B6B1196 /* ChooseFlowViewController.swift */,
+			);
+			path = ChooseFlow;
+			sourceTree = "<group>";
+		};
+		932ED70D90A50E9D7E4789AE /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				8FA5813C0C88046F7C610CB0 /* ChooseFlow */,
+				2E977284F066282F09371FA7 /* Scan */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		A2FFC19B32FC7BE0E4F7EE5C /* CreditResult */ = {
+			isa = PBXGroup;
+			children = (
+				BA081AEFA443E745D029BDED /* CreditResultPresenter.swift */,
+				0F8BC5CCBBFC43029629CF3F /* CreditResultViewController.swift */,
+			);
+			path = CreditResult;
+			sourceTree = "<group>";
+		};
+		A459C43DC562C60FB536C163 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				63F3D9501B4042A2E395EA12 /* + UINavigationController.swift */,
+				4C422047CFD5484F9C67A351 /* + UIStackView.swift */,
+				9E863B4916AA8A443734B39B /* + UIViewController.swift */,
+				0BABFD2661877416E33657CB /* + VNRecognizedObjectObservation.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A5A9DB1B98606A7D0A1587D4 /* Starter */ = {
+			isa = PBXGroup;
+			children = (
+				932ED70D90A50E9D7E4789AE /* Modules */,
+				00709D540BB4FF95C3937F02 /* StarterCoordinator.swift */,
+				720A95A087C05355DBCE6D11 /* StarterCoordinatorFactory.swift */,
+				9A51E000B5891AEE104175A6 /* StarterModuleFactory.swift */,
+			);
+			path = Starter;
+			sourceTree = "<group>";
+		};
 		C8E331D5097B74F4CC5A5FF0 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
+				4590134A051842EE452F1E3B /* AppCoordinator.swift */,
+				4D220547AE0D4451E68BE7D1 /* AppCoordinatorFactory.swift */,
 				BB075C1327A156E59A2E6507 /* AppDelegate.swift */,
-				55AF3C4B2531B36E00AF9F3D /* AppCoordinator.swift */,
-				55AF3C4E2531B3DA00AF9F3D /* AppCoordinatorFactory.swift */,
-				55AF3C4F2531B3DA00AF9F3D /* AppModuleFactory.swift */,
+				94F94AC704D48CB632ADD99B /* AppModuleFactory.swift */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		D79396FB1359F5C4B8152291 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FC509B44A90CE7F2BD302BF3 /* Coordinator */,
+				A459C43DC562C60FB536C163 /* Extensions */,
+				195F1525F4E9DC162A68E5E2 /* Routing */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		E05761026FADD9DACFFF0538 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				5BFF6AC77404C03634A79945 /* Closure.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FC509B44A90CE7F2BD302BF3 /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				C3F873CE643E5900E8BC64A2 /* BaseCoordinator.swift */,
+				53B8C883ECF4CBE0E5C5F69C /* Coordinator.swift */,
+				3FAC61BBAFBBD9B6C460962A /* CoordinatorFactory.swift */,
+				DC14ED7D4B3C059471DC5A09 /* ModuleFactory.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -340,8 +315,6 @@
 			buildPhases = (
 				641013943C19C3AAD132B8DD /* Sources */,
 				0F6FD3072863CC9EFF52698E /* Resources */,
-				55C53C182531BFC900BAA6E7 /* Frameworks */,
-				55C53C192531BFC900BAA6E7 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -395,39 +368,45 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55C53C592531D9CD00BAA6E7 /* YOLOv3Tiny.mlmodel in Sources */,
-				55C53C1B2531C26000BAA6E7 /* + UIStackView.swift in Sources */,
-				55AF3C4C2531B36E00AF9F3D /* AppCoordinator.swift in Sources */,
-				55AF3C5A2531B49B00AF9F3D /* RouterImp.swift in Sources */,
-				55C53C202531C3EC00BAA6E7 /* ScanPresenter.swift in Sources */,
-				557815D42531B897007BBD34 /* + UINavigationController.swift in Sources */,
-				55AF3C422531B10600AF9F3D /* Router.swift in Sources */,
+				FE120D9692C4C9341F4E8202 /* + UINavigationController.swift in Sources */,
+				176A3FCA19EF20E9407E2A28 /* + UIStackView.swift in Sources */,
+				C6D0C6ABE6168AF10A153C5C /* + UIViewController.swift in Sources */,
+				4830536CC7ECB9D281049879 /* + VNRecognizedObjectObservation.swift in Sources */,
+				18D1A1D7AB020D8DFB177885 /* AppCoordinator.swift in Sources */,
+				9E9D3ABD38DFC9C8815C5949 /* AppCoordinatorFactory.swift in Sources */,
 				FCEA5DB9E180A76AABC9369F /* AppDelegate.swift in Sources */,
-				55AF3C702531BD3C00AF9F3D /* ChooseFlowPresenter.swift in Sources */,
-				55C53C562531D1BD00BAA6E7 /* CreditResultPresenter.swift in Sources */,
-				55AF3C3A2531B06D00AF9F3D /* Coordinator.swift in Sources */,
-				55C53C382531CC1D00BAA6E7 /* CreditModuleFactory.swift in Sources */,
-				55C53C252531C6D700BAA6E7 /* CreditCalculatorPresenter.swift in Sources */,
-				55C53C262531C6D700BAA6E7 /* CreditCalculatorViewController.swift in Sources */,
-				55AF3C542531B42400AF9F3D /* ModuleFactory.swift in Sources */,
-				55C53C372531CC1D00BAA6E7 /* CreditCoordinatorFactory.swift in Sources */,
-				55AF3C712531BD3C00AF9F3D /* ChooseFlowViewController.swift in Sources */,
-				55AF3C5E2531B60900AF9F3D /* + UIViewController.swift in Sources */,
-				55AF3C3D2531B09300AF9F3D /* BaseCoordinator.swift in Sources */,
-				55AF3C682531BCC200AF9F3D /* StarterCoordinator.swift in Sources */,
-				55AF3C6A2531BCC200AF9F3D /* StarterModuleFactory.swift in Sources */,
-				55C53C212531C3EC00BAA6E7 /* ScanViewController.swift in Sources */,
-				55AF3C502531B3DA00AF9F3D /* AppCoordinatorFactory.swift in Sources */,
-				55C53C572531D1BD00BAA6E7 /* CreditResultViewController.swift in Sources */,
-				55C53C5C2531DB9100BAA6E7 /* VideoCapture.swift in Sources */,
-				55AF3C572531B47700AF9F3D /* CoordinatorFactory.swift in Sources */,
-				55C53C362531CC1D00BAA6E7 /* CreditCoordinator.swift in Sources */,
-				55AF3C492531B24500AF9F3D /* Closure.swift in Sources */,
+				474FB84F7C048318644BFCA7 /* AppModuleFactory.swift in Sources */,
+				D9ADD6674F762590D4BE9715 /* BaseCoordinator.swift in Sources */,
+				A45B043697281BBBD7750FA9 /* Calculate.swift in Sources */,
+				462D00EA5F644607889EF541 /* CarRecognition.swift in Sources */,
+				8BAB2123C02EC81C51A7FB18 /* Carloan.swift in Sources */,
+				74C75CC58C332688283D9E48 /* ChooseFlowPresenter.swift in Sources */,
+				A357BEE0071B66D62B4CB010 /* ChooseFlowViewController.swift in Sources */,
+				2A133D8ADBE34D656EF87381 /* Closure.swift in Sources */,
+				54DBE5B525279807CD9EDD2C /* Coordinator.swift in Sources */,
+				63C34BF1E90793A8E8D4BA9F /* CoordinatorFactory.swift in Sources */,
+				B71FD4FC406714867172CDFE /* CreditCalculatorPresenter.swift in Sources */,
+				A2C76DA8030EC50094372041 /* CreditCalculatorViewController.swift in Sources */,
+				551C4BCFEBCC82C9D8A172E1 /* CreditCoordinator.swift in Sources */,
+				2C30D4F7D8049EC4D32C2A79 /* CreditCoordinatorFactory.swift in Sources */,
+				CC0128DFF413603FFC74D108 /* CreditModuleFactory.swift in Sources */,
+				455432EFD97F8E77AC350EBB /* CreditResultPresenter.swift in Sources */,
+				1CC7FB6F28BB541594C96A05 /* CreditResultViewController.swift in Sources */,
+				AF1A647A8A897C24F26CAFA6 /* Marketplace.swift in Sources */,
+				EC8F5D87A743DD7A07419811 /* ModuleFactory.swift in Sources */,
+				DB9CAEDADFD39E4FAD0D3DA2 /* PaymentsGraph.swift in Sources */,
+				BF96496B44A139E54F72015F /* Presentable.swift in Sources */,
+				8974B9D9C3F95484EE1FB0B0 /* Router.swift in Sources */,
+				F445AD832D72AE1D61DF6AC3 /* RouterImp.swift in Sources */,
+				FDA79D39AA632BC0FBBB54A7 /* ScanPresenter.swift in Sources */,
+				5FCA45B39974118A4352CDCA /* ScanViewController.swift in Sources */,
+				844ED5903211D20F3983B821 /* Settings.swift in Sources */,
+				CA9B67F210B67DBF2BE9429E /* StarterCoordinator.swift in Sources */,
+				62E5653B529CB4B6DD5572C3 /* StarterCoordinatorFactory.swift in Sources */,
+				B3C42E5CAF25E7EE6EC5EB4D /* StarterModuleFactory.swift in Sources */,
+				09CF3A01B7112E65B29801B4 /* VideoCapture.swift in Sources */,
 				92EAA9AD59E02F0F4BDC566F /* ViewController.swift in Sources */,
-				55AF3C452531B1A000AF9F3D /* Presentable.swift in Sources */,
-				55C53C5E2531E30B00BAA6E7 /* + VNRecognizedObjectObservation.swift in Sources */,
-				55AF3C512531B3DA00AF9F3D /* AppModuleFactory.swift in Sources */,
-				55AF3C692531BCC200AF9F3D /* StarterCoordinatorFactory.swift in Sources */,
+				1E8A69E4191D59D989410FBC /* YOLOv3Tiny.mlmodel in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
