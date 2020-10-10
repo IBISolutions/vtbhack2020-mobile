@@ -13,7 +13,7 @@ protocol ScanControllerOutput: AnyObject {
     
     func viewDidLoad()
     func didCaptureFrame(with buffer: CVPixelBuffer)
-    func didScan()
+    func didHandleShake()
 }
 
 enum ScanCoordinatorAction {
@@ -23,6 +23,10 @@ enum ScanCoordinatorAction {
 protocol ScanCoordinatorOutput: AnyObject {
     
     var onAction: Closure.Generic<ScanCoordinatorAction>? { get set }
+}
+
+enum ScanState {
+    case capturing, found
 }
 
 final class ScanPresenter: ScanCoordinatorOutput {
@@ -46,6 +50,11 @@ final class ScanPresenter: ScanCoordinatorOutput {
         return try? VNCoreMLModel(for: objectModel.model)
     }()
     
+    private var state: ScanState = .capturing {
+        didSet {
+            view?.updateScanViewState(state)
+        }
+    }
     weak var view: ScanView?
     
     var onAction: Closure.Generic<ScanCoordinatorAction>?
@@ -67,13 +76,21 @@ final class ScanPresenter: ScanCoordinatorOutput {
             let carPredictions = predictions
                 .filter { $0.label == Constants.carIdentifier }
                 .sorted { (first, second) -> Bool in
-                    guard let fConfidence = first.labels.first?.confidence, let sConfidence = second.labels.first?.confidence else {
+                    guard let fConfidence = first.labels.first?.confidence,
+                          let sConfidence = second.labels.first?.confidence else {
                         return false
                     }
                     return fConfidence > sConfidence
+                }
+            
+            guard let goodPrediction = carPredictions.first,
+                  goodPrediction.labels.first?.confidence ?? .zero > 0.9 else {
+                return
             }
             
+            print("\n\n\n")
             DispatchQueue.main.async {
+                self.state = .found
                 //TODO send endpoint with captured
                 //TODO show on UI
             }
@@ -84,14 +101,17 @@ final class ScanPresenter: ScanCoordinatorOutput {
 extension ScanPresenter: ScanControllerOutput {
     
     func viewDidLoad() {
-        view?.startCapturing()
+        view?.initializeCapturing()
+        view?.updateScanViewState(.capturing)
     }
     
     func didCaptureFrame(with buffer: CVPixelBuffer) {
         predictUsingVision(pixelBuffer: buffer)
     }
     
-    func didScan() {
-        onAction?(.scanned)
+    func didHandleShake() {
+        if case .found = state {
+            onAction?(.scanned)
+        }
     }
 }

@@ -11,6 +11,8 @@
 		55C53C292531C96200BAA6E7 /* InfiniteContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C282531C96200BAA6E7 /* InfiniteContainer.swift */; };
 		55C53C2C2531C98200BAA6E7 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C2B2531C98200BAA6E7 /* CustomView.swift */; };
 		55C53C302531C9EB00BAA6E7 /* + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C2F2531C9EB00BAA6E7 /* + UIView.swift */; };
+		55C53C762531F51700BAA6E7 /* PredictionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C752531F51700BAA6E7 /* PredictionView.swift */; };
+		55C53C792531FD0300BAA6E7 /* ScanBackgroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55C53C782531FD0300BAA6E7 /* ScanBackgroundView.swift */; };
 		55F0F499253077FA0035CEE5 /* VTBUI.h in Headers */ = {isa = PBXBuildFile; fileRef = 55F0F497253077FA0035CEE5 /* VTBUI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
@@ -18,6 +20,8 @@
 		55C53C282531C96200BAA6E7 /* InfiniteContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfiniteContainer.swift; sourceTree = "<group>"; };
 		55C53C2B2531C98200BAA6E7 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		55C53C2F2531C9EB00BAA6E7 /* + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ UIView.swift"; sourceTree = "<group>"; };
+		55C53C752531F51700BAA6E7 /* PredictionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictionView.swift; sourceTree = "<group>"; };
+		55C53C782531FD0300BAA6E7 /* ScanBackgroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBackgroundView.swift; sourceTree = "<group>"; };
 		55F0F494253077FA0035CEE5 /* VTBUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = VTBUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55F0F497253077FA0035CEE5 /* VTBUI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VTBUI.h; sourceTree = "<group>"; };
 		55F0F498253077FA0035CEE5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -40,6 +44,8 @@
 			children = (
 				55C53C282531C96200BAA6E7 /* InfiniteContainer.swift */,
 				55C53C2B2531C98200BAA6E7 /* CustomView.swift */,
+				55C53C752531F51700BAA6E7 /* PredictionView.swift */,
+				55C53C782531FD0300BAA6E7 /* ScanBackgroundView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -167,6 +173,8 @@
 				55C53C302531C9EB00BAA6E7 /* + UIView.swift in Sources */,
 				55C53C292531C96200BAA6E7 /* InfiniteContainer.swift in Sources */,
 				55C53C2C2531C98200BAA6E7 /* CustomView.swift in Sources */,
+				55C53C762531F51700BAA6E7 /* PredictionView.swift in Sources */,
+				55C53C792531FD0300BAA6E7 /* ScanBackgroundView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
