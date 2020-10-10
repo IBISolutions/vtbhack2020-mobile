@@ -81,7 +81,7 @@ final class CreditCalculatorViewController: UIViewController {
         container.snp.makeConstraints {
             $0.top.equalToSuperview().inset(48)
             $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(calculateButton.snp.top).inset(-32)
+            $0.bottom.equalTo(calculateButton.snp.top).inset(-16)
         }
         container.setComponents([
             (carImageView, UIEdgeInsets(top: 40, left: 16, bottom: .zero, right: 16)),

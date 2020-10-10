@@ -31,7 +31,7 @@ final class CreditCoordinator: BaseCoordinator {
             
             self?.showCreditResultModule()
         }
-        router.setRootModule(view, hideBar: false)
+        router.setRootModule(view)
     }
     
     private func showCreditResultModule() {

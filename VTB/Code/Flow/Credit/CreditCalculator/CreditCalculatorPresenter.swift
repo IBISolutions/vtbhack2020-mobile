@@ -12,6 +12,7 @@ protocol CreditCalculatorControllerOutput: AnyObject {
     
     func viewDidLoad()
     func didTapOnCalculate()
+    
 }
 
 protocol CreditCalculatorCoordinatorOutput: AnyObject {

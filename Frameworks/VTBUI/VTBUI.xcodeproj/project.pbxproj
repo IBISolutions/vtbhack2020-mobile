@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		5523A534253266DC00225F29 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523A533253266DC00225F29 /* Checkbox.swift */; };
 		5523A53725326DD200225F29 /* KingfisherStatic in Frameworks */ = {isa = PBXBuildFile; productRef = 5523A53625326DD200225F29 /* KingfisherStatic */; };
+		5523A539253278DB00225F29 /* OverallLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523A538253278DB00225F29 /* OverallLabel.swift */; };
 		554C2BF925322F560021DBB4 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554C2BF825322F560021DBB4 /* PrimaryButton.swift */; };
 		554C2C06253230F10021DBB4 /* Resources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554C2C05253230F10021DBB4 /* Resources.framework */; };
 		554C2C07253230F10021DBB4 /* Resources.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 554C2C05253230F10021DBB4 /* Resources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -44,6 +45,7 @@
 
 /* Begin PBXFileReference section */
 		5523A533253266DC00225F29 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
+		5523A538253278DB00225F29 /* OverallLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverallLabel.swift; sourceTree = "<group>"; };
 		554C2BF825322F560021DBB4 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		554C2C05253230F10021DBB4 /* Resources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Resources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A19B8E25323A720033D53E /* + UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ UIImageView.swift"; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				55A19B912532471C0033D53E /* CustomLabel.swift */,
+				5523A538253278DB00225F29 /* OverallLabel.swift */,
 			);
 			path = Labels;
 			sourceTree = "<group>";
@@ -260,6 +263,7 @@
 				5523A534253266DC00225F29 /* Checkbox.swift in Sources */,
 				55C53C292531C96200BAA6E7 /* InfiniteContainer.swift in Sources */,
 				55C53C2C2531C98200BAA6E7 /* CustomView.swift in Sources */,
+				5523A539253278DB00225F29 /* OverallLabel.swift in Sources */,
 				55C53C762531F51700BAA6E7 /* PredictionView.swift in Sources */,
 				55A19B8F25323A720033D53E /* + UIImageView.swift in Sources */,
 				55A19BA025325D240033D53E /* + UINavigationController.swift in Sources */,

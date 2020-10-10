@@ -8,7 +8,9 @@
 
 protocol CreditResultControllerOutput: AnyObject {
     
+    func viewDidLoad()
     func didTapOnCreateOffer()
+    func didTapOnPaymentsChart()
 }
 
 enum CreditResultCoordinatorAction {
@@ -33,7 +35,15 @@ final class CreditResultPresenter: CreditResultCoordinatorOutput {
 
 extension CreditResultPresenter: CreditResultControllerOutput {
     
+    func viewDidLoad() {
+        
+    }
+    
     func didTapOnCreateOffer() {
         onAction?(.createOffer)
+    }
+    
+    func didTapOnPaymentsChart() {
+        onAction?(.schedule)
     }
 }
