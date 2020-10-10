@@ -7,7 +7,7 @@
 
 import UIKit
 
-@UIApplicationMain
+@main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //apiCalculatorPaymentsGraph(10.1, 26.94, 1000000, 50000, 3)
         //apiCalculatorCalculate(400000, 150000, 5, true, true, true)
         //apiMarketplaceLoad()
-        apiCarRecognitionCarRecignize()
+//        apiCarRecognitionCarRecignize()
 		appCoordinator.start()
         return true
     }

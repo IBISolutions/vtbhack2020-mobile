@@ -31,9 +31,20 @@ final class ScanPresenter: ScanCoordinatorOutput {
         static let carIdentifier = "car"
     }
     
-    private let objectDectectionModel = YOLOv3Tiny()
-    private var request: VNCoreMLRequest?
-    private var visionModel: VNCoreMLModel?
+    private lazy var request: VNCoreMLRequest? = {
+        guard let visionModel = visionModel else {
+            return nil
+        }
+        let request = VNCoreMLRequest(model: visionModel, completionHandler: visionRequestDidComplete)
+        request.imageCropAndScaleOption = .scaleFill
+        return request
+    }()
+    private var visionModel: VNCoreMLModel? = {
+        guard let objectModel = try? YOLOv3Tiny(configuration: MLModelConfiguration()) else {
+            return nil
+        }
+        return try? VNCoreMLModel(for: objectModel.model)
+    }()
     
     weak var view: ScanView?
     
@@ -41,17 +52,6 @@ final class ScanPresenter: ScanCoordinatorOutput {
 
     init(view: ScanView) {
         self.view = view
-        
-    }
-    
-    private func initializeModels() {
-        if let visionModel = try? VNCoreMLModel(for: objectDectectionModel.model) {
-            self.visionModel = visionModel
-            request = VNCoreMLRequest(model: visionModel, completionHandler: visionRequestDidComplete)
-            request?.imageCropAndScaleOption = .scaleFill
-        } else {
-            fatalError("fail to create vision model")
-        }
     }
     
     private func predictUsingVision(pixelBuffer: CVPixelBuffer) {
@@ -84,7 +84,6 @@ final class ScanPresenter: ScanCoordinatorOutput {
 extension ScanPresenter: ScanControllerOutput {
     
     func viewDidLoad() {
-        initializeModels()
         view?.startCapturing()
     }
     

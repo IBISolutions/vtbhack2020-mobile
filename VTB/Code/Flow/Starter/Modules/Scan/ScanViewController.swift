@@ -27,9 +27,6 @@ final class ScanViewController: UIViewController {
     }()
     
     private let videoPreview = UIView()
-    let semaphore = DispatchSemaphore(value: 1)
-    
-    private let objectDectectionModel = YOLOv3Tiny()
     
     private lazy var videoCapture: VideoCapture = {
         let capture = VideoCapture()
@@ -59,46 +56,6 @@ final class ScanViewController: UIViewController {
         super.viewDidLayoutSubviews()
         
         videoCapture.previewLayer?.frame = videoPreview.bounds
-    }
-    
-    private func initializeModels() {
-        if let visionModel = try? VNCoreMLModel(for: objectDectectionModel.model) {
-            self.visionModel = visionModel
-            request = VNCoreMLRequest(model: visionModel, completionHandler: visionRequestDidComplete)
-            request?.imageCropAndScaleOption = .scaleFill
-        } else {
-            fatalError("fail to create vision model")
-        }
-    }
-    
-    private func predictUsingVision(pixelBuffer: CVPixelBuffer) {
-        guard let request = request else { fatalError() }
-        let handler = VNImageRequestHandler(cvPixelBuffer: pixelBuffer)
-        try? handler.perform([request])
-    }
-    
-    func visionRequestDidComplete(request: VNRequest, error: Error?) {
-        if let predictions = request.results as? [VNRecognizedObjectObservation] {
-            let carPredictions = predictions.filter { $0.label == "car" }.sorted { (first, second) -> Bool in
-                guard let fConfidence = first.labels.first?.confidence, let sConfidence = second.labels.first?.confidence else {
-                    return false
-                }
-                return fConfidence > sConfidence
-            }
-            
-            DispatchQueue.main.async {
-//                self.boxesView.predictedObjects = predictions
-//                self.labelsTableView.reloadData()
-
-                // end of measure
-                
-                self.isInferencing = false
-            }
-        } else {
-            // end of measure
-            
-            self.isInferencing = false
-        }
     }
     
     @objc private func scannedAction() {
