@@ -50,6 +50,10 @@
 
 В рамках хакатона была решена опциональная задача по ML. Подробнее о ее решении рассказывается в <a href="https://github.com/IBISolutions/vtbhack2020-ml" target="_blank">отдельном репозитории</a>. 
 
+# Схема основного сценария
+
+<img src="https://github.com/IBISolutions/vtbhack2020-ml/blob/main/img/схема.jpg" width="600px">
+
 # Экраны приложений и методы API
 
 ## Распознавание модели машины 
