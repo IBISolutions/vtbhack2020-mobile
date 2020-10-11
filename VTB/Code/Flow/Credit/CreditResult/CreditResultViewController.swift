@@ -78,12 +78,12 @@ final class CreditResultViewController: UIViewController {
         view.addSubview(container)
         paymentsButton.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(16)
-            $0.bottom.equalToSuperview().offset(12)
+            $0.bottom.equalToSuperview().offset(-12)
             $0.height.equalTo(48)
         }
         createOfferButton.snp.makeConstraints {
             $0.leading.trailing.equalToSuperview().inset(16)
-            $0.bottom.equalTo(paymentsButton.snp.top).offset(4)
+            $0.bottom.equalTo(paymentsButton.snp.top).offset(-4)
             $0.height.equalTo(48)
         }
         
