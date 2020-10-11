@@ -21,6 +21,8 @@
 		5509C93A25321A6C002A3833 /* Service.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5509C93925321A6C002A3833 /* Service.framework */; };
 		5509C93B25321A6D002A3833 /* Service.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 5509C93925321A6C002A3833 /* Service.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		551C4BCFEBCC82C9D8A172E1 /* CreditCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE2EA802F18E29AEBF40C2B /* CreditCoordinator.swift */; };
+		5523A53F25329D2C00225F29 /* CreditOfferPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523A53D25329D2C00225F29 /* CreditOfferPresenter.swift */; };
+		5523A54025329D2C00225F29 /* CreditOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523A53E25329D2C00225F29 /* CreditOfferViewController.swift */; };
 		55A19B95253250330033D53E /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A19B94253250330033D53E /* AppData.swift */; };
 		55C53C6E2531F09F00BAA6E7 /* VTBUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C53C6D2531F09F00BAA6E7 /* VTBUI.framework */; };
 		55C53C6F2531F09F00BAA6E7 /* VTBUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55C53C6D2531F09F00BAA6E7 /* VTBUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -83,6 +85,8 @@
 		4D220547AE0D4451E68BE7D1 /* AppCoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinatorFactory.swift; sourceTree = "<group>"; };
 		53B8C883ECF4CBE0E5C5F69C /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		5509C93925321A6C002A3833 /* Service.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Service.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5523A53D25329D2C00225F29 /* CreditOfferPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditOfferPresenter.swift; sourceTree = "<group>"; };
+		5523A53E25329D2C00225F29 /* CreditOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditOfferViewController.swift; sourceTree = "<group>"; };
 		55A19B94253250330033D53E /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		55C53C6D2531F09F00BAA6E7 /* VTBUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VTBUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C53C722531F0AE00BAA6E7 /* Resources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Resources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +139,7 @@
 		177798D07DCDE605851CEDA4 /* Credit */ = {
 			isa = PBXGroup;
 			children = (
+				5523A53C25329D1900225F29 /* CreditOffer */,
 				0A414F908EBEA15B376F7020 /* CreditCalculator */,
 				A2FFC19B32FC7BE0E4F7EE5C /* CreditResult */,
 				2EE2EA802F18E29AEBF40C2B /* CreditCoordinator.swift */,
@@ -222,6 +227,15 @@
 				7E7F8088CD002370F4E4324A /* Products */,
 				55C53C6C2531F09F00BAA6E7 /* Frameworks */,
 			);
+			sourceTree = "<group>";
+		};
+		5523A53C25329D1900225F29 /* CreditOffer */ = {
+			isa = PBXGroup;
+			children = (
+				5523A53D25329D2C00225F29 /* CreditOfferPresenter.swift */,
+				5523A53E25329D2C00225F29 /* CreditOfferViewController.swift */,
+			);
+			path = CreditOffer;
 			sourceTree = "<group>";
 		};
 		55A19B93253250260033D53E /* Root */ = {
@@ -431,9 +445,11 @@
 				1CC7FB6F28BB541594C96A05 /* CreditResultViewController.swift in Sources */,
 				EC8F5D87A743DD7A07419811 /* ModuleFactory.swift in Sources */,
 				BF96496B44A139E54F72015F /* Presentable.swift in Sources */,
+				5523A53F25329D2C00225F29 /* CreditOfferPresenter.swift in Sources */,
 				8974B9D9C3F95484EE1FB0B0 /* Router.swift in Sources */,
 				F445AD832D72AE1D61DF6AC3 /* RouterImp.swift in Sources */,
 				FDA79D39AA632BC0FBBB54A7 /* ScanPresenter.swift in Sources */,
+				5523A54025329D2C00225F29 /* CreditOfferViewController.swift in Sources */,
 				5FCA45B39974118A4352CDCA /* ScanViewController.swift in Sources */,
 				CA9B67F210B67DBF2BE9429E /* StarterCoordinator.swift in Sources */,
 				62E5653B529CB4B6DD5572C3 /* StarterCoordinatorFactory.swift in Sources */,

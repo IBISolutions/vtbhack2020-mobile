@@ -21,7 +21,8 @@ final class CreditCoordinator: BaseCoordinator {
     }
     
     override func start() {
-        showMakeCreditModule()
+        showCreditOfferModule()
+//        showMakeCreditModule()
     }
     
     private func showMakeCreditModule() {
@@ -47,5 +48,10 @@ final class CreditCoordinator: BaseCoordinator {
             }
         }
         router.push(view)
+    }
+    
+    private func showCreditOfferModule() {
+        let (view, output) = factory.makeCreditOfferModule()
+        router.setRootModule(view)
     }
 }

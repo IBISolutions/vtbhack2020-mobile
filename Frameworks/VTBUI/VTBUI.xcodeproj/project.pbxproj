@@ -10,6 +10,7 @@
 		5523A534253266DC00225F29 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523A533253266DC00225F29 /* Checkbox.swift */; };
 		5523A53725326DD200225F29 /* KingfisherStatic in Frameworks */ = {isa = PBXBuildFile; productRef = 5523A53625326DD200225F29 /* KingfisherStatic */; };
 		5523A539253278DB00225F29 /* OverallLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523A538253278DB00225F29 /* OverallLabel.swift */; };
+		5523A53B25329A6A00225F29 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523A53A25329A6A00225F29 /* TextFieldView.swift */; };
 		554C2BF925322F560021DBB4 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554C2BF825322F560021DBB4 /* PrimaryButton.swift */; };
 		554C2C06253230F10021DBB4 /* Resources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554C2C05253230F10021DBB4 /* Resources.framework */; };
 		554C2C07253230F10021DBB4 /* Resources.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 554C2C05253230F10021DBB4 /* Resources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -46,6 +47,7 @@
 /* Begin PBXFileReference section */
 		5523A533253266DC00225F29 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		5523A538253278DB00225F29 /* OverallLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverallLabel.swift; sourceTree = "<group>"; };
+		5523A53A25329A6A00225F29 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
 		554C2BF825322F560021DBB4 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		554C2C05253230F10021DBB4 /* Resources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Resources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A19B8E25323A720033D53E /* + UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ UIImageView.swift"; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				55C53C752531F51700BAA6E7 /* PredictionView.swift */,
 				55C53C782531FD0300BAA6E7 /* ScanBackgroundView.swift */,
 				5523A533253266DC00225F29 /* Checkbox.swift */,
+				5523A53A25329A6A00225F29 /* TextFieldView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -258,6 +261,7 @@
 			files = (
 				55A19B9F25325D240033D53E /* + UIStackView.swift in Sources */,
 				554C2BF925322F560021DBB4 /* PrimaryButton.swift in Sources */,
+				5523A53B25329A6A00225F29 /* TextFieldView.swift in Sources */,
 				55A19B972532583E0033D53E /* CustomSlider.swift in Sources */,
 				55C53C302531C9EB00BAA6E7 /* + UIView.swift in Sources */,
 				5523A534253266DC00225F29 /* Checkbox.swift in Sources */,

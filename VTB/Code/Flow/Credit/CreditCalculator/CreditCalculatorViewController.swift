@@ -126,6 +126,9 @@ extension CreditCalculatorViewController: CreditCalculatorView {
         }.forEach {
             checkboxesContainer.addArrangedSubview($0)
         }
-        container.addComponent(checkboxesContainer, with: UIEdgeInsets(top: 38, left: 16, bottom: .zero, right: 16))
+        container.addComponent(checkboxesContainer, with: UIEdgeInsets(top: 38,
+                                                                       left: 16,
+                                                                       bottom: .zero,
+                                                                       right: 16))
     }
 }
