@@ -47,7 +47,7 @@
 
 **Machine Learning**
 
-В рамках хакатона была решена опциональная задача по ML. Подробнее о ее решении рассказывается в <a hreg="https://github.com/IBISolutions/vtbhack2020-ml" target="_blank">отдельном репозитории</a>. 
+В рамках хакатона была решена опциональная задача по ML. Подробнее о ее решении рассказывается в <a href="https://github.com/IBISolutions/vtbhack2020-ml" target="_blank">отдельном репозитории</a>. 
 
 # Экраны приложений и методы API
 
