@@ -107,13 +107,34 @@ final class ScanPresenter: ScanCoordinatorOutput {
             [weak self] res in
 
             if case .success(let predictions) = res {
-                self?.findCarOnMarketplace(using: predictions.probabilities.allProbabilities)
+                if let maximum = self?.maximumProbability(in: predictions.probabilities.allProbabilities), maximum.1 > 0.4 {
+                    self?.findCarOnMarketplace(using: maximum)
+                } else {
+                    self?.service.recognizeOur(base64image: strBase64) {
+                        [weak self] res in
+                        
+                        if case .success(let predictions) = res {
+                            self?.findCarOnMarketplace(using: predictions.probabilities.allProbabilities)
+                        }
+                    }
+                }
             }
         }
         
         DispatchQueue.main.async {
             self.state = .found
         }
+    }
+    
+    private func maximumProbability(in probabilities: [(String, Double)]) -> (String, Double)? {
+        guard let max = (probabilities.max {
+            (f, s) -> Bool in
+            
+            f.1 < s.1
+        }) else {
+            return nil
+        }
+        return max
     }
     
     private func findCarOnMarketplace(using probabilities: [(String, Double)]) {
@@ -132,6 +153,24 @@ final class ScanPresenter: ScanCoordinatorOutput {
             return
         }
         guard let model = (markList.models.filter { max.0.contains($0.title) }).first else {
+            return
+        }
+        let name = String(format: "%@ %@", markList.title, model.title)
+        let offers = String(format: "%d предложений от %d ₽", model.count, model.minPrice)
+        model.fullName = name
+        scannedModel = model
+        view?.updateCarInfo(name: name, offers: offers)
+    }
+    
+    private func findCarOnMarketplace(using maximum: (String, Double)) {
+        guard let marketplace = AppData.shared.marketplace else {
+            return
+        }
+        
+        guard let markList = (marketplace.list.filter { maximum.0.contains($0.title) }).first else {
+            return
+        }
+        guard let model = (markList.models.filter { maximum.0.contains($0.title) }).first else {
             return
         }
         let name = String(format: "%@ %@", markList.title, model.title)
