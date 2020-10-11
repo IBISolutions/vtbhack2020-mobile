@@ -65,11 +65,12 @@ extension CreditOfferPresenter: CreditOfferControllerOutput {
         service.loan(using: parameters) {
             [weak self] result in
             
-//            switch result {
-//            case .success:
-//
-//            case .failure:
-//            }
+            switch result {
+            case .success:
+                self?.onCompleted?(true)
+            case .failure:
+                self?.onCompleted?(false)
+            }
         }
         
     }

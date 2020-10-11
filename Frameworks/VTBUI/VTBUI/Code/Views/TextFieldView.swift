@@ -46,7 +46,9 @@ public class TextFieldView: CustomView {
         }
     }
     
-    public func configure(title: String) {
+    public func configure(title: String, placholder: String? = nil, keyboardType: UIKeyboardType = .default) {
         titleLabel.text = title
+        textField.keyboardType = keyboardType
+        textField.placeholder = placholder
     }
 }

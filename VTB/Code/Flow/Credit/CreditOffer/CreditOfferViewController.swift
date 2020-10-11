@@ -17,7 +17,7 @@ final class CreditOfferViewController: UIViewController {
     
     private lazy var emailTextFieldView: TextFieldView = {
         let textFieldView = TextFieldView()
-        textFieldView.configure(title: "E-mail")
+        textFieldView.configure(title: "E-mail", keyboardType: .emailAddress)
         return textFieldView
     }()
     private lazy var familyTextFieldView: TextFieldView = {
@@ -37,7 +37,7 @@ final class CreditOfferViewController: UIViewController {
     }()
     private lazy var phoneTextFieldView: TextFieldView = {
         let textFieldView = TextFieldView()
-        textFieldView.configure(title: "Телефон")
+        textFieldView.configure(title: "Телефон", keyboardType: .phonePad)
         return textFieldView
     }()
     private lazy var cityTextFieldView: TextFieldView = {
@@ -47,7 +47,7 @@ final class CreditOfferViewController: UIViewController {
     }()
     private lazy var birthdayTextFieldView: TextFieldView = {
         let textFieldView = TextFieldView()
-        textFieldView.configure(title: "Дата рождения")
+        textFieldView.configure(title: "Дата рождения", placholder: "2000-10-20", keyboardType: .numbersAndPunctuation)
         return textFieldView
     }()
     private lazy var textFieldsStack: UIStackView = {
