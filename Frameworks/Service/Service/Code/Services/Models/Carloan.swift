@@ -19,5 +19,5 @@ public struct Application: Codable {
 public struct DecisionReport: Codable {
     let applicationStatus: String
     let comment: String
-    let monthlyPayment: Int
+    let monthlyPayment: Double
 }

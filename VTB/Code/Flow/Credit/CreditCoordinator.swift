@@ -21,9 +21,7 @@ final class CreditCoordinator: BaseCoordinator {
     }
     
     override func start() {
-        showCreditResultModule(result: CalculateResult())
-//        showCreditOfferModule()
-//        showMakeCreditModule()
+        showMakeCreditModule()
     }
     
     private func showMakeCreditModule() {
@@ -37,23 +35,25 @@ final class CreditCoordinator: BaseCoordinator {
     }
     
     private func showCreditResultModule(result: CalculateResult) {
-        let (view, output) = factory.makeCreditResultModule(photo: model.photo, result: result)
+        let (view, output) = factory.makeCreditResultModule(carName: model.name(),
+                                                            photo: model.photo,
+                                                            result: result)
         output.onAction = {
             [weak self] action in
             
             switch action {
             case .createOffer:
-                print("createoffer")
+                self?.showCreditOfferModule(result: result)
             case .schedule:
                 print("schedule")
             }
         }
-        router.setRootModule(view)
-//        router.push(view)
+        router.push(view)
     }
     
-    private func showCreditOfferModule() {
-        let (view, output) = factory.makeCreditOfferModule()
-//        router.setRootModule(view)
+    private func showCreditOfferModule(result: CalculateResult) {
+        let (view, output) = factory.makeCreditOfferModule(car: model,
+                                                           calculateResult: result)
+        router.push(view)
     }
 }

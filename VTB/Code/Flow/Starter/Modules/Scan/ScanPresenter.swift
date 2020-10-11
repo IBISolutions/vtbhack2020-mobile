@@ -20,7 +20,7 @@ protocol ScanControllerOutput: AnyObject {
 }
 
 enum ScanCoordinatorAction {
-    case scanned
+    case scanned(car: Model)
 }
 
 protocol ScanCoordinatorOutput: AnyObject {
@@ -59,7 +59,7 @@ final class ScanPresenter: ScanCoordinatorOutput {
         }
     }
     private var capturedBuffer: CVPixelBuffer?
-    
+    private var scannedModel: Model?
     weak var view: ScanView?
     private let service = NetworkService()
     
@@ -134,6 +134,8 @@ final class ScanPresenter: ScanCoordinatorOutput {
         }
         let name = String(format: "%@ %@", markList.title, model.title)
         let offers = String(format: "%d предложений от %d ₽", model.count, model.minPrice)
+        model.fullName = name
+        scannedModel = model
         view?.updateCarInfo(name: name, offers: offers)
     }
 }
@@ -151,8 +153,9 @@ extension ScanPresenter: ScanControllerOutput {
     }
     
     func didHandleShake() {
-        if case .found = state {
-            onAction?(.scanned)
+        if case .found = state,
+           let model = scannedModel {
+            onAction?(.scanned(car: model))
         }
     }
     

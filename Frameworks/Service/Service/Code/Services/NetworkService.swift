@@ -53,7 +53,7 @@ public class NetworkService: NetworkServiceProtocol {
             "clientTypes": [],
             "cost": parameters.cost,
             "initialFee": parameters.initialFee,
-            "kaskoValue": kaskoValue, //значение Каско берем 15% от полной стоимости
+            "kaskoValue": Int(kaskoValue), //значение Каско берем 15% от полной стоимости
             "language": "ru-RU",
             "residualPayment": residalPayment, //остаточный платеж = стоимость каско + полная стоимость - первоначальный взнос
             "settingsName": "Haval",

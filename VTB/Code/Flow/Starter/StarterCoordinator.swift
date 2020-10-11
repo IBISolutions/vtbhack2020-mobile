@@ -7,6 +7,7 @@
 //
 
 import UIKit.UINavigationController
+import Service
 
 final class StarterCoordinator: BaseCoordinator {
     
@@ -31,8 +32,8 @@ final class StarterCoordinator: BaseCoordinator {
             
             switch action {
             case .startScan:
-                self?.startCreditFlow()
-//                self?.showScannerModule()
+//                self?.startCreditFlow()
+                self?.showScannerModule()
             case .chooseFromGallery:
                 print("gal")
             }
@@ -46,8 +47,8 @@ final class StarterCoordinator: BaseCoordinator {
             [weak self] action in
             
             switch action {
-            case .scanned:
-                self?.startCreditFlow()
+            case .scanned(let model):
+                self?.startCreditFlow(with: model)
             default:
                 break
             }
@@ -55,12 +56,9 @@ final class StarterCoordinator: BaseCoordinator {
         router.push(view)
     }
     
-    private func startCreditFlow() {
+    private func startCreditFlow(with model: Model) {
         let controller = UINavigationController()
         controller.navigationBar.prefersLargeTitles = true
-        guard let model = AppData.shared.marketplace?.list.first?.models.first else {
-            return
-        }
         let coordinator = coordinatorFactory.makeCreditCoordinator(model: model, rootController: controller)
         addDependency(coordinator)
         coordinator.start()

@@ -30,8 +30,6 @@ final class ChooseFlowViewController: UIViewController {
         }
     }
     
-    private let textField = TextFieldView()
-    
     private lazy var startScanButton: PrimaryButton = {
         let button = PrimaryButton(type: .system)
         button.setTitle("Нажмите чтобы распознать машину", for: .normal)
@@ -60,7 +58,7 @@ final class ChooseFlowViewController: UIViewController {
     private let carImageView = UIImageView(contentMode: .scaleAspectFill,
                                            image: R.image.main.car())
     
-    private lazy var bottomButtonsStackView = UIStackView(subviews: [textField, startScanButton, chooseFromGalleryButton],
+    private lazy var bottomButtonsStackView = UIStackView(subviews: [startScanButton, chooseFromGalleryButton],
                                                           axis: .vertical,
                                                           spacing: Layouts.Buttons.spacing)
     

@@ -26,11 +26,17 @@ public struct Country: Codable {
     public let title: String
 }
 
-public struct Model: Codable {
+public class Model: Codable {
     public let title: String
     public let titleRus: String
     public let photo: String
     public let minPrice: Int
     public let count: Int
     public let colorsCount: Int
+    
+    public var fullName: String?
+    
+    public func name() -> String {
+        fullName ?? ""
+    }
 }

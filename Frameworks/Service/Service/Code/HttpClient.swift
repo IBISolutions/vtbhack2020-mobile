@@ -53,6 +53,8 @@ public class HttpClient {
                 return
             }
             if let data = data {
+                let str = String(data: data, encoding: .utf8)
+                print(str)
                 DispatchQueue.main.async {
                     result(mapper.map(data: data))
                 }

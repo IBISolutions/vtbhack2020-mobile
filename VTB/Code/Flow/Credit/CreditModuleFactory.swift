@@ -11,8 +11,8 @@ import Service
 protocol CreditModuleFactory {
     
     func makeCreditCalculatorModule(using model: Model) -> (Presentable, CreditCalculatorCoordinatorOutput)
-    func makeCreditResultModule(photo: String, result: CalculateResult) -> (Presentable, CreditResultCoordinatorOutput)
-    func makeCreditOfferModule() -> (Presentable, CreditOfferCoordinatorOutput)
+    func makeCreditResultModule(carName: String, photo: String, result: CalculateResult) -> (Presentable, CreditResultCoordinatorOutput)
+    func makeCreditOfferModule(car: Model, calculateResult: CalculateResult) -> (Presentable, CreditOfferCoordinatorOutput)
 }
 
 extension ModuleFactory: CreditModuleFactory {
@@ -24,18 +24,19 @@ extension ModuleFactory: CreditModuleFactory {
         return (controller, presenter)
     }
     
-    func makeCreditResultModule(photo: String, result: CalculateResult) -> (Presentable, CreditResultCoordinatorOutput) {
+    func makeCreditResultModule(carName: String, photo: String, result: CalculateResult) -> (Presentable, CreditResultCoordinatorOutput) {
         let controller = CreditResultViewController()
-        let presenter = CreditResultPresenter(carPhoto: photo,
+        let presenter = CreditResultPresenter(carName: carName,
+                                              carPhoto: photo,
                                               result: result,
                                               view: controller)
         controller.output = presenter
         return (controller, presenter)
     }
     
-    func makeCreditOfferModule() -> (Presentable, CreditOfferCoordinatorOutput) {
+    func makeCreditOfferModule(car: Model, calculateResult: CalculateResult) -> (Presentable, CreditOfferCoordinatorOutput) {
         let controller = CreditOfferViewController()
-        let presenter = CreditOfferPresenter(view: controller)
+        let presenter = CreditOfferPresenter(car: car, calculateResult: calculateResult, view: controller)
         controller.output = presenter
         return (controller, presenter)
     }

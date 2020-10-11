@@ -48,7 +48,7 @@ extension CreditCalculatorPresenter: CreditCalculatorControllerOutput {
                                        min: paymentMin,
                                        max: paymentMax)
         
-        view?.configure(with: model.title,
+        view?.configure(with: model.name(),
                         photo: model.photo,
                         paymentsSliderModel: paymentModel,
                         creditSliderModel: SliderModel.year,

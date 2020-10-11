@@ -27,13 +27,15 @@ protocol CreditResultCoordinatorOutput: AnyObject {
 
 final class CreditResultPresenter: CreditResultCoordinatorOutput {
 
+    private let carName: String
     private let carPhoto: String
     private let result: CalculateResult
     weak var view: CreditResultView?
     
     var onAction: Closure.Generic<CreditResultCoordinatorAction>?
 
-    init(carPhoto: String, result: CalculateResult, view: CreditResultView) {
+    init(carName: String, carPhoto: String, result: CalculateResult, view: CreditResultView) {
+        self.carName = carName
         self.carPhoto = carPhoto
         self.result = result
         self.view = view
@@ -51,7 +53,7 @@ extension CreditResultPresenter: CreditResultControllerOutput {
                                        value: String(format: "%d Р", Int(result.loanAmount)))
         let termModel = OverallModel(title: "Срок кредита",
                                        value: String(format: "%d лет%", Int(result.term)))
-        view?.configure(with: "Тачка",
+        view?.configure(with: carName,
                         photo: carPhoto,
                         monthlyPaymentsModel: monthlyPaymentsModel,
                         creditModel: creditModel,

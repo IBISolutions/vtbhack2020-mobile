@@ -72,7 +72,7 @@ final class CreditOfferViewController: UIViewController {
         button.onTap = {
             [weak self] in
             
-            self?.output?.didTapOnSend()
+            self?.collectDataAndSend()
         }
         return button
     }()
@@ -106,6 +106,7 @@ final class CreditOfferViewController: UIViewController {
                selector: #selector(self.keyboardNotification(notification:)),
                name: UIResponder.keyboardWillChangeFrameNotification,
                object: nil)
+        view.bringSubviewToFront(sendButton)
     }
     
     @objc func keyboardNotification(notification: NSNotification) {
@@ -138,6 +139,17 @@ final class CreditOfferViewController: UIViewController {
     @objc private func onViewTap() {
         view.endEditing(true)
     }
+    
+    private func collectDataAndSend() {
+        output?.didTapOnSend(email: emailTextFieldView.value,
+                             family: familyTextFieldView.value,
+                             name: nameTextFieldView.value,
+                             secondName: secondNameTextFieldView.value,
+                             phone: phoneTextFieldView.value,
+                             city: cityTextFieldView.value,
+                             birthday: birthdayTextFieldView.value)
+    }
+    
 }
 
 extension CreditOfferViewController: CreditOfferView {

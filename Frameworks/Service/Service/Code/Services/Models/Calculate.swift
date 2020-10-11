@@ -19,12 +19,4 @@ public struct CalculateResult: Codable {
     public let loanAmount: Double
     public let payment: Double
     public let term: Int
-    
-    public init() {
-        contractRate = 0
-        kaskoCost = 0
-        loanAmount = 0
-        payment = 0
-        term = 0
-    }
 }

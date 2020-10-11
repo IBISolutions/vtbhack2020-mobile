@@ -22,4 +22,32 @@ public struct LoanParameters {
     let requestedTerm: Int
     let vehicleCost: Int
     let interestRate: Double
+    
+    public init(email: String,
+                incomeAmount: Int,
+                phone: String,
+                firstName: String,
+                familyName: String,
+                middleName: String,
+                birthDateTime: String,
+                birthPlace: String,
+                tradeMark: String,
+                requestedAmount: Int,
+                requestedTerm: Int,
+                vehicleCost: Int,
+                interestRate: Double) {
+        self.email = email
+        self.incomeAmount = incomeAmount
+        self.phone = phone
+        self.firstName = firstName
+        self.familyName = familyName
+        self.middleName = middleName
+        self.birthDateTime = birthDateTime
+        self.birthPlace = birthPlace
+        self.tradeMark = tradeMark
+        self.requestedAmount = requestedAmount
+        self.requestedTerm = requestedTerm
+        self.vehicleCost = vehicleCost
+        self.interestRate = interestRate
+    }
 }
