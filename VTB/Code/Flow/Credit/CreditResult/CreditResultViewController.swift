@@ -73,23 +73,10 @@ final class CreditResultViewController: UIViewController {
         
         navigationItem.largeTitleDisplayMode = .automatic
         view.backgroundColor = .white
-        view.addSubview(createOfferButton)
-        view.addSubview(paymentsButton)
         view.addSubview(container)
-        paymentsButton.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(16)
-            $0.bottom.equalToSuperview().offset(-12)
-            $0.height.equalTo(48)
-        }
-        createOfferButton.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview().inset(16)
-            $0.bottom.equalTo(paymentsButton.snp.top).offset(-4)
-            $0.height.equalTo(48)
-        }
         
         container.snp.makeConstraints {
-            $0.top.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(createOfferButton.snp.top).offset(-16)
+            $0.edges.equalToSuperview()
         }
         carImageView.snp.makeConstraints {
             $0.height.equalTo(206)
@@ -101,8 +88,8 @@ final class CreditResultViewController: UIViewController {
             (creditLabel, Layouts.insets),
             (creditSumLabel, Layouts.insets),
             (termLabel, Layouts.insets),
-//            (createOfferButton, Layouts.insets),
-//            (paymentsButton, Layouts.insets),
+            (createOfferButton, UIEdgeInsets(top: 40, left: 16, bottom: .zero, right: 16)),
+            (paymentsButton, UIEdgeInsets(top: 4, left: 16, bottom: 16, right: 16)),
         ])
         output?.viewDidLoad()
     }

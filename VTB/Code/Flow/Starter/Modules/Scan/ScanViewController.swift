@@ -66,7 +66,6 @@ final class ScanViewController: UIViewController {
         view.addSubview(videoPreview)
         view.addSubview(backgroundView)
         backgroundView.addSubview(predictionView)
-        predictionView.isHidden = true
         backgroundView.isHidden = true
         videoPreview.snp.makeConstraints { $0.edges.equalToSuperview() }
         backgroundView.snp.makeConstraints { $0.edges.equalToSuperview() }
