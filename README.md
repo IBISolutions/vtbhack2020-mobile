@@ -44,7 +44,7 @@
 **Дизайн** 
 
 Для отрисовки прототипа и дизайна экранов использовалась Figma. 
-Ссылка на макет. 
+<a href="https://www.figma.com/file/HzLdUViklWQhcvWA8Pnz9T/3-команда-IBI-Solutions-ВТБ-дизайн?node-id=0%3A1" target="_blank">Ссылка на макет</a>. 
 
 **Machine Learning**
 
