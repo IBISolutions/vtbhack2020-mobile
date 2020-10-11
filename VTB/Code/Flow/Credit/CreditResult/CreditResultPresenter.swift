@@ -8,6 +8,7 @@
 
 import Service
 import VTBUI
+import Resources
 
 protocol CreditResultControllerOutput: AnyObject {
     
@@ -48,11 +49,12 @@ extension CreditResultPresenter: CreditResultControllerOutput {
         let monthlyPaymentsModel = OverallModel(title: "Ежемесячный платеж",
                                                 value: String(format: "%d Р", Int(result.payment)))
         let creditModel = OverallModel(title: "Ставка по кредиту",
-                                       value: String(format: "%d %", result.contractRate))
+                                       value: String(format: "%f %", result.contractRate))
         let creditSumModel = OverallModel(title: "Сумма кредита",
                                        value: String(format: "%d Р", Int(result.loanAmount)))
         let termModel = OverallModel(title: "Срок кредита",
-                                       value: String(format: "%d лет%", Int(result.term)))
+                                     value: R.string.localizable.pluralYears(years: Int(result.term)))
+        
         view?.configure(with: carName,
                         photo: carPhoto,
                         monthlyPaymentsModel: monthlyPaymentsModel,

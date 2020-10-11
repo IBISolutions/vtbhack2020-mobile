@@ -12,11 +12,11 @@ import SnapKit
 public struct SliderModel {
     
     public let title: String
-    public let valueMask: String
+    public let valueMask: String?
     public let min: SliderBoundary
     public let max: SliderBoundary
     
-    public init(title: String, valueMask: String, min: SliderBoundary, max: SliderBoundary) {
+    public init(title: String, valueMask: String? = nil, min: SliderBoundary, max: SliderBoundary) {
         self.title = title
         self.valueMask = valueMask
         self.min = min
@@ -67,7 +67,7 @@ public class SliderView: CustomView {
                                                    axis: .vertical,
                                                    spacing: 4)
     
-    private var valueMask: String = "%d"
+    private var valueMask: String?
     
     public var value: Float {
         Float(Int(slider.value))
@@ -81,17 +81,24 @@ public class SliderView: CustomView {
     }
     
     public func configure(model: SliderModel) {
-        valueMask = model.valueMask
+        if let mask = model.valueMask {
+            valueMask = mask
+        }
         titleLabel.text = model.title
-        valueLabel.text = String(format: valueMask, Int(model.min.value))
-        minValue.text = String(format: model.min.title, Int(model.min.value))
         slider.minimumValue = model.min.value
-        maxValue.text = String(format: model.max.title, Int(model.max.value))
         slider.maximumValue = model.max.value
+        slider.value = model.min.value
+        minValue.text = String(format: model.min.title, Int(model.min.value))
+        maxValue.text = String(format: model.max.title, Int(model.max.value))
+        onChangeSlider()
     }
     
     @objc private func onChangeSlider() {
-        valueLabel.text = String(format: valueMask, Int(slider.value))
+        if let mask = valueMask {
+            valueLabel.text = String(format: mask, Int(slider.value))
+        } else {
+            valueLabel.text = R.string.localizable.pluralYears(years: Int(slider.value))
+        }
     }
 }
 
