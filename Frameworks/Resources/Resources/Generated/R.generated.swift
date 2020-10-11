@@ -90,12 +90,14 @@ public struct R: Rswift.Validatable {
 
   /// This `R.image` struct is generated, and contains static references to 0 images.
   public struct image {
-    /// This `R.image.main` struct is generated, and contains static references to 3 images.
+    /// This `R.image.main` struct is generated, and contains static references to 4 images.
     public struct main {
       /// Image `Background`.
       public static let background = Rswift.ImageResource(bundle: R.hostingBundle, name: "Main/Background")
       /// Image `Car`.
       public static let car = Rswift.ImageResource(bundle: R.hostingBundle, name: "Main/Car")
+      /// Image `Close`.
+      public static let close = Rswift.ImageResource(bundle: R.hostingBundle, name: "Main/Close")
       /// Image `Shake`.
       public static let shake = Rswift.ImageResource(bundle: R.hostingBundle, name: "Main/Shake")
 
@@ -110,6 +112,13 @@ public struct R: Rswift.Validatable {
       /// `UIImage(named: "Car", bundle: ..., traitCollection: ...)`
       public static func car(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.main.car, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Close", bundle: ..., traitCollection: ...)`
+      public static func close(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.main.close, compatibleWith: traitCollection)
       }
       #endif
 

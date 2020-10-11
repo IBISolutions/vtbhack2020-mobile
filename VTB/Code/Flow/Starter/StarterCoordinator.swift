@@ -32,10 +32,7 @@ final class StarterCoordinator: BaseCoordinator {
             
             switch action {
             case .startScan:
-//                self?.startCreditFlow()
                 self?.showScannerModule()
-            default:
-                break
             }
         }
         router.setRootModule(view, hideBar: true)
@@ -49,8 +46,8 @@ final class StarterCoordinator: BaseCoordinator {
             switch action {
             case .scanned(let model):
                 self?.startCreditFlow(with: model)
-            default:
-                break
+            case .close:
+                self?.router.popModule()
             }
         }
         router.push(view)

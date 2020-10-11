@@ -14,13 +14,14 @@ import Service
 protocol ScanControllerOutput: AnyObject {
     
     func viewDidLoad()
+    func didTapOnClose()
     func didCaptureFrame(with buffer: CVPixelBuffer)
     func didHandleShake()
     func didTapOnBackground()
 }
 
 enum ScanCoordinatorAction {
-    case scanned(car: Model)
+    case scanned(car: Model), close
 }
 
 protocol ScanCoordinatorOutput: AnyObject {
@@ -142,6 +143,10 @@ final class ScanPresenter: ScanCoordinatorOutput {
 }
 
 extension ScanPresenter: ScanControllerOutput {
+    
+    func didTapOnClose() {
+        onAction?(.close)
+    }
     
     func viewDidLoad() {
         view?.initializeCapturing()

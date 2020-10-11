@@ -9,13 +9,15 @@
 import Foundation
 
 public struct PaymentsGraph: Codable {
-    let payments: [Payment]
+    
+    public let payments: [Payment]
 }
 
-struct Payment: Codable {
-    let balanceOut: Double
-    let debt: Double
-    let order: Int
-    let payment: Double
-    let percent: Double
+public struct Payment: Codable {
+    
+    public let balanceOut: Double
+    public let debt: Double
+    public let order: Int
+    public let payment: Double
+    public let percent: Double
 }

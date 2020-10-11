@@ -36,8 +36,7 @@ final class CreditCoordinator: BaseCoordinator, CreditCoordinatorFinishable {
         output.onCalculate = {
             [weak self] result in
             
-            self?.showAlert(completed: false)
-//            self?.showCreditResultModule(result: result)
+            self?.showCreditResultModule(result: result)
         }
         router.setRootModule(view)
     }
@@ -53,7 +52,7 @@ final class CreditCoordinator: BaseCoordinator, CreditCoordinatorFinishable {
             case .createOffer:
                 self?.showCreditOfferModule(result: result)
             case .schedule:
-                print("schedule")
+                self?.showGraphModule(calculateResult: result)
             }
         }
         router.push(view)
@@ -68,6 +67,14 @@ final class CreditCoordinator: BaseCoordinator, CreditCoordinatorFinishable {
             self?.showAlert(completed: success)
         }
         router.push(view)
+    }
+    
+    private func showGraphModule(calculateResult: CalculateResult) {
+        let parameters = PaymentGraphParameters.from(calculate: calculateResult)
+        let (view, _) = factory.makeGraphModule(parameters: parameters)
+        let controller = UINavigationController(rootViewController: view.toPresent())
+        controller.navigationBar.prefersLargeTitles = true
+        router.present(controller)
     }
     
     private func showAlert(completed: Bool) {

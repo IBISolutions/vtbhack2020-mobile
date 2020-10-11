@@ -70,7 +70,9 @@ final class CreditCalculatorViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .close,
+                                                            target: self,
+                                                            action: #selector(closeAction))
         view.backgroundColor = .white
         view.addSubview(calculateButton)
         calculateButton.snp.makeConstraints {
@@ -90,6 +92,10 @@ final class CreditCalculatorViewController: UIViewController {
             $0.width.equalTo(carImageView.snp.height).multipliedBy(206/343)
         }
         output?.viewDidLoad()
+    }
+    
+    @objc private func closeAction() {
+        dismiss(animated: true)
     }
     
     private func collectDataAndSend() {

@@ -11,6 +11,7 @@ import UIKit
 import SnapKit
 import Vision
 import VTBUI
+import Resources
 
 protocol ScanView: AnyObject {
     
@@ -40,6 +41,18 @@ final class ScanViewController: UIViewController {
         return capture
     }()
     
+    private lazy var closeButton: CustomButton = {
+        let button = CustomButton(type: .system)
+        button.setImage(R.image.main.close(), for: .normal)
+        button.tintColor = .white
+        button.onTap = {
+            [weak self] in
+            
+            self?.output?.didTapOnClose()
+        }
+        return button
+    }()
+    
     var output: ScanControllerOutput?
     
     override var canBecomeFirstResponder: Bool {
@@ -53,11 +66,18 @@ final class ScanViewController: UIViewController {
         view.addSubview(videoPreview)
         view.addSubview(backgroundView)
         backgroundView.addSubview(predictionView)
+        predictionView.isHidden = true
+        backgroundView.isHidden = true
         videoPreview.snp.makeConstraints { $0.edges.equalToSuperview() }
         backgroundView.snp.makeConstraints { $0.edges.equalToSuperview() }
         predictionView.snp.makeConstraints {
             $0.centerX.equalToSuperview()
             $0.centerY.equalToSuperview().multipliedBy(0.4)
+        }
+        view.addSubview(closeButton)
+        closeButton.snp.makeConstraints {
+            $0.top.equalToSuperview().offset(24)
+            $0.trailing.equalToSuperview().inset(16)
         }
         output?.viewDidLoad()
     }

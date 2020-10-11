@@ -14,6 +14,7 @@ public struct Calculate: Codable {
 }
 
 public struct CalculateResult: Codable {
+    
     public let contractRate: Double
     public let kaskoCost: Double
     public let loanAmount: Double

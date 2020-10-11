@@ -11,6 +11,7 @@
 		5523A53725326DD200225F29 /* KingfisherStatic in Frameworks */ = {isa = PBXBuildFile; productRef = 5523A53625326DD200225F29 /* KingfisherStatic */; };
 		5523A539253278DB00225F29 /* OverallLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523A538253278DB00225F29 /* OverallLabel.swift */; };
 		5523A53B25329A6A00225F29 /* TextFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523A53A25329A6A00225F29 /* TextFieldView.swift */; };
+		5523A5572532DA5B00225F29 /* GraphTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523A5562532DA5B00225F29 /* GraphTableViewCell.swift */; };
 		554C2BF925322F560021DBB4 /* PrimaryButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554C2BF825322F560021DBB4 /* PrimaryButton.swift */; };
 		554C2C06253230F10021DBB4 /* Resources.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 554C2C05253230F10021DBB4 /* Resources.framework */; };
 		554C2C07253230F10021DBB4 /* Resources.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 554C2C05253230F10021DBB4 /* Resources.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -48,6 +49,7 @@
 		5523A533253266DC00225F29 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		5523A538253278DB00225F29 /* OverallLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverallLabel.swift; sourceTree = "<group>"; };
 		5523A53A25329A6A00225F29 /* TextFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldView.swift; sourceTree = "<group>"; };
+		5523A5562532DA5B00225F29 /* GraphTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphTableViewCell.swift; sourceTree = "<group>"; };
 		554C2BF825322F560021DBB4 /* PrimaryButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButton.swift; sourceTree = "<group>"; };
 		554C2C05253230F10021DBB4 /* Resources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Resources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55A19B8E25323A720033D53E /* + UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ UIImageView.swift"; sourceTree = "<group>"; };
@@ -92,6 +94,14 @@
 			path = Code;
 			sourceTree = "<group>";
 		};
+		5523A5552532DA4900225F29 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5523A5562532DA5B00225F29 /* GraphTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		554C2C04253230F10021DBB4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +131,7 @@
 		55C53C272531C95200BAA6E7 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				5523A5552532DA4900225F29 /* Cells */,
 				55A19B9825325B650033D53E /* Slider */,
 				55C53C282531C96200BAA6E7 /* InfiniteContainer.swift */,
 				55C53C2B2531C98200BAA6E7 /* CustomView.swift */,
@@ -264,6 +275,7 @@
 				5523A53B25329A6A00225F29 /* TextFieldView.swift in Sources */,
 				55A19B972532583E0033D53E /* CustomSlider.swift in Sources */,
 				55C53C302531C9EB00BAA6E7 /* + UIView.swift in Sources */,
+				5523A5572532DA5B00225F29 /* GraphTableViewCell.swift in Sources */,
 				5523A534253266DC00225F29 /* Checkbox.swift in Sources */,
 				55C53C292531C96200BAA6E7 /* InfiniteContainer.swift in Sources */,
 				55C53C2C2531C98200BAA6E7 /* CustomView.swift in Sources */,
