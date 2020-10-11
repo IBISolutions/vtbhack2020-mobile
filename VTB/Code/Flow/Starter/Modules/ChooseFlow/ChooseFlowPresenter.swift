@@ -9,11 +9,10 @@
 protocol ChooseFlowControllerOutput: AnyObject {
     
     func didTapOnStartScan()
-    func didTapOnChooseFromGallery()
 }
 
 enum ChooseFlowCoordinatorAction {
-    case startScan, chooseFromGallery
+    case startScan
 }
 
 protocol ChooseFlowCoordinatorOutput: AnyObject {
@@ -36,9 +35,5 @@ extension ChooseFlowPresenter: ChooseFlowControllerOutput {
     
     func didTapOnStartScan() {
         onAction?(.startScan)
-    }
-    
-    func didTapOnChooseFromGallery() {
-        onAction?(.chooseFromGallery)
     }
 }

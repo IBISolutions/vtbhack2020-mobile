@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct PaymentsGraph: Codable {
+public struct PaymentsGraph: Codable {
     let payments: [Payment]
 }
 

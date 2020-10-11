@@ -34,8 +34,8 @@ final class StarterCoordinator: BaseCoordinator {
             case .startScan:
 //                self?.startCreditFlow()
                 self?.showScannerModule()
-            case .chooseFromGallery:
-                print("gal")
+            default:
+                break
             }
         }
         router.setRootModule(view, hideBar: true)

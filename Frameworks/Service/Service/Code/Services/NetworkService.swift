@@ -13,6 +13,7 @@ public protocol NetworkServiceProtocol {
     func recognize(base64image: String, result: @escaping ((Result<CarRecognition, Error>) -> Void))
     func recognizeOur(base64image: String, result: @escaping ((Result<CarRecognitionOur, Error>) -> Void))
     func calculate(using parameters: CalculateParameters, result: @escaping ((Result<Calculate, Error>) -> Void))
+    func paymentGraph(using parameters: PaymentGraphParameters, result: @escaping ((Result<PaymentsGraph, Error>) -> Void))
     func loan(using parameters: LoanParameters, result: @escaping ((Result<CarLoan, Error>) -> Void))
     func settings(result: @escaping ((Result<Settings, Error>) -> Void))
 }
@@ -24,6 +25,7 @@ public class NetworkService: NetworkServiceProtocol {
         static let recognize = "/car-recognize"
         static let recognizeOur = "/car-recognize/"
         static let calculate = "/calculate"
+        static let paymentGraph = "/payments-graph"
         static let loan = "/carloan"
         static let settings = "/settings?name=Haval&language=ru-RU"
     }
@@ -77,6 +79,22 @@ public class NetworkService: NetworkServiceProtocol {
                     endpoint: Endpoints.calculate,
                     parameters: parameters,
                     mapper: Mapper(keyDecodingStrategy: .useDefaultKeys),
+                    result: result)
+    }
+    
+    public func paymentGraph(using parameters: PaymentGraphParameters, result: @escaping ((Result<PaymentsGraph, Error>) -> Void)) {
+        let parameters = [
+            "contractRate": parameters.contractRate,
+            "lastPayment": parameters.lastPayment,
+            "loanAmount": parameters.loanAmount,
+            "payment": parameters.payment,
+            "term": parameters.term
+        ] as [String : Any]
+        
+        client.load(method: .post,
+                    endpoint: Endpoints.paymentGraph,
+                    parameters: parameters,
+                    mapper: Mapper(),
                     result: result)
     }
     

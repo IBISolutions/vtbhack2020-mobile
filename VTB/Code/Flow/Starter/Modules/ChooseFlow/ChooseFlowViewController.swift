@@ -41,24 +41,13 @@ final class ChooseFlowViewController: UIViewController {
         return button
     }()
     
-    private lazy var chooseFromGalleryButton: CustomButton = {
-        let button = CustomButton(type: .system)
-        button.setTitle("Загрузить фото", for: .normal)
-        button.onTap = {
-            [weak self] in
-            
-            self?.output?.didTapOnChooseFromGallery()
-        }
-        return button
-    }()
-    
     private let backgroundImageView = UIImageView(contentMode: .scaleAspectFill,
                                                   image: R.image.main.background())
     
     private let carImageView = UIImageView(contentMode: .scaleAspectFill,
                                            image: R.image.main.car())
     
-    private lazy var bottomButtonsStackView = UIStackView(subviews: [startScanButton, chooseFromGalleryButton],
+    private lazy var bottomButtonsStackView = UIStackView(subviews: [startScanButton],
                                                           axis: .vertical,
                                                           spacing: Layouts.Buttons.spacing)
     

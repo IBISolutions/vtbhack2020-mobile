@@ -156,58 +156,58 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     
-//    private func apiCalculatorPaymentsGraph(_ contractRate: Double,
-//                                            _ lastPayment: Double,
-//                                            _ loanAmount: Double,
-//                                            _ payment: Double,
-//                                            _ term: Int) {
-//        let headers = [
-//          "x-ibm-client-id": "424d8a3ed155851f325f7090c7049df6",
-//          "content-type": "application/json",
-//          "accept": "application/json"
-//        ]
-//        let parameters = [
-//          "contractRate": contractRate,
-//          "lastPayment": lastPayment,
-//          "loanAmount": loanAmount,
-//          "payment": payment,
-//          "term": term
-//        ] as [String : Any]
-//
-//        let postData = try? JSONSerialization.data(withJSONObject: parameters, options: [])
-//
-//        let request = NSMutableURLRequest(url: NSURL(string: "https://gw.hackathon.vtb.ru/vtb/hackathon/payments-graph")! as URL,
-//                                                cachePolicy: .useProtocolCachePolicy,
-//                                            timeoutInterval: 10.0)
-//        request.httpMethod = "POST"
-//        request.allHTTPHeaderFields = headers
-//        request.httpBody = postData
-//
-//        let session = URLSession.shared
-//        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-//          if (error != nil) {
-//            print(error)
-//          } else {
-//            let httpResponse = response as? HTTPURLResponse
-//            print(httpResponse)
-//          }
-//          guard let data = data else {
-//            return
-//          }
-//          let str = String(data: data, encoding: .utf8)
-//          print(str)
-//          let decoder = JSONDecoder()
-//          decoder.keyDecodingStrategy = .useDefaultKeys
-//          do {
-//            let paymentsGraph = try decoder.decode(PaymentsGraph.self, from: data)
-//            print(paymentsGraph)
-//          } catch let e {
-//            print(e)
-//          }
-//        })
-//
-//        dataTask.resume()
-//    }
+    private func apiCalculatorPaymentsGraph(_ contractRate: Double,
+                                            _ lastPayment: Double,
+                                            _ loanAmount: Double,
+                                            _ payment: Double,
+                                            _ term: Int) {
+        let headers = [
+          "x-ibm-client-id": "424d8a3ed155851f325f7090c7049df6",
+          "content-type": "application/json",
+          "accept": "application/json"
+        ]
+        let parameters = [
+          "contractRate": contractRate,
+          "lastPayment": lastPayment,
+          "loanAmount": loanAmount,
+          "payment": payment,
+          "term": term
+        ] as [String : Any]
+
+        let postData = try? JSONSerialization.data(withJSONObject: parameters, options: [])
+
+        let request = NSMutableURLRequest(url: NSURL(string: "https://gw.hackathon.vtb.ru/vtb/hackathon/payments-graph")! as URL,
+                                                cachePolicy: .useProtocolCachePolicy,
+                                            timeoutInterval: 10.0)
+        request.httpMethod = "POST"
+        request.allHTTPHeaderFields = headers
+        request.httpBody = postData
+
+        let session = URLSession.shared
+        let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
+          if (error != nil) {
+            print(error)
+          } else {
+            let httpResponse = response as? HTTPURLResponse
+            print(httpResponse)
+          }
+          guard let data = data else {
+            return
+          }
+          let str = String(data: data, encoding: .utf8)
+          print(str)
+          let decoder = JSONDecoder()
+          decoder.keyDecodingStrategy = .useDefaultKeys
+          do {
+            let paymentsGraph = try decoder.decode(PaymentsGraph.self, from: data)
+            print(paymentsGraph)
+          } catch let e {
+            print(e)
+          }
+        })
+
+        dataTask.resume()
+    }
     
     private func apiCalculatorCalculate(_ cost: Double,
                                         _ initialFee: Double,
