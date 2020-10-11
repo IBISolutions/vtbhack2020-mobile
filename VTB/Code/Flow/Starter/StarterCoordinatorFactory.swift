@@ -11,12 +11,12 @@ import Service
 
 protocol StarterCoordinatorFactory {
     
-    func makeCreditCoordinator(model: Model, rootController: UINavigationController) -> Coordinator
+    func makeCreditCoordinator(model: Model, rootController: UINavigationController) -> Coordinator & CreditCoordinatorFinishable
 }
 
 extension CoordinatorFactory: StarterCoordinatorFactory {
     
-    func makeCreditCoordinator(model: Model, rootController: UINavigationController) -> Coordinator {
+    func makeCreditCoordinator(model: Model, rootController: UINavigationController) -> Coordinator & CreditCoordinatorFinishable {
         let router = RouterImp(rootController: rootController)
         return CreditCoordinator(model: model, router: router, factory: ModuleFactory(router: router))
     }

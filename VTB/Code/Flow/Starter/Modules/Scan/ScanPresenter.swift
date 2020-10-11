@@ -100,12 +100,13 @@ final class ScanPresenter: ScanCoordinatorOutput {
               let data = UIImage(ciImage: CIImage(cvPixelBuffer: buffer)).jpegData(compressionQuality: 0.95) else {
             return
         }
+        
         let strBase64 = data.base64EncodedString()
         service.recognize(base64image: strBase64) {
             [weak self] res in
-            
+
             if case .success(let predictions) = res {
-                self?.findCarOnMarketplace(using: predictions.probabilities)
+                self?.findCarOnMarketplace(using: predictions.probabilities.allProbabilities)
             }
         }
         
@@ -114,15 +115,15 @@ final class ScanPresenter: ScanCoordinatorOutput {
         }
     }
     
-    private func findCarOnMarketplace(using probabilities: Probabilities) {
+    private func findCarOnMarketplace(using probabilities: [(String, Double)]) {
         guard let marketplace = AppData.shared.marketplace else {
             return
         }
         
-        guard let max = (probabilities.allProbabilities.max {
+        guard let max = (probabilities.max {
             (f, s) -> Bool in
             
-            f.1 > s.1
+            f.1 < s.1
         }) else {
             return
         }

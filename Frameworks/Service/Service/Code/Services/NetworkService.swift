@@ -11,6 +11,7 @@ public protocol NetworkServiceProtocol {
     
     func marketplace(result: @escaping ((Result<Marketplace, Error>) -> Void))
     func recognize(base64image: String, result: @escaping ((Result<CarRecognition, Error>) -> Void))
+    func recognizeOur(base64image: String, result: @escaping ((Result<CarRecognitionOur, Error>) -> Void))
     func calculate(using parameters: CalculateParameters, result: @escaping ((Result<Calculate, Error>) -> Void))
     func loan(using parameters: LoanParameters, result: @escaping ((Result<CarLoan, Error>) -> Void))
     func settings(result: @escaping ((Result<Settings, Error>) -> Void))
@@ -21,6 +22,7 @@ public class NetworkService: NetworkServiceProtocol {
     enum Endpoints {
         static let marketplace = "/marketplace"
         static let recognize = "/car-recognize"
+        static let recognizeOur = "/car-recognize/"
         static let calculate = "/calculate"
         static let loan = "/carloan"
         static let settings = "/settings?name=Haval&language=ru-RU"
@@ -40,6 +42,17 @@ public class NetworkService: NetworkServiceProtocol {
         ] as [String : Any]
         client.load(method: .post,
                     endpoint: Endpoints.recognize,
+                    parameters: parameters,
+                    mapper: Mapper(keyDecodingStrategy: .useDefaultKeys), result: result)
+    }
+    
+    public func recognizeOur(base64image: String, result: @escaping ((Result<CarRecognitionOur, Error>) -> Void)) {
+        let parameters = [
+            "content": base64image,
+        ] as [String : Any]
+        client.load(useOurs: true,
+                    method: .post,
+                    endpoint: Endpoints.recognizeOur,
                     parameters: parameters,
                     mapper: Mapper(keyDecodingStrategy: .useDefaultKeys), result: result)
     }

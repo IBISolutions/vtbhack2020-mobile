@@ -11,10 +11,7 @@ import Resources
 import VTBUI
 import SnapKit
 
-protocol CreditOfferView: AnyObject {
-
-    
-}
+protocol CreditOfferView: AnyObject { }
 
 final class CreditOfferViewController: UIViewController {
     
@@ -149,9 +146,6 @@ final class CreditOfferViewController: UIViewController {
                              city: cityTextFieldView.value,
                              birthday: birthdayTextFieldView.value)
     }
-    
 }
 
-extension CreditOfferViewController: CreditOfferView {
-    
-}
+extension CreditOfferViewController: CreditOfferView { }

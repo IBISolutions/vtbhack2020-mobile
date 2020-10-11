@@ -59,7 +59,15 @@ final class StarterCoordinator: BaseCoordinator {
     private func startCreditFlow(with model: Model) {
         let controller = UINavigationController()
         controller.navigationBar.prefersLargeTitles = true
-        let coordinator = coordinatorFactory.makeCreditCoordinator(model: model, rootController: controller)
+        var coordinator = coordinatorFactory.makeCreditCoordinator(model: model, rootController: controller)
+        coordinator.onFinishFlow = {
+            [weak self, weak coordinator] in
+            
+            self?.removeDependency(coordinator)
+            self?.router.dismissModule(animated: true) {
+                self?.showStartScreenModule()
+            }
+        }
         addDependency(coordinator)
         coordinator.start()
         router.present(controller)

@@ -7,12 +7,19 @@
 //
 
 import Service
+import UIKit
 
-final class CreditCoordinator: BaseCoordinator {
+protocol CreditCoordinatorFinishable {
+    
+    var onFinishFlow: Closure.Void? { get set }
+}
+
+final class CreditCoordinator: BaseCoordinator, CreditCoordinatorFinishable {
     
     private let model: Model
     private let factory: CreditModuleFactory
     private let router: Router
+    var onFinishFlow: Closure.Void?
     
     init(model: Model, router: Router, factory: CreditModuleFactory) {
         self.model = model
@@ -29,7 +36,8 @@ final class CreditCoordinator: BaseCoordinator {
         output.onCalculate = {
             [weak self] result in
             
-            self?.showCreditResultModule(result: result)
+            self?.showAlert(completed: false)
+//            self?.showCreditResultModule(result: result)
         }
         router.setRootModule(view)
     }
@@ -54,6 +62,29 @@ final class CreditCoordinator: BaseCoordinator {
     private func showCreditOfferModule(result: CalculateResult) {
         let (view, output) = factory.makeCreditOfferModule(car: model,
                                                            calculateResult: result)
+        output.onCompleted = {
+            [weak self] success in
+            
+            self?.showAlert(completed: success)
+        }
         router.push(view)
+    }
+    
+    private func showAlert(completed: Bool) {
+        if completed {
+            showAlert(title: "Поздравляем", message: "Ваша заявка одобрена. Менеджер банка свяжется с вами в ближайшее время для уточнения деталей")
+        } else {
+            showAlert(title: "Ой...", message: "Ваша заявка не одобрена. Попробуйте изменить кредитные условия или выберите другой автомобиль")
+        }
+    }
+    
+    private func showAlert(title: String?, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: {
+            [weak self] action in
+            
+            self?.onFinishFlow?()
+        }))
+        router.present(alertController, animated: true)
     }
 }

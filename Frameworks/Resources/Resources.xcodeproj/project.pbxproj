@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5523A5482532C58700225F29 /* Plural.stringsdict in Resources */ = {isa = PBXBuildFile; fileRef = 5523A5472532C58700225F29 /* Plural.stringsdict */; };
 		554C2BFD2532306C0021DBB4 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554C2BFC2532306C0021DBB4 /* Color.swift */; };
 		554C2C01253230960021DBB4 /* + UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 554C2C00253230960021DBB4 /* + UIColor.swift */; };
 		554C2C0C253233A80021DBB4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 554C2C0B253233A80021DBB4 /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5523A5472532C58700225F29 /* Plural.stringsdict */ = {isa = PBXFileReference; lastKnownFileType = text.plist.stringsdict; path = Plural.stringsdict; sourceTree = "<group>"; };
 		554C2BFC2532306C0021DBB4 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		554C2C00253230960021DBB4 /* + UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ UIColor.swift"; sourceTree = "<group>"; };
 		554C2C0B253233A80021DBB4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -37,6 +39,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5523A5462532C55C00225F29 /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				5523A5472532C58700225F29 /* Plural.stringsdict */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
 		554C2BFB253230640021DBB4 /* Code */ = {
 			isa = PBXGroup;
 			children = (
@@ -89,6 +99,7 @@
 		55C53C462531D14F00BAA6E7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				5523A5462532C55C00225F29 /* Localization */,
 				558E81EE2532388800CF078C /* Generated */,
 				554C2C0A2532339C0021DBB4 /* Resources */,
 				554C2BFB253230640021DBB4 /* Code */,
@@ -174,6 +185,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5523A5482532C58700225F29 /* Plural.stringsdict in Resources */,
 				554C2C0C253233A80021DBB4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

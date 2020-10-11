@@ -20,15 +20,17 @@ protocol CreditOfferControllerOutput: AnyObject {
 }
 
 protocol CreditOfferCoordinatorOutput: AnyObject {
-
+    
+    var onCompleted: Closure.Boolean? { get set}
 }
 
-final class CreditOfferPresenter {
+final class CreditOfferPresenter: CreditOfferCoordinatorOutput {
 
     private let car: Model
     private let calculateResult: CalculateResult
     weak var view: CreditOfferView?
     private let service = NetworkService()
+    var onCompleted: Closure.Boolean?
 
     init(car: Model, calculateResult: CalculateResult, view: CreditOfferView) {
         self.car = car
@@ -61,14 +63,14 @@ extension CreditOfferPresenter: CreditOfferControllerOutput {
                                         vehicleCost: car.minPrice,
                                         interestRate: calculateResult.contractRate)
         service.loan(using: parameters) {
-            result in
+            [weak self] result in
             
-            print(result)
+//            switch result {
+//            case .success:
+//
+//            case .failure:
+//            }
         }
         
     }
-}
-
-extension CreditOfferPresenter: CreditOfferCoordinatorOutput {
-    
 }
