@@ -11,7 +11,7 @@ import Service
 protocol CreditModuleFactory {
     
     func makeCreditCalculatorModule(using model: Model) -> (Presentable, CreditCalculatorCoordinatorOutput)
-    func makeCreditResultModule() -> (Presentable, CreditResultCoordinatorOutput)
+    func makeCreditResultModule(photo: String, result: CalculateResult) -> (Presentable, CreditResultCoordinatorOutput)
     func makeCreditOfferModule() -> (Presentable, CreditOfferCoordinatorOutput)
 }
 
@@ -24,9 +24,11 @@ extension ModuleFactory: CreditModuleFactory {
         return (controller, presenter)
     }
     
-    func makeCreditResultModule() -> (Presentable, CreditResultCoordinatorOutput) {
+    func makeCreditResultModule(photo: String, result: CalculateResult) -> (Presentable, CreditResultCoordinatorOutput) {
         let controller = CreditResultViewController()
-        let presenter = CreditResultPresenter(view: controller)
+        let presenter = CreditResultPresenter(carPhoto: photo,
+                                              result: result,
+                                              view: controller)
         controller.output = presenter
         return (controller, presenter)
     }

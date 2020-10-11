@@ -9,13 +9,22 @@
 import Foundation
 
 public struct Calculate: Codable {
-    let result: CalculateResult
+    
+    public let result: CalculateResult
 }
 
 public struct CalculateResult: Codable {
-    let contractRate: Double
-    let kaskoCost: Double
-    let loanAmount: Double
-    let payment: Double
-    let term: Int
+    public let contractRate: Double
+    public let kaskoCost: Double
+    public let loanAmount: Double
+    public let payment: Double
+    public let term: Int
+    
+    public init() {
+        contractRate = 0
+        kaskoCost = 0
+        loanAmount = 0
+        payment = 0
+        term = 0
+    }
 }

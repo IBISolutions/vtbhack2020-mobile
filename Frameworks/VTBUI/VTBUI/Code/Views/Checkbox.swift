@@ -27,6 +27,8 @@ public class Checkbox: CustomButton {
         }
     }
     
+    public var id: String?
+    
     public var title: String? {
         didSet {
             setTitle(title, for: .normal)

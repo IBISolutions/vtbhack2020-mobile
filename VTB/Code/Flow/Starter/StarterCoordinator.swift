@@ -57,6 +57,7 @@ final class StarterCoordinator: BaseCoordinator {
     
     private func startCreditFlow() {
         let controller = UINavigationController()
+        controller.navigationBar.prefersLargeTitles = true
         guard let model = AppData.shared.marketplace?.list.first?.models.first else {
             return
         }

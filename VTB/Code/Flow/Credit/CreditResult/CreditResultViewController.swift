@@ -12,11 +12,20 @@ import VTBUI
 import SnapKit
 
 protocol CreditResultView: AnyObject {
-
     
+    func configure(with title: String,
+                   photo: String,
+                   monthlyPaymentsModel: OverallModel,
+                   creditModel: OverallModel,
+                   creditSumModel: OverallModel,
+                   termModel: OverallModel)
 }
 
 final class CreditResultViewController: UIViewController {
+    
+    private enum Layouts {
+        static let insets = UIEdgeInsets(top: 40, left: 16, bottom: .zero, right: 16)
+    }
     
     private lazy var carImageView: UIImageView = {
         let image = UIImageView(contentMode: .scaleAspectFit, clipsToBounds: true)
@@ -28,6 +37,7 @@ final class CreditResultViewController: UIViewController {
     private let monthlyPaymentsLabel = OverallLabel()
     private let creditLabel = OverallLabel()
     private let creditSumLabel = OverallLabel()
+    private let termLabel = OverallLabel()
     private lazy var createOfferButton: PrimaryButton = {
         let button = PrimaryButton(type: .system)
         button.setTitle("Оформить заявку", for: .normal)
@@ -50,10 +60,9 @@ final class CreditResultViewController: UIViewController {
         return button
     }()
     
-    private lazy var overallsStackView = UIStackView(subviews: [monthlyPaymentsLabel, creditLabel, creditSumLabel],
-                                                     axis: .vertical,
-                                                     spacing: 40)
-    private lazy var buttonsStackView = UIStackView(subviews: [createOfferButton, paymentsButton], axis: .vertical, spacing: 14)
+    private lazy var buttonsStackView = UIStackView(subviews: [createOfferButton, paymentsButton],
+                                                    axis: .vertical,
+                                                    spacing: 4)
     
     private let container = InfiniteContainer()
     
@@ -62,35 +71,40 @@ final class CreditResultViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationController?.navigationBar.prefersLargeTitles = true
-        title = "Машина"
+        navigationItem.largeTitleDisplayMode = .automatic
         view.backgroundColor = .white
-        view.addSubview(buttonsStackView)
-        buttonsStackView.snp.makeConstraints {
-            $0.bottom.leading.trailing.equalToSuperview().inset(16)
-            $0.height.equalTo(100)
-        }
-        createOfferButton.snp.makeConstraints { $0.height.equalTo(48) }
+        view.addSubview(createOfferButton)
+        view.addSubview(paymentsButton)
         view.addSubview(container)
-        container.snp.makeConstraints {
-            $0.top.equalToSuperview().inset(48)
-            $0.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(buttonsStackView.snp.top).inset(-16)
+        paymentsButton.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.bottom.equalToSuperview().offset(12)
+            $0.height.equalTo(48)
         }
-        monthlyPaymentsLabel.title = "Ежемесячный платеж"
-        monthlyPaymentsLabel.value = "100 000 ₽"
-        creditLabel.title = "Ежемесячный платеж"
-        creditLabel.value = "100 000 ₽"
-        creditSumLabel.title = "Ежемесячный платеж"
-        creditSumLabel.value = "100 000 ₽"
-        container.setComponents([
-            (carImageView, UIEdgeInsets(top: 40, left: 16, bottom: .zero, right: 16)),
-            (overallsStackView, UIEdgeInsets(top: 40, left: 16, bottom: .zero, right: 16))
-        ])
+        createOfferButton.snp.makeConstraints {
+            $0.leading.trailing.equalToSuperview().inset(16)
+            $0.bottom.equalTo(paymentsButton.snp.top).offset(4)
+            $0.height.equalTo(48)
+        }
+        
+        container.snp.makeConstraints {
+            $0.top.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(createOfferButton.snp.top).offset(-16)
+        }
         carImageView.snp.makeConstraints {
             $0.height.equalTo(206)
             $0.width.equalTo(carImageView.snp.height).multipliedBy(206/343)
         }
+        container.setComponents([
+            (carImageView, Layouts.insets),
+            (monthlyPaymentsLabel, Layouts.insets),
+            (creditLabel, Layouts.insets),
+            (creditSumLabel, Layouts.insets),
+            (termLabel, Layouts.insets),
+//            (createOfferButton, Layouts.insets),
+//            (paymentsButton, Layouts.insets),
+        ])
+        output?.viewDidLoad()
     }
     
     @objc private func createOfferAction() {
@@ -100,4 +114,20 @@ final class CreditResultViewController: UIViewController {
 
 extension CreditResultViewController: CreditResultView {
     
+    func configure(with title: String,
+                   photo: String,
+                   monthlyPaymentsModel: OverallModel,
+                   creditModel: OverallModel,
+                   creditSumModel: OverallModel,
+                   termModel: OverallModel) {
+        self.title = title
+        guard let url = URL(string: photo) else {
+            return
+        }
+        carImageView.kf.setImage(with: url)
+        monthlyPaymentsLabel.configure(with: monthlyPaymentsModel)
+        creditLabel.configure(with: creditModel)
+        creditSumLabel.configure(with: creditSumModel)
+        termLabel.configure(with: termModel)
+    }
 }

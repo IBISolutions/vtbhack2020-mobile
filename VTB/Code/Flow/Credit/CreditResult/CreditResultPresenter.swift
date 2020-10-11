@@ -6,6 +6,9 @@
 //  Copyright © 2020 IBI-Solutions. All rights reserved.
 //
 
+import Service
+import VTBUI
+
 protocol CreditResultControllerOutput: AnyObject {
     
     func viewDidLoad()
@@ -24,11 +27,15 @@ protocol CreditResultCoordinatorOutput: AnyObject {
 
 final class CreditResultPresenter: CreditResultCoordinatorOutput {
 
+    private let carPhoto: String
+    private let result: CalculateResult
     weak var view: CreditResultView?
     
     var onAction: Closure.Generic<CreditResultCoordinatorAction>?
 
-    init(view: CreditResultView) {
+    init(carPhoto: String, result: CalculateResult, view: CreditResultView) {
+        self.carPhoto = carPhoto
+        self.result = result
         self.view = view
     }
 }
@@ -36,7 +43,20 @@ final class CreditResultPresenter: CreditResultCoordinatorOutput {
 extension CreditResultPresenter: CreditResultControllerOutput {
     
     func viewDidLoad() {
-        
+        let monthlyPaymentsModel = OverallModel(title: "Ежемесячный платеж",
+                                                value: String(format: "%d Р", Int(result.payment)))
+        let creditModel = OverallModel(title: "Ставка по кредиту",
+                                       value: String(format: "%d %", result.contractRate))
+        let creditSumModel = OverallModel(title: "Сумма кредита",
+                                       value: String(format: "%d Р", Int(result.loanAmount)))
+        let termModel = OverallModel(title: "Срок кредита",
+                                       value: String(format: "%d лет%", Int(result.term)))
+        view?.configure(with: "Тачка",
+                        photo: carPhoto,
+                        monthlyPaymentsModel: monthlyPaymentsModel,
+                        creditModel: creditModel,
+                        creditSumModel: creditSumModel,
+                        termModel: termModel)
     }
     
     func didTapOnCreateOffer() {

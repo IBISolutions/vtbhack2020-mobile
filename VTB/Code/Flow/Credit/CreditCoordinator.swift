@@ -21,22 +21,23 @@ final class CreditCoordinator: BaseCoordinator {
     }
     
     override func start() {
-        showCreditOfferModule()
-//        showMakeCreditModule()
+//        showCreditResultModule(result: CalculateResult())
+//        showCreditOfferModule()
+        showMakeCreditModule()
     }
     
     private func showMakeCreditModule() {
         let (view, output) = factory.makeCreditCalculatorModule(using: model)
         output.onCalculate = {
-            [weak self] in
+            [weak self] result in
             
-            self?.showCreditResultModule()
+            self?.showCreditResultModule(result: result)
         }
         router.setRootModule(view)
     }
     
-    private func showCreditResultModule() {
-        let (view, output) = factory.makeCreditResultModule()
+    private func showCreditResultModule(result: CalculateResult) {
+        let (view, output) = factory.makeCreditResultModule(photo: model.photo, result: result)
         output.onAction = {
             [weak self] action in
             
@@ -47,11 +48,12 @@ final class CreditCoordinator: BaseCoordinator {
                 print("schedule")
             }
         }
+//        router.setRootModule(view)
         router.push(view)
     }
     
     private func showCreditOfferModule() {
         let (view, output) = factory.makeCreditOfferModule()
-        router.setRootModule(view)
+//        router.setRootModule(view)
     }
 }

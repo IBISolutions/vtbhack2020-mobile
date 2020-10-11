@@ -9,10 +9,30 @@ import UIKit
 import Resources
 import SnapKit
 
+public struct SliderModel {
+    
+    public let title: String
+    public let valueMask: String
+    public let min: SliderBoundary
+    public let max: SliderBoundary
+    
+    public init(title: String, valueMask: String, min: SliderBoundary, max: SliderBoundary) {
+        self.title = title
+        self.valueMask = valueMask
+        self.min = min
+        self.max = max
+    }
+}
+
 public struct SliderBoundary {
     
-    let title: String
-    let value: Float
+    public let title: String
+    public let value: Float
+    
+    public init(title: String, value: Float) {
+        self.title = title
+        self.value = value
+    }
 }
 
 public class SliderView: CustomView {
@@ -46,25 +66,32 @@ public class SliderView: CustomView {
     private lazy var finiteStackView = UIStackView(subviews: [topStackView, bottomStackView],
                                                    axis: .vertical,
                                                    spacing: 4)
+    
+    private var valueMask: String = "%d"
+    
+    public var value: Float {
+        Float(Int(slider.value))
+    }
+    
     public override init(frame: CGRect) {
         super.init(frame: frame)
         
         addSubview(finiteStackView)
         finiteStackView.snp.makeConstraints { $0.edges.equalToSuperview() }
-        configure(title: "Первоначальный взнос", value: "800000", min: SliderBoundary(title: "800 000 Р", value: 800_000), max: SliderBoundary(title: "1 600 000 Р", value: 1_600_000))
     }
     
-    public func configure(title: String, value: String, min: SliderBoundary, max: SliderBoundary) {
-        titleLabel.text = title
-        valueLabel.text = String(format: "%d", Int(slider.value))
-        minValue.text = min.title
-        slider.minimumValue = min.value
-        maxValue.text = max.title
-        slider.maximumValue = max.value
+    public func configure(model: SliderModel) {
+        valueMask = model.valueMask
+        titleLabel.text = model.title
+        valueLabel.text = String(format: valueMask, Int(model.min.value))
+        minValue.text = String(format: model.min.title, Int(model.min.value))
+        slider.minimumValue = model.min.value
+        maxValue.text = String(format: model.max.title, Int(model.max.value))
+        slider.maximumValue = model.max.value
     }
     
     @objc private func onChangeSlider() {
-        valueLabel.text = String(format: "%d", Int(slider.value))
+        valueLabel.text = String(format: valueMask, Int(slider.value))
     }
 }
 

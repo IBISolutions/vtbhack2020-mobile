@@ -23,6 +23,7 @@
 		551C4BCFEBCC82C9D8A172E1 /* CreditCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2EE2EA802F18E29AEBF40C2B /* CreditCoordinator.swift */; };
 		5523A53F25329D2C00225F29 /* CreditOfferPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523A53D25329D2C00225F29 /* CreditOfferPresenter.swift */; };
 		5523A54025329D2C00225F29 /* CreditOfferViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523A53E25329D2C00225F29 /* CreditOfferViewController.swift */; };
+		5523A5452532A92A00225F29 /* + SliderModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5523A5442532A92A00225F29 /* + SliderModel.swift */; };
 		55A19B95253250330033D53E /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55A19B94253250330033D53E /* AppData.swift */; };
 		55C53C6E2531F09F00BAA6E7 /* VTBUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55C53C6D2531F09F00BAA6E7 /* VTBUI.framework */; };
 		55C53C6F2531F09F00BAA6E7 /* VTBUI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 55C53C6D2531F09F00BAA6E7 /* VTBUI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -87,6 +88,7 @@
 		5509C93925321A6C002A3833 /* Service.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Service.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5523A53D25329D2C00225F29 /* CreditOfferPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditOfferPresenter.swift; sourceTree = "<group>"; };
 		5523A53E25329D2C00225F29 /* CreditOfferViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditOfferViewController.swift; sourceTree = "<group>"; };
+		5523A5442532A92A00225F29 /* + SliderModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "+ SliderModel.swift"; sourceTree = "<group>"; };
 		55A19B94253250330033D53E /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		55C53C6D2531F09F00BAA6E7 /* VTBUI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = VTBUI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		55C53C722531F0AE00BAA6E7 /* Resources.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Resources.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -303,6 +305,7 @@
 			isa = PBXGroup;
 			children = (
 				0BABFD2661877416E33657CB /* + VNRecognizedObjectObservation.swift */,
+				5523A5442532A92A00225F29 /* + SliderModel.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				2A133D8ADBE34D656EF87381 /* Closure.swift in Sources */,
 				54DBE5B525279807CD9EDD2C /* Coordinator.swift in Sources */,
 				63C34BF1E90793A8E8D4BA9F /* CoordinatorFactory.swift in Sources */,
+				5523A5452532A92A00225F29 /* + SliderModel.swift in Sources */,
 				B71FD4FC406714867172CDFE /* CreditCalculatorPresenter.swift in Sources */,
 				A2C76DA8030EC50094372041 /* CreditCalculatorViewController.swift in Sources */,
 				551C4BCFEBCC82C9D8A172E1 /* CreditCoordinator.swift in Sources */,
