@@ -4,7 +4,7 @@
 
 # Возможности 
 
-Основной флоу:
+**Основной флоу:**
 <div display="inline">
 <img src="https://github.com/IBISolutions/vtbhack2020-ml/blob/main/img/Мокап1.png" width="150px">
 <img src="https://github.com/IBISolutions/vtbhack2020-ml/blob/main/img/Мокап2.png" width="150px">
@@ -18,7 +18,7 @@
 - График платежей (после расчета условий по кредиту можно получить график платежей прямо в приложении) <br>
 - Оформление заявки на автокредит (оформите заявку на автокредит одним кликом после расчета условий и получите одобрение, после чего ожидайте звонок менеджера банка для оформления сделки) <br>
 
-Дополнительно:
+**Дополнительно:**
 <div display="inline">
 <img src="https://github.com/IBISolutions/vtbhack2020-ml/blob/main/img/Мокап6.png" width="150px">
 <img src="https://github.com/IBISolutions/vtbhack2020-ml/blob/main/img/Мокап7.png" width="150px">
